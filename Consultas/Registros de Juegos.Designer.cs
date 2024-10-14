@@ -129,6 +129,7 @@
             this.btnNuevoJuego.TabIndex = 6;
             this.btnNuevoJuego.Text = "+ Nuevo Juego";
             this.btnNuevoJuego.UseVisualStyleBackColor = false;
+            this.btnNuevoJuego.Click += new System.EventHandler(this.btnNuevoJuego_Click);
             // 
             // btnBuscarJuego
             // 
@@ -188,6 +189,7 @@
             this.Controls.Add(this.lblJuegosRegistrados);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Registros_de_Juegos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registros_de_Juegos";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

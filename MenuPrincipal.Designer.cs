@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             this.panelSideView = new System.Windows.Forms.Panel();
-            this.btnDispositivos = new System.Windows.Forms.Button();
             this.btnTesis = new System.Windows.Forms.Button();
             this.btnJuegos = new System.Windows.Forms.Button();
             this.panelProyectos_submenu = new System.Windows.Forms.Panel();
@@ -76,7 +75,6 @@
             // 
             this.panelSideView.AutoScroll = true;
             this.panelSideView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.panelSideView.Controls.Add(this.btnDispositivos);
             this.panelSideView.Controls.Add(this.btnTesis);
             this.panelSideView.Controls.Add(this.btnJuegos);
             this.panelSideView.Controls.Add(this.panelProyectos_submenu);
@@ -96,13 +94,6 @@
             this.panelSideView.Name = "panelSideView";
             this.panelSideView.Size = new System.Drawing.Size(319, 1055);
             this.panelSideView.TabIndex = 0;
-            // 
-            // btnDispositivos
-            // 
-            this.btnDispositivos.Location = new System.Drawing.Point(0, 0);
-            this.btnDispositivos.Name = "btnDispositivos";
-            this.btnDispositivos.Size = new System.Drawing.Size(75, 23);
-            this.btnDispositivos.TabIndex = 0;
             // 
             // btnTesis
             // 
@@ -595,7 +586,6 @@
         private System.Windows.Forms.Panel panelProyectos_submenu;
         private System.Windows.Forms.Button btnProyectos;
         private System.Windows.Forms.Panel panelMapas_submenu;
-        private System.Windows.Forms.Button btnDispositivos;
         private System.Windows.Forms.Button btnTesis;
         private System.Windows.Forms.Button btnJuegos;
         private System.Windows.Forms.PictureBox LogoMenu;
