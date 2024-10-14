@@ -129,6 +129,7 @@
             this.btnNuevoMapa.TabIndex = 6;
             this.btnNuevoMapa.Text = "+ Nuevo Mapa";
             this.btnNuevoMapa.UseVisualStyleBackColor = false;
+            this.btnNuevoMapa.Click += new System.EventHandler(this.btnNuevoMapa_Click);
             // 
             // btnBuscarMapa
             // 

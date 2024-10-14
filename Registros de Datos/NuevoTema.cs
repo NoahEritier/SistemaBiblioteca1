@@ -16,5 +16,10 @@ namespace WindowsFormsApp1.Registros_de_Datos
         {
             InitializeComponent();
         }
+
+        private void btnCancelarRegistro_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

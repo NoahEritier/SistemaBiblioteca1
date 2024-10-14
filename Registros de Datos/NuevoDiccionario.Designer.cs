@@ -141,6 +141,7 @@
             this.btnCancelarRegistro.TabIndex = 27;
             this.btnCancelarRegistro.Text = "Cancelar";
             this.btnCancelarRegistro.UseVisualStyleBackColor = false;
+            this.btnCancelarRegistro.Click += new System.EventHandler(this.btnCancelarRegistro_Click);
             // 
             // cmbIdiomas
             // 
@@ -219,6 +220,7 @@
             this.Controls.Add(this.lblNuevoDiccionario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "NuevoDiccionario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NuevoDiccionario";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

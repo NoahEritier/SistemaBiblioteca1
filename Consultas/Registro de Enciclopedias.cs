@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1;
+using WindowsFormsApp1.Registros_de_Datos;
 
 namespace WindowsFormsApp1.Consultas
 {
@@ -20,6 +22,12 @@ namespace WindowsFormsApp1.Consultas
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnNuevaEnciclopedia_Click(object sender, EventArgs e)
+        {
+            NuevaEnciclopedia nuevaEnciclopedia = new NuevaEnciclopedia();
+            nuevaEnciclopedia.ShowDialog(this);
         }
     }
 }

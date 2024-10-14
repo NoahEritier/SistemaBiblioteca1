@@ -19,7 +19,12 @@ namespace WindowsFormsApp1.Registros_de_Datos
 
         private void btnConfirmarRegistro_Click(object sender, EventArgs e)
         {
+            
+        }
 
+        private void btnCancelarRegistro_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

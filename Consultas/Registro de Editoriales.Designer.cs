@@ -81,6 +81,7 @@
             this.btnNuevaEditorial.TabIndex = 6;
             this.btnNuevaEditorial.Text = "+ Nueva Editorial";
             this.btnNuevaEditorial.UseVisualStyleBackColor = false;
+            this.btnNuevaEditorial.Click += new System.EventHandler(this.btnNuevaEditorial_Click);
             // 
             // btnBuscarEditorial
             // 

@@ -34,25 +34,27 @@
             this.btnTesis = new System.Windows.Forms.Button();
             this.btnJuegos = new System.Windows.Forms.Button();
             this.panelProyectos_submenu = new System.Windows.Forms.Panel();
-            this.btnCarrera = new System.Windows.Forms.Button();
+            this.btnRegistrosPro = new System.Windows.Forms.Button();
             this.btnProyectos = new System.Windows.Forms.Button();
             this.panelMapas_submenu = new System.Windows.Forms.Panel();
             this.btnEditorialMap = new System.Windows.Forms.Button();
             this.btnTemasMap = new System.Windows.Forms.Button();
+            this.btnRegistrosMap = new System.Windows.Forms.Button();
             this.btnMapas = new System.Windows.Forms.Button();
             this.panelDiccionarios_submenu = new System.Windows.Forms.Panel();
             this.btnEditorialDiccio = new System.Windows.Forms.Button();
+            this.btnRegistrosDiccio = new System.Windows.Forms.Button();
             this.btnDiccionarios = new System.Windows.Forms.Button();
             this.panelEnciclopedias_submenu = new System.Windows.Forms.Panel();
-            this.btnTemasCiclo = new System.Windows.Forms.Button();
             this.btnEditorialCiclo = new System.Windows.Forms.Button();
+            this.btnTemasCiclo = new System.Windows.Forms.Button();
+            this.btnRegistrosCiclo = new System.Windows.Forms.Button();
             this.btnEnciclopedias = new System.Windows.Forms.Button();
             this.panelLibros_submenu = new System.Windows.Forms.Panel();
             this.btnAutores = new System.Windows.Forms.Button();
-            this.btnNivel = new System.Windows.Forms.Button();
             this.btnEditorial = new System.Windows.Forms.Button();
             this.btnTemas = new System.Windows.Forms.Button();
-            this.btnRegistro = new System.Windows.Forms.Button();
+            this.btnRegistrosLib = new System.Windows.Forms.Button();
             this.btnLibros = new System.Windows.Forms.Button();
             this.paneLogo = new System.Windows.Forms.Panel();
             this.LogoMenu = new System.Windows.Forms.PictureBox();
@@ -94,25 +96,13 @@
             this.panelSideView.Name = "panelSideView";
             this.panelSideView.Size = new System.Drawing.Size(319, 1055);
             this.panelSideView.TabIndex = 0;
-            this.panelSideView.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSideView_Paint);
             // 
             // btnDispositivos
             // 
-            this.btnDispositivos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDispositivos.FlatAppearance.BorderSize = 0;
-            this.btnDispositivos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.btnDispositivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDispositivos.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnDispositivos.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDispositivos.Location = new System.Drawing.Point(0, 1014);
+            this.btnDispositivos.Location = new System.Drawing.Point(0, 0);
             this.btnDispositivos.Name = "btnDispositivos";
-            this.btnDispositivos.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnDispositivos.Size = new System.Drawing.Size(298, 58);
-            this.btnDispositivos.TabIndex = 32;
-            this.btnDispositivos.Text = "DISPOSITIVOS";
-            this.btnDispositivos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDispositivos.UseVisualStyleBackColor = false;
-            this.btnDispositivos.Click += new System.EventHandler(this.btnDispositivos_Click_1);
+            this.btnDispositivos.Size = new System.Drawing.Size(75, 23);
+            this.btnDispositivos.TabIndex = 0;
             // 
             // btnTesis
             // 
@@ -122,7 +112,7 @@
             this.btnTesis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTesis.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnTesis.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnTesis.Location = new System.Drawing.Point(0, 956);
+            this.btnTesis.Location = new System.Drawing.Point(0, 1048);
             this.btnTesis.Name = "btnTesis";
             this.btnTesis.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnTesis.Size = new System.Drawing.Size(298, 58);
@@ -140,7 +130,7 @@
             this.btnJuegos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnJuegos.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnJuegos.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnJuegos.Location = new System.Drawing.Point(0, 898);
+            this.btnJuegos.Location = new System.Drawing.Point(0, 990);
             this.btnJuegos.Name = "btnJuegos";
             this.btnJuegos.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnJuegos.Size = new System.Drawing.Size(298, 58);
@@ -153,29 +143,29 @@
             // panelProyectos_submenu
             // 
             this.panelProyectos_submenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.panelProyectos_submenu.Controls.Add(this.btnCarrera);
+            this.panelProyectos_submenu.Controls.Add(this.btnRegistrosPro);
             this.panelProyectos_submenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelProyectos_submenu.Location = new System.Drawing.Point(0, 853);
+            this.panelProyectos_submenu.Location = new System.Drawing.Point(0, 945);
             this.panelProyectos_submenu.Name = "panelProyectos_submenu";
             this.panelProyectos_submenu.Size = new System.Drawing.Size(298, 45);
             this.panelProyectos_submenu.TabIndex = 29;
             // 
-            // btnCarrera
+            // btnRegistrosPro
             // 
-            this.btnCarrera.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCarrera.FlatAppearance.BorderSize = 0;
-            this.btnCarrera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCarrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
-            this.btnCarrera.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCarrera.Location = new System.Drawing.Point(0, 0);
-            this.btnCarrera.Name = "btnCarrera";
-            this.btnCarrera.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnCarrera.Size = new System.Drawing.Size(298, 45);
-            this.btnCarrera.TabIndex = 9;
-            this.btnCarrera.Text = "CARRERA";
-            this.btnCarrera.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCarrera.UseVisualStyleBackColor = true;
-            this.btnCarrera.Click += new System.EventHandler(this.btnCarrera_Click_1);
+            this.btnRegistrosPro.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRegistrosPro.FlatAppearance.BorderSize = 0;
+            this.btnRegistrosPro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrosPro.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.btnRegistrosPro.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnRegistrosPro.Location = new System.Drawing.Point(0, 0);
+            this.btnRegistrosPro.Name = "btnRegistrosPro";
+            this.btnRegistrosPro.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnRegistrosPro.Size = new System.Drawing.Size(298, 45);
+            this.btnRegistrosPro.TabIndex = 1;
+            this.btnRegistrosPro.Text = "REGISTROS";
+            this.btnRegistrosPro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistrosPro.UseVisualStyleBackColor = true;
+            this.btnRegistrosPro.Click += new System.EventHandler(this.btnRegistrosPro_Click);
             // 
             // btnProyectos
             // 
@@ -185,7 +175,7 @@
             this.btnProyectos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProyectos.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnProyectos.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnProyectos.Location = new System.Drawing.Point(0, 795);
+            this.btnProyectos.Location = new System.Drawing.Point(0, 887);
             this.btnProyectos.Name = "btnProyectos";
             this.btnProyectos.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnProyectos.Size = new System.Drawing.Size(298, 58);
@@ -200,10 +190,11 @@
             this.panelMapas_submenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.panelMapas_submenu.Controls.Add(this.btnEditorialMap);
             this.panelMapas_submenu.Controls.Add(this.btnTemasMap);
+            this.panelMapas_submenu.Controls.Add(this.btnRegistrosMap);
             this.panelMapas_submenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelMapas_submenu.Location = new System.Drawing.Point(0, 704);
+            this.panelMapas_submenu.Location = new System.Drawing.Point(0, 750);
             this.panelMapas_submenu.Name = "panelMapas_submenu";
-            this.panelMapas_submenu.Size = new System.Drawing.Size(298, 91);
+            this.panelMapas_submenu.Size = new System.Drawing.Size(298, 137);
             this.panelMapas_submenu.TabIndex = 27;
             // 
             // btnEditorialMap
@@ -213,11 +204,11 @@
             this.btnEditorialMap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditorialMap.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
             this.btnEditorialMap.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnEditorialMap.Location = new System.Drawing.Point(0, 45);
+            this.btnEditorialMap.Location = new System.Drawing.Point(0, 90);
             this.btnEditorialMap.Name = "btnEditorialMap";
             this.btnEditorialMap.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnEditorialMap.Size = new System.Drawing.Size(298, 45);
-            this.btnEditorialMap.TabIndex = 8;
+            this.btnEditorialMap.TabIndex = 3;
             this.btnEditorialMap.Text = "EDITORIAL";
             this.btnEditorialMap.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditorialMap.UseVisualStyleBackColor = true;
@@ -230,15 +221,32 @@
             this.btnTemasMap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTemasMap.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
             this.btnTemasMap.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnTemasMap.Location = new System.Drawing.Point(0, 0);
+            this.btnTemasMap.Location = new System.Drawing.Point(0, 45);
             this.btnTemasMap.Name = "btnTemasMap";
             this.btnTemasMap.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnTemasMap.Size = new System.Drawing.Size(298, 45);
-            this.btnTemasMap.TabIndex = 7;
+            this.btnTemasMap.TabIndex = 2;
             this.btnTemasMap.Text = "TEMAS";
             this.btnTemasMap.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTemasMap.UseVisualStyleBackColor = true;
             this.btnTemasMap.Click += new System.EventHandler(this.btnTemasMap_Click);
+            // 
+            // btnRegistrosMap
+            // 
+            this.btnRegistrosMap.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRegistrosMap.FlatAppearance.BorderSize = 0;
+            this.btnRegistrosMap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrosMap.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.btnRegistrosMap.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnRegistrosMap.Location = new System.Drawing.Point(0, 0);
+            this.btnRegistrosMap.Name = "btnRegistrosMap";
+            this.btnRegistrosMap.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnRegistrosMap.Size = new System.Drawing.Size(298, 45);
+            this.btnRegistrosMap.TabIndex = 1;
+            this.btnRegistrosMap.Text = "REGISTROS";
+            this.btnRegistrosMap.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistrosMap.UseVisualStyleBackColor = true;
+            this.btnRegistrosMap.Click += new System.EventHandler(this.btnRegistrosMap_Click);
             // 
             // btnMapas
             // 
@@ -248,7 +256,7 @@
             this.btnMapas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMapas.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnMapas.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnMapas.Location = new System.Drawing.Point(0, 646);
+            this.btnMapas.Location = new System.Drawing.Point(0, 692);
             this.btnMapas.Name = "btnMapas";
             this.btnMapas.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnMapas.Size = new System.Drawing.Size(298, 58);
@@ -262,10 +270,11 @@
             // 
             this.panelDiccionarios_submenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.panelDiccionarios_submenu.Controls.Add(this.btnEditorialDiccio);
+            this.panelDiccionarios_submenu.Controls.Add(this.btnRegistrosDiccio);
             this.panelDiccionarios_submenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelDiccionarios_submenu.Location = new System.Drawing.Point(0, 601);
             this.panelDiccionarios_submenu.Name = "panelDiccionarios_submenu";
-            this.panelDiccionarios_submenu.Size = new System.Drawing.Size(298, 45);
+            this.panelDiccionarios_submenu.Size = new System.Drawing.Size(298, 91);
             this.panelDiccionarios_submenu.TabIndex = 25;
             // 
             // btnEditorialDiccio
@@ -275,15 +284,32 @@
             this.btnEditorialDiccio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditorialDiccio.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
             this.btnEditorialDiccio.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnEditorialDiccio.Location = new System.Drawing.Point(0, 0);
+            this.btnEditorialDiccio.Location = new System.Drawing.Point(0, 45);
             this.btnEditorialDiccio.Name = "btnEditorialDiccio";
             this.btnEditorialDiccio.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnEditorialDiccio.Size = new System.Drawing.Size(298, 45);
-            this.btnEditorialDiccio.TabIndex = 6;
+            this.btnEditorialDiccio.TabIndex = 2;
             this.btnEditorialDiccio.Text = "EDITORIAL";
             this.btnEditorialDiccio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditorialDiccio.UseVisualStyleBackColor = true;
-            this.btnEditorialDiccio.Click += new System.EventHandler(this.btnEditorialDiccio_Click);
+            this.btnEditorialDiccio.Click += new System.EventHandler(this.btnEditorialCiclo_Click_1);
+            // 
+            // btnRegistrosDiccio
+            // 
+            this.btnRegistrosDiccio.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRegistrosDiccio.FlatAppearance.BorderSize = 0;
+            this.btnRegistrosDiccio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrosDiccio.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.btnRegistrosDiccio.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnRegistrosDiccio.Location = new System.Drawing.Point(0, 0);
+            this.btnRegistrosDiccio.Name = "btnRegistrosDiccio";
+            this.btnRegistrosDiccio.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnRegistrosDiccio.Size = new System.Drawing.Size(298, 45);
+            this.btnRegistrosDiccio.TabIndex = 1;
+            this.btnRegistrosDiccio.Text = "REGISTROS";
+            this.btnRegistrosDiccio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistrosDiccio.UseVisualStyleBackColor = true;
+            this.btnRegistrosDiccio.Click += new System.EventHandler(this.btnRegistrosDiccio_Click);
             // 
             // btnDiccionarios
             // 
@@ -306,13 +332,31 @@
             // panelEnciclopedias_submenu
             // 
             this.panelEnciclopedias_submenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.panelEnciclopedias_submenu.Controls.Add(this.btnTemasCiclo);
             this.panelEnciclopedias_submenu.Controls.Add(this.btnEditorialCiclo);
+            this.panelEnciclopedias_submenu.Controls.Add(this.btnTemasCiclo);
+            this.panelEnciclopedias_submenu.Controls.Add(this.btnRegistrosCiclo);
             this.panelEnciclopedias_submenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelEnciclopedias_submenu.Location = new System.Drawing.Point(0, 452);
+            this.panelEnciclopedias_submenu.Location = new System.Drawing.Point(0, 406);
             this.panelEnciclopedias_submenu.Name = "panelEnciclopedias_submenu";
-            this.panelEnciclopedias_submenu.Size = new System.Drawing.Size(298, 91);
+            this.panelEnciclopedias_submenu.Size = new System.Drawing.Size(298, 137);
             this.panelEnciclopedias_submenu.TabIndex = 23;
+            // 
+            // btnEditorialCiclo
+            // 
+            this.btnEditorialCiclo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEditorialCiclo.FlatAppearance.BorderSize = 0;
+            this.btnEditorialCiclo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditorialCiclo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.btnEditorialCiclo.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnEditorialCiclo.Location = new System.Drawing.Point(0, 90);
+            this.btnEditorialCiclo.Name = "btnEditorialCiclo";
+            this.btnEditorialCiclo.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnEditorialCiclo.Size = new System.Drawing.Size(298, 45);
+            this.btnEditorialCiclo.TabIndex = 2;
+            this.btnEditorialCiclo.Text = "EDITORIAL";
+            this.btnEditorialCiclo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditorialCiclo.UseVisualStyleBackColor = true;
+            this.btnEditorialCiclo.Click += new System.EventHandler(this.btnEditorialCiclo_Click_1);
             // 
             // btnTemasCiclo
             // 
@@ -325,28 +369,28 @@
             this.btnTemasCiclo.Name = "btnTemasCiclo";
             this.btnTemasCiclo.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnTemasCiclo.Size = new System.Drawing.Size(298, 45);
-            this.btnTemasCiclo.TabIndex = 6;
+            this.btnTemasCiclo.TabIndex = 1;
             this.btnTemasCiclo.Text = "TEMAS";
             this.btnTemasCiclo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTemasCiclo.UseVisualStyleBackColor = true;
             this.btnTemasCiclo.Click += new System.EventHandler(this.btnTemasCiclo_Click_1);
             // 
-            // btnEditorialCiclo
+            // btnRegistrosCiclo
             // 
-            this.btnEditorialCiclo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEditorialCiclo.FlatAppearance.BorderSize = 0;
-            this.btnEditorialCiclo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditorialCiclo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
-            this.btnEditorialCiclo.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnEditorialCiclo.Location = new System.Drawing.Point(0, 0);
-            this.btnEditorialCiclo.Name = "btnEditorialCiclo";
-            this.btnEditorialCiclo.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnEditorialCiclo.Size = new System.Drawing.Size(298, 45);
-            this.btnEditorialCiclo.TabIndex = 5;
-            this.btnEditorialCiclo.Text = "EDITORIAL";
-            this.btnEditorialCiclo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditorialCiclo.UseVisualStyleBackColor = true;
-            this.btnEditorialCiclo.Click += new System.EventHandler(this.btnEditorialCiclo_Click_1);
+            this.btnRegistrosCiclo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRegistrosCiclo.FlatAppearance.BorderSize = 0;
+            this.btnRegistrosCiclo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrosCiclo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.btnRegistrosCiclo.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnRegistrosCiclo.Location = new System.Drawing.Point(0, 0);
+            this.btnRegistrosCiclo.Name = "btnRegistrosCiclo";
+            this.btnRegistrosCiclo.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnRegistrosCiclo.Size = new System.Drawing.Size(298, 45);
+            this.btnRegistrosCiclo.TabIndex = 0;
+            this.btnRegistrosCiclo.Text = "REGISTROS";
+            this.btnRegistrosCiclo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistrosCiclo.UseVisualStyleBackColor = true;
+            this.btnRegistrosCiclo.Click += new System.EventHandler(this.btnRegistrosCiclo_Click);
             // 
             // btnEnciclopedias
             // 
@@ -356,7 +400,7 @@
             this.btnEnciclopedias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnciclopedias.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnEnciclopedias.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnEnciclopedias.Location = new System.Drawing.Point(0, 394);
+            this.btnEnciclopedias.Location = new System.Drawing.Point(0, 348);
             this.btnEnciclopedias.Name = "btnEnciclopedias";
             this.btnEnciclopedias.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnEnciclopedias.Size = new System.Drawing.Size(298, 58);
@@ -370,16 +414,14 @@
             // 
             this.panelLibros_submenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.panelLibros_submenu.Controls.Add(this.btnAutores);
-            this.panelLibros_submenu.Controls.Add(this.btnNivel);
             this.panelLibros_submenu.Controls.Add(this.btnEditorial);
             this.panelLibros_submenu.Controls.Add(this.btnTemas);
-            this.panelLibros_submenu.Controls.Add(this.btnRegistro);
+            this.panelLibros_submenu.Controls.Add(this.btnRegistrosLib);
             this.panelLibros_submenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLibros_submenu.Location = new System.Drawing.Point(0, 166);
             this.panelLibros_submenu.Name = "panelLibros_submenu";
-            this.panelLibros_submenu.Size = new System.Drawing.Size(298, 228);
+            this.panelLibros_submenu.Size = new System.Drawing.Size(298, 182);
             this.panelLibros_submenu.TabIndex = 21;
-            this.panelLibros_submenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLibros_submenus_Paint);
             // 
             // btnAutores
             // 
@@ -388,7 +430,7 @@
             this.btnAutores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAutores.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
             this.btnAutores.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnAutores.Location = new System.Drawing.Point(0, 180);
+            this.btnAutores.Location = new System.Drawing.Point(0, 135);
             this.btnAutores.Name = "btnAutores";
             this.btnAutores.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnAutores.Size = new System.Drawing.Size(298, 45);
@@ -396,22 +438,7 @@
             this.btnAutores.Text = "AUTORES";
             this.btnAutores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAutores.UseVisualStyleBackColor = true;
-            // 
-            // btnNivel
-            // 
-            this.btnNivel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnNivel.FlatAppearance.BorderSize = 0;
-            this.btnNivel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
-            this.btnNivel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnNivel.Location = new System.Drawing.Point(0, 135);
-            this.btnNivel.Name = "btnNivel";
-            this.btnNivel.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnNivel.Size = new System.Drawing.Size(298, 45);
-            this.btnNivel.TabIndex = 3;
-            this.btnNivel.Text = "NIVEL";
-            this.btnNivel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNivel.UseVisualStyleBackColor = true;
+            this.btnAutores.Click += new System.EventHandler(this.btnAutores_Click);
             // 
             // btnEditorial
             // 
@@ -428,6 +455,7 @@
             this.btnEditorial.Text = "EDITORIAL";
             this.btnEditorial.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditorial.UseVisualStyleBackColor = true;
+            this.btnEditorial.Click += new System.EventHandler(this.btnEditorial_Click);
             // 
             // btnTemas
             // 
@@ -444,23 +472,24 @@
             this.btnTemas.Text = "TEMAS";
             this.btnTemas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTemas.UseVisualStyleBackColor = true;
+            this.btnTemas.Click += new System.EventHandler(this.btnTemas_Click);
             // 
-            // btnRegistro
+            // btnRegistrosLib
             // 
-            this.btnRegistro.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRegistro.FlatAppearance.BorderSize = 0;
-            this.btnRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
-            this.btnRegistro.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnRegistro.Location = new System.Drawing.Point(0, 0);
-            this.btnRegistro.Name = "btnRegistro";
-            this.btnRegistro.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnRegistro.Size = new System.Drawing.Size(298, 45);
-            this.btnRegistro.TabIndex = 0;
-            this.btnRegistro.Text = "REGISTROS";
-            this.btnRegistro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegistro.UseVisualStyleBackColor = true;
-            this.btnRegistro.Click += new System.EventHandler(this.btnRegistross_Click);
+            this.btnRegistrosLib.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRegistrosLib.FlatAppearance.BorderSize = 0;
+            this.btnRegistrosLib.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrosLib.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.btnRegistrosLib.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnRegistrosLib.Location = new System.Drawing.Point(0, 0);
+            this.btnRegistrosLib.Name = "btnRegistrosLib";
+            this.btnRegistrosLib.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnRegistrosLib.Size = new System.Drawing.Size(298, 45);
+            this.btnRegistrosLib.TabIndex = 0;
+            this.btnRegistrosLib.Text = "REGISTROS";
+            this.btnRegistrosLib.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistrosLib.UseVisualStyleBackColor = true;
+            this.btnRegistrosLib.Click += new System.EventHandler(this.btnRegistrosLib_Click);
             // 
             // btnLibros
             // 
@@ -491,7 +520,6 @@
             this.paneLogo.Name = "paneLogo";
             this.paneLogo.Size = new System.Drawing.Size(298, 108);
             this.paneLogo.TabIndex = 8;
-            this.paneLogo.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // LogoMenu
             // 
@@ -555,31 +583,33 @@
         private System.Windows.Forms.Button btnLibros;
         private System.Windows.Forms.Panel paneLogo;
         private System.Windows.Forms.Panel panelLibros_submenu;
-        private System.Windows.Forms.Button btnRegistro;
+        private System.Windows.Forms.Button btnRegistrosLib;
         private System.Windows.Forms.Button btnTemas;
         private System.Windows.Forms.Button btnAutores;
-        private System.Windows.Forms.Button btnNivel;
         private System.Windows.Forms.Button btnEditorial;
         private System.Windows.Forms.Button btnEnciclopedias;
         private System.Windows.Forms.Panel panelEnciclopedias_submenu;
         private System.Windows.Forms.Button btnDiccionarios;
-        private System.Windows.Forms.Button btnTemasCiclo;
-        private System.Windows.Forms.Button btnEditorialCiclo;
         private System.Windows.Forms.Panel panelDiccionarios_submenu;
-        private System.Windows.Forms.Button btnEditorialDiccio;
         private System.Windows.Forms.Button btnMapas;
         private System.Windows.Forms.Panel panelProyectos_submenu;
         private System.Windows.Forms.Button btnProyectos;
         private System.Windows.Forms.Panel panelMapas_submenu;
-        private System.Windows.Forms.Button btnEditorialMap;
-        private System.Windows.Forms.Button btnTemasMap;
         private System.Windows.Forms.Button btnDispositivos;
         private System.Windows.Forms.Button btnTesis;
         private System.Windows.Forms.Button btnJuegos;
-        private System.Windows.Forms.Button btnCarrera;
         private System.Windows.Forms.PictureBox LogoMenu;
         private System.Windows.Forms.Panel panelChildForm;
         private System.Windows.Forms.PictureBox Logo;
+        private System.Windows.Forms.Button btnRegistrosCiclo;
+        private System.Windows.Forms.Button btnEditorialCiclo;
+        private System.Windows.Forms.Button btnTemasCiclo;
+        private System.Windows.Forms.Button btnRegistrosDiccio;
+        private System.Windows.Forms.Button btnEditorialDiccio;
+        private System.Windows.Forms.Button btnEditorialMap;
+        private System.Windows.Forms.Button btnTemasMap;
+        private System.Windows.Forms.Button btnRegistrosMap;
+        private System.Windows.Forms.Button btnRegistrosPro;
     }
 }
 

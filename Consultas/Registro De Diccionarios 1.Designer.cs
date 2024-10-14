@@ -124,6 +124,7 @@
             this.btnNuevoDiccionario.TabIndex = 6;
             this.btnNuevoDiccionario.Text = "+ Nuevo Diccionario";
             this.btnNuevoDiccionario.UseVisualStyleBackColor = false;
+            this.btnNuevoDiccionario.Click += new System.EventHandler(this.btnNuevoDiccionario_Click);
             // 
             // btnBuscarDiccionario
             // 

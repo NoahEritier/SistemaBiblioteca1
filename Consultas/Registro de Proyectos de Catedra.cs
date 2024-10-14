@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Registros_de_Datos;
 
 namespace WindowsFormsApp1.Consultas
 {
@@ -17,6 +18,10 @@ namespace WindowsFormsApp1.Consultas
             InitializeComponent();
         }
 
-        
+        private void btnNuevoProyecto_Click(object sender, EventArgs e)
+        {
+            NuevoProyectoDeCatedra nuevoProyectoDeCatedra = new NuevoProyectoDeCatedra();
+            nuevoProyectoDeCatedra.ShowDialog(this);
+        }
     }
 }

@@ -137,6 +137,7 @@
             this.btnCancelarRegistro.TabIndex = 27;
             this.btnCancelarRegistro.Text = "Cancelar";
             this.btnCancelarRegistro.UseVisualStyleBackColor = false;
+            this.btnCancelarRegistro.Click += new System.EventHandler(this.btnCancelarRegistro_Click);
             // 
             // cmbCarreras
             // 
@@ -193,6 +194,7 @@
             this.Controls.Add(this.lblProyectosDeCatedra);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "NuevoProyectoDeCatedra";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NuevoProyectoDeCatedra";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

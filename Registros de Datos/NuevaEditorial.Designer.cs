@@ -64,6 +64,7 @@
             this.pillButton1.TabIndex = 31;
             this.pillButton1.Text = "Cancelar";
             this.pillButton1.UseVisualStyleBackColor = false;
+            this.pillButton1.Click += new System.EventHandler(this.pillButton1_Click);
             // 
             // btnConfirmarRegistro
             // 
@@ -125,6 +126,7 @@
             this.Controls.Add(this.lblNuevaEditorial);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "NuevaEditorial";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NuevaEditorial";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -132,6 +132,7 @@
             this.btnNuevaEnciclopedia.TabIndex = 6;
             this.btnNuevaEnciclopedia.Text = "+ Nueva Enciclopedia";
             this.btnNuevaEnciclopedia.UseVisualStyleBackColor = false;
+            this.btnNuevaEnciclopedia.Click += new System.EventHandler(this.btnNuevaEnciclopedia_Click);
             // 
             // btnBuscarEnciclopedia
             // 

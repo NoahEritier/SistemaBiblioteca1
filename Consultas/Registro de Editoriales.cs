@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Registros_de_Datos;
 
 namespace WindowsFormsApp1.Consultas
 {
@@ -20,6 +21,14 @@ namespace WindowsFormsApp1.Consultas
         private void Registro_de_Editoriales_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnNuevaEditorial_Click(object sender, EventArgs e)
+        {
+            NuevaEditorial nuevaEditorial = new NuevaEditorial();
+            nuevaEditorial.ShowDialog(this);
+            
+         
         }
     }
 }

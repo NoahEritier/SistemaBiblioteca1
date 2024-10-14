@@ -151,6 +151,7 @@
             this.btnCancelarRegistro.TabIndex = 27;
             this.btnCancelarRegistro.Text = "Cancelar";
             this.btnCancelarRegistro.UseVisualStyleBackColor = false;
+            this.btnCancelarRegistro.Click += new System.EventHandler(this.btnCancelarRegistro_Click);
             // 
             // cmbTemas
             // 
@@ -286,6 +287,7 @@
             this.Controls.Add(this.lblNuevoLibro);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "NuevaEnciclopedia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NuevaEnciclopedia";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

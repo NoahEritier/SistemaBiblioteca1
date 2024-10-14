@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Consultas;
 
 namespace WindowsFormsApp1
 {
@@ -58,44 +59,50 @@ namespace WindowsFormsApp1
             showSubMenu(panelLibros_submenu);
         }
 
-        private void btnRegistros_Click(object sender, EventArgs e)
+        private void btnRegistrosLib_Click(object sender, EventArgs e)
         {
+            openChildForm(new Registro_de_Libros());
             HideSubMenu();
         }
 
         private void btnTemas_Click(object sender, EventArgs e)
         {
+            openChildForm(new registro_de_temas());
             HideSubMenu();
         }
 
         private void btnEditorial_Click(object sender, EventArgs e)
         {
-            HideSubMenu();
-        }
-
-        private void btnNivel_Click(object sender, EventArgs e)
-        {
+            openChildForm(new Registro_de_Editoriales());
             HideSubMenu();
         }
 
         private void btnAutores_Click(object sender, EventArgs e)
         {
+            openChildForm(new Registro_de_Autores());
             HideSubMenu();
         }
 
         private void btnEnciclopedias_Click(object sender, EventArgs e)
         {
             showSubMenu(panelEnciclopedias_submenu);
-
         }
 
-        private void btnEditorialCiclo_Click_1(object sender, EventArgs e)
+        private void btnRegistrosCiclo_Click(object sender, EventArgs e)
         {
+            openChildForm(new Registro_de_Diccionarios());
             HideSubMenu();
         }
 
         private void btnTemasCiclo_Click_1(object sender, EventArgs e)
         {
+            openChildForm(new registro_de_temas());
+            HideSubMenu();
+        }
+
+        private void btnEditorialCiclo_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new Registro_de_Editoriales());
             HideSubMenu();
         }
 
@@ -104,8 +111,15 @@ namespace WindowsFormsApp1
             showSubMenu(panelDiccionarios_submenu);
         }
 
+        private void btnRegistrosDiccio_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Registro_De_Diccionarios_1());
+            HideSubMenu();
+        }
+
         private void btnEditorialDiccio_Click(object sender, EventArgs e)
         {
+            openChildForm(new Registro_de_Editoriales());
             HideSubMenu();
         }
 
@@ -114,13 +128,21 @@ namespace WindowsFormsApp1
             showSubMenu(panelMapas_submenu);
         }
 
+        private void btnRegistrosMap_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Registros_de_Mapas());
+            HideSubMenu();
+        }
+
         private void btnTemasMap_Click(object sender, EventArgs e)
         {
+            openChildForm(new registro_de_temas());
             HideSubMenu();
         }
 
         private void btnEditorialMap_Click(object sender, EventArgs e)
         {
+            openChildForm(new Registro_de_Editoriales());
             HideSubMenu();
         }
 
@@ -129,14 +151,15 @@ namespace WindowsFormsApp1
             showSubMenu(panelProyectos_submenu);
         }
 
-        private void btnCarrera_Click_1(object sender, EventArgs e)
+        private void btnRegistrosPro_Click(object sender, EventArgs e)
         {
+            openChildForm(new Registro_de_Proyecto_de_Catedra());
             HideSubMenu();
         }
 
         private void btnJuegos_Click_1(object sender, EventArgs e)
         {
-
+            openChildForm(new Registros_de_Juegos());
         }
 
         private void btnTesis_Click_1(object sender, EventArgs e)
@@ -144,7 +167,7 @@ namespace WindowsFormsApp1
 
         }
 
-        private void btnDispositivos_Click_1(object sender, EventArgs e)
+        private void MenuPrincipal_Load(object sender, EventArgs e)
         {
 
         }
@@ -154,7 +177,7 @@ namespace WindowsFormsApp1
         {
             if (activateForm != null)
                 activateForm.Close();
-            activateForm.Close();
+            activateForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
@@ -162,44 +185,6 @@ namespace WindowsFormsApp1
             panelChildForm.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-      
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panelSideView_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnRegistross_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelLibros_submenus_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-      
-
-        private void MenuPrincipal_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

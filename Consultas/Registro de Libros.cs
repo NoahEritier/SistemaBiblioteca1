@@ -21,5 +21,11 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void btnNuevoLibro_Click(object sender, EventArgs e)
+        {
+            NuevoLibro nuevoLibro = new NuevoLibro();
+            nuevoLibro.ShowDialog(this);
+        }
     }
 }

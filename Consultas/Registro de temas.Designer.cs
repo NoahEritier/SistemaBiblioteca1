@@ -79,8 +79,9 @@
             this.btnNuevoTema.Name = "btnNuevoTema";
             this.btnNuevoTema.Size = new System.Drawing.Size(165, 38);
             this.btnNuevoTema.TabIndex = 6;
-            this.btnNuevoTema.Text = "+ Nueva Editorial";
+            this.btnNuevoTema.Text = "+ Nuevo Tema";
             this.btnNuevoTema.UseVisualStyleBackColor = false;
+            this.btnNuevoTema.Click += new System.EventHandler(this.btnNuevoTema_Click);
             // 
             // btnBuscarTema
             // 
@@ -165,6 +166,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "registro_de_temas";
             this.Text = "registro_de_temas";
+            this.Load += new System.EventHandler(this.registro_de_temas_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTemas)).EndInit();

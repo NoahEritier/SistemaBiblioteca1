@@ -17,5 +17,14 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
+        private void btnCancelarRegistro_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnConfirmarRegistro_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -127,6 +127,7 @@
             this.btnNuevoProyecto.TabIndex = 6;
             this.btnNuevoProyecto.Text = "+ Nuevo Proyecto";
             this.btnNuevoProyecto.UseVisualStyleBackColor = false;
+            this.btnNuevoProyecto.Click += new System.EventHandler(this.btnNuevoProyecto_Click);
             // 
             // btnBuscarProyecto
             // 

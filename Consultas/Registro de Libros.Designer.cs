@@ -92,6 +92,7 @@
             this.btnNuevoLibro.TabIndex = 6;
             this.btnNuevoLibro.Text = "+ Nuevo Libro";
             this.btnNuevoLibro.UseVisualStyleBackColor = false;
+            this.btnNuevoLibro.Click += new System.EventHandler(this.btnNuevoLibro_Click);
             // 
             // btnBuscarLibro
             // 
