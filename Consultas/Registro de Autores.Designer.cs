@@ -195,6 +195,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Registro_de_Autores";
             this.Text = "Registro_de_Autores";
+            this.Load += new System.EventHandler(this.Registro_de_Autores_Load);
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAutores)).EndInit();
