@@ -89,6 +89,7 @@
             this.btnConfirmarRegistro.TabIndex = 30;
             this.btnConfirmarRegistro.Text = "Aceptar";
             this.btnConfirmarRegistro.UseVisualStyleBackColor = false;
+            this.btnConfirmarRegistro.Click += new System.EventHandler(this.btnConfirmarRegistro_Click);
             // 
             // txtNacionalidadAutor
             // 
@@ -108,9 +109,9 @@
             this.lblNacionalidadAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lblNacionalidadAutor.Location = new System.Drawing.Point(36, 234);
             this.lblNacionalidadAutor.Name = "lblNacionalidadAutor";
-            this.lblNacionalidadAutor.Size = new System.Drawing.Size(132, 24);
+            this.lblNacionalidadAutor.Size = new System.Drawing.Size(120, 24);
             this.lblNacionalidadAutor.TabIndex = 7;
-            this.lblNacionalidadAutor.Text = "* Nacionalidad";
+            this.lblNacionalidadAutor.Text = "Nacionalidad";
             this.lblNacionalidadAutor.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // txtApellidoAutor

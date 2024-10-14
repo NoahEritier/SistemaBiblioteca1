@@ -126,6 +126,7 @@
             this.btnBuscarAutor.TabIndex = 5;
             this.btnBuscarAutor.Text = "Buscar";
             this.btnBuscarAutor.UseVisualStyleBackColor = false;
+            this.btnBuscarAutor.Click += new System.EventHandler(this.btnBuscarAutor_Click);
             // 
             // cmbFiltroPeriodo
             // 
