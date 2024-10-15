@@ -109,7 +109,6 @@
             this.btnNuevoAutor.TabIndex = 6;
             this.btnNuevoAutor.Text = "+ Nuevo Autor";
             this.btnNuevoAutor.UseVisualStyleBackColor = false;
-            this.btnNuevoAutor.Click += new System.EventHandler(this.btnNuevoAutor_Click);
             // 
             // btnBuscarAutor
             // 
