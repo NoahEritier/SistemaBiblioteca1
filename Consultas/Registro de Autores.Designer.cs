@@ -85,14 +85,12 @@
             // 
             // dgvAutores
             // 
-            this.dgvAutores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvAutores.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvAutores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAutores.Location = new System.Drawing.Point(35, 262);
             this.dgvAutores.Name = "dgvAutores";
             this.dgvAutores.RowHeadersWidth = 51;
             this.dgvAutores.RowTemplate.Height = 24;
-            this.dgvAutores.Size = new System.Drawing.Size(968, 415);
+            this.dgvAutores.Size = new System.Drawing.Size(736, 415);
             this.dgvAutores.TabIndex = 7;
             // 
             // btnNuevoAutor

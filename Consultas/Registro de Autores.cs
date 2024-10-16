@@ -20,7 +20,6 @@ namespace WindowsFormsApp1
             cmbFiltroPeriodo.SelectedIndex = 3; // Por defecto: "Cualquier momento"
         }
 
-
         private void btnBuscarAutor_Click(object sender, EventArgs e)
         {
             // Obtener los valores de los filtros
@@ -29,7 +28,7 @@ namespace WindowsFormsApp1
             string filtroPeriodo = cmbFiltroPeriodo.SelectedItem.ToString();
 
             // Construir la sentencia SQL dinámica
-            string consulta = "SELECT * FROM autores";
+            string consulta = "SELECT * FROM autores WHERE 1=1";
 
             // Filtrar por nombre de autor si no está vacío
             if (!string.IsNullOrEmpty(filtroAutor))
@@ -71,7 +70,6 @@ namespace WindowsFormsApp1
                 try
                 {
                     mySqlConnection.Open();
-                    
 
                     // Crear el comando SQL con la consulta
                     MySqlCommand sqlCommand = new MySqlCommand(consulta, mySqlConnection);
@@ -79,12 +77,12 @@ namespace WindowsFormsApp1
                     // Asignar valores a los parámetros si son necesarios
                     if (!string.IsNullOrEmpty(filtroAutor))
                     {
-                        sqlCommand.Parameters.AddWithValue("@filtroAutor", "%" + filtroAutor + "%");
+                        sqlCommand.Parameters.AddWithValue("@filtroAutor", "%" + filtroAutor + "%"); // Agrega los comodines %
                     }
 
                     if (!string.IsNullOrEmpty(filtroNacionalidad))
                     {
-                        sqlCommand.Parameters.AddWithValue("@filtroNacionalidad", "%" + filtroNacionalidad + "%");
+                        sqlCommand.Parameters.AddWithValue("@filtroNacionalidad", "%" + filtroNacionalidad + "%"); // Agrega los comodines %
                     }
 
                     if (filtroPeriodo != "Cualquier momento")
