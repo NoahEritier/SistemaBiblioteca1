@@ -70,7 +70,6 @@
             this.txtFiltroNacionalidad.Name = "txtFiltroNacionalidad";
             this.txtFiltroNacionalidad.Size = new System.Drawing.Size(446, 41);
             this.txtFiltroNacionalidad.TabIndex = 9;
-            this.txtFiltroNacionalidad.Click += new System.EventHandler(this.txtFiltroNacionalidad_Click);
             // 
             // lblFiltroNacionalidad
             // 
@@ -149,7 +148,6 @@
             this.txtFiltroAutor.Name = "txtFiltroAutor";
             this.txtFiltroAutor.Size = new System.Drawing.Size(501, 41);
             this.txtFiltroAutor.TabIndex = 4;
-            this.txtFiltroAutor.Click += new System.EventHandler(this.txtFiltroAutor_Click);
             // 
             // lblFiltroPeriodo
             // 

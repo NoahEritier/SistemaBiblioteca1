@@ -20,16 +20,6 @@ namespace WindowsFormsApp1
             cmbFiltroPeriodo.SelectedIndex = 3; // Por defecto: "Cualquier momento"
         }
 
-        private void txtFiltroAutor_Click(object sender, EventArgs e)
-        {
-            txtFiltroAutor.Clear();
-        }
-
-        // Eliminar texto al hacer clic en txtFiltroNacionalidad
-        private void txtFiltroNacionalidad_Click(object sender, EventArgs e)
-        {
-            txtFiltroNacionalidad.Clear();
-        }
 
         private void btnBuscarAutor_Click(object sender, EventArgs e)
         {

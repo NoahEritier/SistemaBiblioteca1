@@ -169,7 +169,6 @@
             this.txtFiltroTituloEnciclopedia.Name = "txtFiltroTituloEnciclopedia";
             this.txtFiltroTituloEnciclopedia.Size = new System.Drawing.Size(501, 41);
             this.txtFiltroTituloEnciclopedia.TabIndex = 4;
-            this.txtFiltroTituloEnciclopedia.Text = "Ingrese el nombre de la enciclopedia";
             // 
             // lblFiltroTema
             // 

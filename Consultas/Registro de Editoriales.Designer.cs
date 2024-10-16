@@ -118,7 +118,6 @@
             this.txtFiltroNombre.Name = "txtFiltroNombre";
             this.txtFiltroNombre.Size = new System.Drawing.Size(501, 41);
             this.txtFiltroNombre.TabIndex = 4;
-            this.txtFiltroNombre.Text = "Ingrese el nombre de la editorial";
             // 
             // lblFiltroPeriodo
             // 
