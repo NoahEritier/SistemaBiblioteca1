@@ -1,13 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1
@@ -37,11 +31,6 @@ namespace WindowsFormsApp1
             txtFiltroNacionalidad.Clear();
         }
 
-        private void Registro_de_Autores_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnBuscarAutor_Click(object sender, EventArgs e)
         {
             // Obtener los valores de los filtros
@@ -50,7 +39,7 @@ namespace WindowsFormsApp1
             string filtroPeriodo = cmbFiltroPeriodo.SelectedItem.ToString();
 
             // Construir la sentencia SQL dinámica
-            string consulta = "SELECT * FROM autores WHERE 1=1";
+            string consulta = "SELECT * FROM autores";
 
             // Filtrar por nombre de autor si no está vacío
             if (!string.IsNullOrEmpty(filtroAutor))
@@ -92,6 +81,7 @@ namespace WindowsFormsApp1
                 try
                 {
                     mySqlConnection.Open();
+                    
 
                     // Crear el comando SQL con la consulta
                     MySqlCommand sqlCommand = new MySqlCommand(consulta, mySqlConnection);
@@ -117,8 +107,16 @@ namespace WindowsFormsApp1
                     DataTable dataTable = new DataTable();
                     dataAdapter.Fill(dataTable);
 
-                    // Mostrar los resultados en el DataGridView
-                    dgvAutores.DataSource = dataTable;
+                    // Verificar si hay datos
+                    if (dataTable.Rows.Count > 0)
+                    {
+                        dgvAutores.AutoGenerateColumns = true;  // Asegura que el DataGridView genere las columnas automáticamente
+                        dgvAutores.DataSource = dataTable;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontraron resultados.");
+                    }
                 }
                 catch (Exception ex)
                 {
