@@ -120,7 +120,7 @@
             this.btnNuevoDiccionario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnNuevoDiccionario.Location = new System.Drawing.Point(167, 196);
             this.btnNuevoDiccionario.Name = "btnNuevoDiccionario";
-            this.btnNuevoDiccionario.Size = new System.Drawing.Size(206, 38);
+            this.btnNuevoDiccionario.Size = new System.Drawing.Size(245, 38);
             this.btnNuevoDiccionario.TabIndex = 6;
             this.btnNuevoDiccionario.Text = "+ Nuevo Diccionario";
             this.btnNuevoDiccionario.UseVisualStyleBackColor = false;

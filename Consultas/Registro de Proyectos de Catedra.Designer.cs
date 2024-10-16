@@ -123,7 +123,7 @@
             this.btnNuevoProyecto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnNuevoProyecto.Location = new System.Drawing.Point(168, 248);
             this.btnNuevoProyecto.Name = "btnNuevoProyecto";
-            this.btnNuevoProyecto.Size = new System.Drawing.Size(188, 38);
+            this.btnNuevoProyecto.Size = new System.Drawing.Size(205, 38);
             this.btnNuevoProyecto.TabIndex = 6;
             this.btnNuevoProyecto.Text = "+ Nuevo Proyecto";
             this.btnNuevoProyecto.UseVisualStyleBackColor = false;

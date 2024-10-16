@@ -72,6 +72,7 @@
             this.pillButton1.TabIndex = 31;
             this.pillButton1.Text = "Cancelar";
             this.pillButton1.UseVisualStyleBackColor = false;
+            this.pillButton1.Click += new System.EventHandler(this.pillButton1_Click);
             // 
             // btnConfirmarRegistro
             // 

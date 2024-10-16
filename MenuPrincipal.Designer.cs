@@ -32,8 +32,6 @@
             this.panelSideView = new System.Windows.Forms.Panel();
             this.btnTesis = new System.Windows.Forms.Button();
             this.btnJuegos = new System.Windows.Forms.Button();
-            this.panelProyectos_submenu = new System.Windows.Forms.Panel();
-            this.btnRegistrosPro = new System.Windows.Forms.Button();
             this.btnProyectos = new System.Windows.Forms.Button();
             this.panelMapas_submenu = new System.Windows.Forms.Panel();
             this.btnEditorialMap = new System.Windows.Forms.Button();
@@ -60,7 +58,6 @@
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.Logo = new System.Windows.Forms.PictureBox();
             this.panelSideView.SuspendLayout();
-            this.panelProyectos_submenu.SuspendLayout();
             this.panelMapas_submenu.SuspendLayout();
             this.panelDiccionarios_submenu.SuspendLayout();
             this.panelEnciclopedias_submenu.SuspendLayout();
@@ -77,7 +74,6 @@
             this.panelSideView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
             this.panelSideView.Controls.Add(this.btnTesis);
             this.panelSideView.Controls.Add(this.btnJuegos);
-            this.panelSideView.Controls.Add(this.panelProyectos_submenu);
             this.panelSideView.Controls.Add(this.btnProyectos);
             this.panelSideView.Controls.Add(this.panelMapas_submenu);
             this.panelSideView.Controls.Add(this.btnMapas);
@@ -103,7 +99,7 @@
             this.btnTesis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTesis.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnTesis.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnTesis.Location = new System.Drawing.Point(0, 1048);
+            this.btnTesis.Location = new System.Drawing.Point(0, 1003);
             this.btnTesis.Name = "btnTesis";
             this.btnTesis.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnTesis.Size = new System.Drawing.Size(298, 58);
@@ -121,7 +117,7 @@
             this.btnJuegos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnJuegos.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnJuegos.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnJuegos.Location = new System.Drawing.Point(0, 990);
+            this.btnJuegos.Location = new System.Drawing.Point(0, 945);
             this.btnJuegos.Name = "btnJuegos";
             this.btnJuegos.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnJuegos.Size = new System.Drawing.Size(298, 58);
@@ -130,33 +126,6 @@
             this.btnJuegos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnJuegos.UseVisualStyleBackColor = false;
             this.btnJuegos.Click += new System.EventHandler(this.btnJuegos_Click_1);
-            // 
-            // panelProyectos_submenu
-            // 
-            this.panelProyectos_submenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.panelProyectos_submenu.Controls.Add(this.btnRegistrosPro);
-            this.panelProyectos_submenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelProyectos_submenu.Location = new System.Drawing.Point(0, 945);
-            this.panelProyectos_submenu.Name = "panelProyectos_submenu";
-            this.panelProyectos_submenu.Size = new System.Drawing.Size(298, 45);
-            this.panelProyectos_submenu.TabIndex = 29;
-            // 
-            // btnRegistrosPro
-            // 
-            this.btnRegistrosPro.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRegistrosPro.FlatAppearance.BorderSize = 0;
-            this.btnRegistrosPro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrosPro.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
-            this.btnRegistrosPro.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnRegistrosPro.Location = new System.Drawing.Point(0, 0);
-            this.btnRegistrosPro.Name = "btnRegistrosPro";
-            this.btnRegistrosPro.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnRegistrosPro.Size = new System.Drawing.Size(298, 45);
-            this.btnRegistrosPro.TabIndex = 1;
-            this.btnRegistrosPro.Text = "REGISTROS";
-            this.btnRegistrosPro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegistrosPro.UseVisualStyleBackColor = true;
-            this.btnRegistrosPro.Click += new System.EventHandler(this.btnRegistrosPro_Click);
             // 
             // btnProyectos
             // 
@@ -555,7 +524,6 @@
             this.Text = "Sistema de Gestion de Biblioteca";
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.panelSideView.ResumeLayout(false);
-            this.panelProyectos_submenu.ResumeLayout(false);
             this.panelMapas_submenu.ResumeLayout(false);
             this.panelDiccionarios_submenu.ResumeLayout(false);
             this.panelEnciclopedias_submenu.ResumeLayout(false);
@@ -583,7 +551,6 @@
         private System.Windows.Forms.Button btnDiccionarios;
         private System.Windows.Forms.Panel panelDiccionarios_submenu;
         private System.Windows.Forms.Button btnMapas;
-        private System.Windows.Forms.Panel panelProyectos_submenu;
         private System.Windows.Forms.Button btnProyectos;
         private System.Windows.Forms.Panel panelMapas_submenu;
         private System.Windows.Forms.Button btnTesis;
@@ -599,7 +566,6 @@
         private System.Windows.Forms.Button btnEditorialMap;
         private System.Windows.Forms.Button btnTemasMap;
         private System.Windows.Forms.Button btnRegistrosMap;
-        private System.Windows.Forms.Button btnRegistrosPro;
     }
 }
 

@@ -77,7 +77,7 @@
             this.btnNuevaEditorial.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnNuevaEditorial.Location = new System.Drawing.Point(167, 196);
             this.btnNuevaEditorial.Name = "btnNuevaEditorial";
-            this.btnNuevaEditorial.Size = new System.Drawing.Size(165, 38);
+            this.btnNuevaEditorial.Size = new System.Drawing.Size(206, 38);
             this.btnNuevaEditorial.TabIndex = 6;
             this.btnNuevaEditorial.Text = "+ Nueva Editorial";
             this.btnNuevaEditorial.UseVisualStyleBackColor = false;

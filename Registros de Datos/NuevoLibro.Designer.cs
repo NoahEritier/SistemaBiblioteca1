@@ -297,6 +297,7 @@
             this.btnAgregarNuevoAutor.TabIndex = 9;
             this.btnAgregarNuevoAutor.Text = "+";
             this.btnAgregarNuevoAutor.UseVisualStyleBackColor = true;
+            this.btnAgregarNuevoAutor.Click += new System.EventHandler(this.btnAgregarNuevoAutor_Click);
             // 
             // txtTitulo
             // 

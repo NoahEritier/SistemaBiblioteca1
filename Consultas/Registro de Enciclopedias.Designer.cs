@@ -128,7 +128,7 @@
             this.btnNuevaEnciclopedia.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnNuevaEnciclopedia.Location = new System.Drawing.Point(166, 308);
             this.btnNuevaEnciclopedia.Name = "btnNuevaEnciclopedia";
-            this.btnNuevaEnciclopedia.Size = new System.Drawing.Size(206, 38);
+            this.btnNuevaEnciclopedia.Size = new System.Drawing.Size(242, 38);
             this.btnNuevaEnciclopedia.TabIndex = 6;
             this.btnNuevaEnciclopedia.Text = "+ Nueva Enciclopedia";
             this.btnNuevaEnciclopedia.UseVisualStyleBackColor = false;

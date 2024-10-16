@@ -13,8 +13,6 @@ namespace WindowsFormsApp1
 {
     public partial class MenuPrincipal : Form
     {
-        
-
         public MenuPrincipal()
         {
             InitializeComponent();
@@ -26,7 +24,6 @@ namespace WindowsFormsApp1
             panelEnciclopedias_submenu.Visible = false;
             panelDiccionarios_submenu.Visible = false;
             panelMapas_submenu.Visible = false;
-            panelProyectos_submenu.Visible = false;
         }
 
         private void HideSubMenu()
@@ -39,8 +36,6 @@ namespace WindowsFormsApp1
                 panelDiccionarios_submenu.Visible = false;
             if (panelMapas_submenu.Visible == true)
                 panelMapas_submenu.Visible = false;
-            if (panelProyectos_submenu.Visible == true)
-                panelProyectos_submenu.Visible = false;
         }
 
         private void showSubMenu(Panel subMenu)
@@ -148,13 +143,7 @@ namespace WindowsFormsApp1
 
         private void btnProyectos_Click(object sender, EventArgs e)
         {
-            showSubMenu(panelProyectos_submenu);
-        }
-
-        private void btnRegistrosPro_Click(object sender, EventArgs e)
-        {
             openChildForm(new Registro_de_Proyecto_de_Catedra());
-            HideSubMenu();
         }
 
         private void btnJuegos_Click_1(object sender, EventArgs e)

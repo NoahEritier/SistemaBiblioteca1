@@ -125,7 +125,7 @@
             this.btnNuevoJuego.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnNuevoJuego.Location = new System.Drawing.Point(168, 248);
             this.btnNuevoJuego.Name = "btnNuevoJuego";
-            this.btnNuevoJuego.Size = new System.Drawing.Size(165, 38);
+            this.btnNuevoJuego.Size = new System.Drawing.Size(190, 38);
             this.btnNuevoJuego.TabIndex = 6;
             this.btnNuevoJuego.Text = "+ Nuevo Juego";
             this.btnNuevoJuego.UseVisualStyleBackColor = false;

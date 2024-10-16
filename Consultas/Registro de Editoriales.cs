@@ -27,8 +27,6 @@ namespace WindowsFormsApp1.Consultas
         {
             NuevaEditorial nuevaEditorial = new NuevaEditorial();
             nuevaEditorial.ShowDialog(this);
-            
-         
         }
     }
 }
