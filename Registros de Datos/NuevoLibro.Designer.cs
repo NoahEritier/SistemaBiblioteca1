@@ -229,6 +229,7 @@
             this.btnAgregarNuevoTema.TabIndex = 15;
             this.btnAgregarNuevoTema.Text = "+";
             this.btnAgregarNuevoTema.UseVisualStyleBackColor = true;
+            this.btnAgregarNuevoTema.Click += new System.EventHandler(this.btnAgregarNuevoTema_Click);
             // 
             // lblTema
             // 
@@ -263,6 +264,7 @@
             this.btnAgregarNuevaEditorial.TabIndex = 12;
             this.btnAgregarNuevaEditorial.Text = "+";
             this.btnAgregarNuevaEditorial.UseVisualStyleBackColor = true;
+            this.btnAgregarNuevaEditorial.Click += new System.EventHandler(this.btnAgregarNuevaEditorial_Click);
             // 
             // lblEditorial
             // 

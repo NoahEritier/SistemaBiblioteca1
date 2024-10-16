@@ -33,8 +33,6 @@
             this.lblTomos = new System.Windows.Forms.Label();
             this.txtAño = new System.Windows.Forms.TextBox();
             this.lblAño = new System.Windows.Forms.Label();
-            this.btnConfirmarRegistro = new WindowsFormsApp1.PillButton();
-            this.btnCancelarRegistro = new WindowsFormsApp1.PillButton();
             this.cmbTemas = new System.Windows.Forms.ComboBox();
             this.btnAgregarNuevoTema = new System.Windows.Forms.Button();
             this.lblTema = new System.Windows.Forms.Label();
@@ -46,6 +44,8 @@
             this.lblEditorial = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblNuevoLibro = new System.Windows.Forms.Label();
+            this.btnConfirmarRegistro = new WindowsFormsApp1.PillButton();
+            this.btnCancelarRegistro = new WindowsFormsApp1.PillButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -119,40 +119,6 @@
             this.lblAño.Text = "* Año";
             this.lblAño.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btnConfirmarRegistro
-            // 
-            this.btnConfirmarRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(126)))));
-            this.btnConfirmarRegistro.FlatAppearance.BorderSize = 0;
-            this.btnConfirmarRegistro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(146)))));
-            this.btnConfirmarRegistro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(126)))));
-            this.btnConfirmarRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmarRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmarRegistro.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnConfirmarRegistro.Location = new System.Drawing.Point(184, 483);
-            this.btnConfirmarRegistro.Name = "btnConfirmarRegistro";
-            this.btnConfirmarRegistro.Size = new System.Drawing.Size(107, 38);
-            this.btnConfirmarRegistro.TabIndex = 28;
-            this.btnConfirmarRegistro.Text = "Aceptar";
-            this.btnConfirmarRegistro.UseVisualStyleBackColor = false;
-            this.btnConfirmarRegistro.Click += new System.EventHandler(this.btnConfirmarRegistro_Click);
-            // 
-            // btnCancelarRegistro
-            // 
-            this.btnCancelarRegistro.BackColor = System.Drawing.Color.LightGray;
-            this.btnCancelarRegistro.FlatAppearance.BorderSize = 0;
-            this.btnCancelarRegistro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
-            this.btnCancelarRegistro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
-            this.btnCancelarRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarRegistro.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCancelarRegistro.Location = new System.Drawing.Point(41, 483);
-            this.btnCancelarRegistro.Name = "btnCancelarRegistro";
-            this.btnCancelarRegistro.Size = new System.Drawing.Size(127, 38);
-            this.btnCancelarRegistro.TabIndex = 27;
-            this.btnCancelarRegistro.Text = "Cancelar";
-            this.btnCancelarRegistro.UseVisualStyleBackColor = false;
-            this.btnCancelarRegistro.Click += new System.EventHandler(this.btnCancelarRegistro_Click);
-            // 
             // cmbTemas
             // 
             this.cmbTemas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -174,6 +140,7 @@
             this.btnAgregarNuevoTema.TabIndex = 15;
             this.btnAgregarNuevoTema.Text = "+";
             this.btnAgregarNuevoTema.UseVisualStyleBackColor = true;
+            this.btnAgregarNuevoTema.Click += new System.EventHandler(this.btnAgregarNuevoTema_Click);
             // 
             // lblTema
             // 
@@ -230,6 +197,7 @@
             this.btnAgregarNuevaEditorial.TabIndex = 9;
             this.btnAgregarNuevaEditorial.Text = "+";
             this.btnAgregarNuevaEditorial.UseVisualStyleBackColor = true;
+            this.btnAgregarNuevaEditorial.Click += new System.EventHandler(this.btnAgregarNuevaEditorial_Click);
             // 
             // txtTitulo
             // 
@@ -276,6 +244,40 @@
             this.lblNuevoLibro.TabIndex = 4;
             this.lblNuevoLibro.Text = "Nueva Enciclopedia";
             this.lblNuevoLibro.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // btnConfirmarRegistro
+            // 
+            this.btnConfirmarRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(126)))));
+            this.btnConfirmarRegistro.FlatAppearance.BorderSize = 0;
+            this.btnConfirmarRegistro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(146)))));
+            this.btnConfirmarRegistro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(126)))));
+            this.btnConfirmarRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirmarRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmarRegistro.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnConfirmarRegistro.Location = new System.Drawing.Point(184, 483);
+            this.btnConfirmarRegistro.Name = "btnConfirmarRegistro";
+            this.btnConfirmarRegistro.Size = new System.Drawing.Size(107, 38);
+            this.btnConfirmarRegistro.TabIndex = 28;
+            this.btnConfirmarRegistro.Text = "Aceptar";
+            this.btnConfirmarRegistro.UseVisualStyleBackColor = false;
+            this.btnConfirmarRegistro.Click += new System.EventHandler(this.btnConfirmarRegistro_Click);
+            // 
+            // btnCancelarRegistro
+            // 
+            this.btnCancelarRegistro.BackColor = System.Drawing.Color.LightGray;
+            this.btnCancelarRegistro.FlatAppearance.BorderSize = 0;
+            this.btnCancelarRegistro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.btnCancelarRegistro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.btnCancelarRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarRegistro.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCancelarRegistro.Location = new System.Drawing.Point(41, 483);
+            this.btnCancelarRegistro.Name = "btnCancelarRegistro";
+            this.btnCancelarRegistro.Size = new System.Drawing.Size(127, 38);
+            this.btnCancelarRegistro.TabIndex = 27;
+            this.btnCancelarRegistro.Text = "Cancelar";
+            this.btnCancelarRegistro.UseVisualStyleBackColor = false;
+            this.btnCancelarRegistro.Click += new System.EventHandler(this.btnCancelarRegistro_Click);
             // 
             // NuevaEnciclopedia
             // 

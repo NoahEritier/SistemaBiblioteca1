@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Registros_de_Datos;
 
 namespace WindowsFormsApp1
 {
@@ -31,6 +32,18 @@ namespace WindowsFormsApp1
         {
             NuevoAutor nuevoAutor = new NuevoAutor();
             nuevoAutor.ShowDialog(this);
+        }
+
+        private void btnAgregarNuevaEditorial_Click(object sender, EventArgs e)
+        {
+            NuevaEditorial nuevaEditorial = new NuevaEditorial();
+            nuevaEditorial.ShowDialog(this);
+        }
+
+        private void btnAgregarNuevoTema_Click(object sender, EventArgs e)
+        {
+            NuevoTema nuevoTema = new NuevoTema();
+            nuevoTema.ShowDialog(this);
         }
     }
 }

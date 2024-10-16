@@ -36,7 +36,6 @@
             this.btnConfirmarRegistro = new WindowsFormsApp1.PillButton();
             this.btnCancelarRegistro = new WindowsFormsApp1.PillButton();
             this.cmbCarreras = new System.Windows.Forms.ComboBox();
-            this.btnAgregarNuevaEditorial = new System.Windows.Forms.Button();
             this.lblCarrera = new System.Windows.Forms.Label();
             this.lblProyectosDeCatedra = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -52,7 +51,6 @@
             this.panel1.Controls.Add(this.btnConfirmarRegistro);
             this.panel1.Controls.Add(this.btnCancelarRegistro);
             this.panel1.Controls.Add(this.cmbCarreras);
-            this.panel1.Controls.Add(this.btnAgregarNuevaEditorial);
             this.panel1.Controls.Add(this.lblCarrera);
             this.panel1.Location = new System.Drawing.Point(48, 92);
             this.panel1.Name = "panel1";
@@ -149,18 +147,6 @@
             this.cmbCarreras.Size = new System.Drawing.Size(403, 33);
             this.cmbCarreras.TabIndex = 13;
             // 
-            // btnAgregarNuevaEditorial
-            // 
-            this.btnAgregarNuevaEditorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarNuevaEditorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.btnAgregarNuevaEditorial.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnAgregarNuevaEditorial.Location = new System.Drawing.Point(445, 79);
-            this.btnAgregarNuevaEditorial.Name = "btnAgregarNuevaEditorial";
-            this.btnAgregarNuevaEditorial.Size = new System.Drawing.Size(36, 33);
-            this.btnAgregarNuevaEditorial.TabIndex = 12;
-            this.btnAgregarNuevaEditorial.Text = "+";
-            this.btnAgregarNuevaEditorial.UseVisualStyleBackColor = true;
-            // 
             // lblCarrera
             // 
             this.lblCarrera.AutoSize = true;
@@ -213,7 +199,6 @@
         private PillButton btnConfirmarRegistro;
         private PillButton btnCancelarRegistro;
         private System.Windows.Forms.ComboBox cmbCarreras;
-        private System.Windows.Forms.Button btnAgregarNuevaEditorial;
         private System.Windows.Forms.Label lblCarrera;
         private System.Windows.Forms.Label lblProyectosDeCatedra;
     }

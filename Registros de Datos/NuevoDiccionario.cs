@@ -26,5 +26,11 @@ namespace WindowsFormsApp1.Registros_de_Datos
         {
             Close();
         }
+
+        private void btnAgregarNuevaEditorial_Click(object sender, EventArgs e)
+        {
+            NuevaEditorial nuevaEditorial = new NuevaEditorial();
+            nuevaEditorial.ShowDialog();
+        }
     }
 }

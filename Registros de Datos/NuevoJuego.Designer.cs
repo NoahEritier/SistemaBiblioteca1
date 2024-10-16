@@ -155,6 +155,7 @@
             this.Controls.Add(this.lblProyectosDeCatedra);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "NuevoJuego";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NuevoJuego";
             this.Load += new System.EventHandler(this.NuevoJuego_Load);
             this.panel1.ResumeLayout(false);
