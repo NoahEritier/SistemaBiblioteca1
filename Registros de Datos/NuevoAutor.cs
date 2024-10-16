@@ -77,6 +77,7 @@ namespace WindowsFormsApp1
                         if (registrosAfectados > 0)
                         {
                             MessageBox.Show("Autor registrado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Close();
                         }
                         else
                         {
@@ -96,7 +97,7 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void pillButton1_Click(object sender, EventArgs e)
+        private void btnCancelar_CLick(object sender, EventArgs e)
         {
             Close();
         }

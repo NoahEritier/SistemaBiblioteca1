@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pillButton1 = new WindowsFormsApp1.PillButton();
+            this.btnCancelar = new WindowsFormsApp1.PillButton();
             this.btnConfirmarRegistro = new WindowsFormsApp1.PillButton();
             this.txtNacionalidadAutor = new System.Windows.Forms.TextBox();
             this.lblNacionalidadAutor = new System.Windows.Forms.Label();
@@ -44,7 +44,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel1.Controls.Add(this.pillButton1);
+            this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.btnConfirmarRegistro);
             this.panel1.Controls.Add(this.txtNacionalidadAutor);
             this.panel1.Controls.Add(this.lblNacionalidadAutor);
@@ -57,22 +57,21 @@
             this.panel1.Size = new System.Drawing.Size(1129, 715);
             this.panel1.TabIndex = 5;
             // 
-            // pillButton1
+            // btnCancelar
             // 
-            this.pillButton1.BackColor = System.Drawing.Color.LightGray;
-            this.pillButton1.FlatAppearance.BorderSize = 0;
-            this.pillButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
-            this.pillButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
-            this.pillButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.pillButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pillButton1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pillButton1.Location = new System.Drawing.Point(41, 347);
-            this.pillButton1.Name = "pillButton1";
-            this.pillButton1.Size = new System.Drawing.Size(127, 38);
-            this.pillButton1.TabIndex = 31;
-            this.pillButton1.Text = "Cancelar";
-            this.pillButton1.UseVisualStyleBackColor = false;
-            this.pillButton1.Click += new System.EventHandler(this.pillButton1_Click);
+            this.btnCancelar.BackColor = System.Drawing.Color.LightGray;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCancelar.Location = new System.Drawing.Point(41, 347);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(127, 38);
+            this.btnCancelar.TabIndex = 31;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
             // 
             // btnConfirmarRegistro
             // 
@@ -95,7 +94,7 @@
             // 
             this.txtNacionalidadAutor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNacionalidadAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtNacionalidadAutor.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtNacionalidadAutor.ForeColor = System.Drawing.SystemColors.InfoText;
             this.txtNacionalidadAutor.Location = new System.Drawing.Point(35, 271);
             this.txtNacionalidadAutor.Multiline = true;
             this.txtNacionalidadAutor.Name = "txtNacionalidadAutor";
@@ -118,7 +117,7 @@
             // 
             this.txtApellidoAutor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtApellidoAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtApellidoAutor.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtApellidoAutor.ForeColor = System.Drawing.SystemColors.InfoText;
             this.txtApellidoAutor.Location = new System.Drawing.Point(35, 180);
             this.txtApellidoAutor.Multiline = true;
             this.txtApellidoAutor.Name = "txtApellidoAutor";
@@ -141,7 +140,7 @@
             // 
             this.txtNombreAutor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombreAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtNombreAutor.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtNombreAutor.ForeColor = System.Drawing.SystemColors.InfoText;
             this.txtNombreAutor.Location = new System.Drawing.Point(35, 89);
             this.txtNombreAutor.Multiline = true;
             this.txtNombreAutor.Name = "txtNombreAutor";
@@ -201,6 +200,6 @@
         private System.Windows.Forms.TextBox txtNacionalidadAutor;
         private System.Windows.Forms.Label lblNacionalidadAutor;
         private PillButton btnConfirmarRegistro;
-        private PillButton pillButton1;
+        private PillButton btnCancelar;
     }
 }
