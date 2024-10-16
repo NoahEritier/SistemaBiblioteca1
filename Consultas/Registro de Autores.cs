@@ -131,5 +131,10 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void btnNuevoAutor_Click(object sender, EventArgs e)
+        {
+            NuevoAutor nuevoAutor = new NuevoAutor();
+            nuevoAutor.ShowDialog(this);
+        }
     }
 }
