@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Registros_de_Datos;
 
 namespace WindowsFormsApp1.Consultas
 {
@@ -17,25 +18,10 @@ namespace WindowsFormsApp1.Consultas
             InitializeComponent();
         }
 
-        private void Registro_de_Tesis_Load(object sender, EventArgs e)
+        private void btnNuevaTesis_Click(object sender, EventArgs e)
         {
-
+            NuevaTesis nuevaTesis = new NuevaTesis();
+            nuevaTesis.ShowDialog(this);
         }
-
-        private void panel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lblFiltroPeriodo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnNuevoAutor_Click(object sender, EventArgs e)
-        {
-            
-        }
-
     }
 }

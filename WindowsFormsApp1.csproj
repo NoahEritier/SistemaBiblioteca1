@@ -138,6 +138,12 @@
     <Compile Include="Consultas\Registro de Temas.Designer.cs">
       <DependentUpon>Registro de Temas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consultas\Registro de Tesis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\Registro de Tesis.Designer.cs">
+      <DependentUpon>Registro de Tesis.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\Registros de Juegos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +180,12 @@
     </Compile>
     <Compile Include="Registros de Datos\NuevaEnciclopedia.Designer.cs">
       <DependentUpon>NuevaEnciclopedia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registros de Datos\NuevaTesis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros de Datos\NuevaTesis.Designer.cs">
+      <DependentUpon>NuevaTesis.cs</DependentUpon>
     </Compile>
     <Compile Include="Registros de Datos\NuevoAutor.cs">
       <SubType>Form</SubType>
@@ -245,6 +257,9 @@
     <EmbeddedResource Include="Consultas\Registro de Temas.resx">
       <DependentUpon>Registro de Temas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\Registro de Tesis.resx">
+      <DependentUpon>Registro de Tesis.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consultas\Registros de Juegos.resx">
       <DependentUpon>Registros de Juegos.cs</DependentUpon>
     </EmbeddedResource>
@@ -259,6 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registros de Datos\NuevaEnciclopedia.resx">
       <DependentUpon>NuevaEnciclopedia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros de Datos\NuevaTesis.resx">
+      <DependentUpon>NuevaTesis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registros de Datos\NuevoAutor.resx">
       <DependentUpon>NuevoAutor.cs</DependentUpon>
