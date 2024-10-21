@@ -31,7 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pillButton1 = new WindowsFormsApp1.PillButton();
             this.btnConfirmarRegistro = new WindowsFormsApp1.PillButton();
-            this.txtNombreAutor = new System.Windows.Forms.TextBox();
+            this.txtNombreEditorial = new System.Windows.Forms.TextBox();
             this.lblNombreEditorial = new System.Windows.Forms.Label();
             this.lblNuevaEditorial = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -42,7 +42,7 @@
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.Controls.Add(this.pillButton1);
             this.panel1.Controls.Add(this.btnConfirmarRegistro);
-            this.panel1.Controls.Add(this.txtNombreAutor);
+            this.panel1.Controls.Add(this.txtNombreEditorial);
             this.panel1.Controls.Add(this.lblNombreEditorial);
             this.panel1.Location = new System.Drawing.Point(48, 99);
             this.panel1.Name = "panel1";
@@ -81,17 +81,18 @@
             this.btnConfirmarRegistro.TabIndex = 30;
             this.btnConfirmarRegistro.Text = "Aceptar";
             this.btnConfirmarRegistro.UseVisualStyleBackColor = false;
+            this.btnConfirmarRegistro.Click += new System.EventHandler(this.btnConfirmarRegistro_Click);
             // 
-            // txtNombreAutor
+            // txtNombreEditorial
             // 
-            this.txtNombreAutor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNombreAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtNombreAutor.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtNombreAutor.Location = new System.Drawing.Point(35, 89);
-            this.txtNombreAutor.Multiline = true;
-            this.txtNombreAutor.Name = "txtNombreAutor";
-            this.txtNombreAutor.Size = new System.Drawing.Size(403, 41);
-            this.txtNombreAutor.TabIndex = 4;
+            this.txtNombreEditorial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNombreEditorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.txtNombreEditorial.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtNombreEditorial.Location = new System.Drawing.Point(35, 89);
+            this.txtNombreEditorial.Multiline = true;
+            this.txtNombreEditorial.Name = "txtNombreEditorial";
+            this.txtNombreEditorial.Size = new System.Drawing.Size(403, 41);
+            this.txtNombreEditorial.TabIndex = 4;
             // 
             // lblNombreEditorial
             // 
@@ -140,7 +141,7 @@
         private System.Windows.Forms.Panel panel1;
         private PillButton pillButton1;
         private PillButton btnConfirmarRegistro;
-        private System.Windows.Forms.TextBox txtNombreAutor;
+        private System.Windows.Forms.TextBox txtNombreEditorial;
         private System.Windows.Forms.Label lblNombreEditorial;
         private System.Windows.Forms.Label lblNuevaEditorial;
     }
