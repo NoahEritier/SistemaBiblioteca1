@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1
+﻿namespace WindowsFormsApp1.Consultas
 {
     partial class Registro_de_Editoriales
     {
@@ -165,6 +165,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Registro_de_Editoriales";
             this.Text = "Registro_de_Editoriales";
+            this.Load += new System.EventHandler(this.Registro_de_Editoriales_Load);
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEditoriales)).EndInit();
