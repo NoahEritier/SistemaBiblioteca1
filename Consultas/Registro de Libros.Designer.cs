@@ -130,7 +130,6 @@
             this.txtFiltroLibro.Name = "txtFiltroLibro";
             this.txtFiltroLibro.Size = new System.Drawing.Size(728, 41);
             this.txtFiltroLibro.TabIndex = 4;
-            this.txtFiltroLibro.Text = " Ingrese el título o autor del libro";
             // 
             // lblFiltroPeriodo
             // 

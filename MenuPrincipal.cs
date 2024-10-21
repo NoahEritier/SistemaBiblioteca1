@@ -153,7 +153,7 @@ namespace WindowsFormsApp1
 
         private void btnTesis_Click_1(object sender, EventArgs e)
         {
-
+            openChildForm(new Registro_de_Tesis());
         }
 
         private void MenuPrincipal_Load(object sender, EventArgs e)

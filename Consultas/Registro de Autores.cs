@@ -1,13 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1
@@ -24,22 +18,6 @@ namespace WindowsFormsApp1
             cmbFiltroPeriodo.Items.Add("6 meses");
             cmbFiltroPeriodo.Items.Add("Cualquier momento");
             cmbFiltroPeriodo.SelectedIndex = 3; // Por defecto: "Cualquier momento"
-        }
-
-        private void txtFiltroAutor_Click(object sender, EventArgs e)
-        {
-            txtFiltroAutor.Clear();
-        }
-
-        // Eliminar texto al hacer clic en txtFiltroNacionalidad
-        private void txtFiltroNacionalidad_Click(object sender, EventArgs e)
-        {
-            txtFiltroNacionalidad.Clear();
-        }
-
-        private void Registro_de_Autores_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnBuscarAutor_Click(object sender, EventArgs e)
@@ -99,12 +77,12 @@ namespace WindowsFormsApp1
                     // Asignar valores a los parámetros si son necesarios
                     if (!string.IsNullOrEmpty(filtroAutor))
                     {
-                        sqlCommand.Parameters.AddWithValue("@filtroAutor", "%" + filtroAutor + "%");
+                        sqlCommand.Parameters.AddWithValue("@filtroAutor", "%" + filtroAutor + "%"); // Agrega los comodines %
                     }
 
                     if (!string.IsNullOrEmpty(filtroNacionalidad))
                     {
-                        sqlCommand.Parameters.AddWithValue("@filtroNacionalidad", "%" + filtroNacionalidad + "%");
+                        sqlCommand.Parameters.AddWithValue("@filtroNacionalidad", "%" + filtroNacionalidad + "%"); // Agrega los comodines %
                     }
 
                     if (filtroPeriodo != "Cualquier momento")
@@ -117,8 +95,16 @@ namespace WindowsFormsApp1
                     DataTable dataTable = new DataTable();
                     dataAdapter.Fill(dataTable);
 
-                    // Mostrar los resultados en el DataGridView
-                    dgvAutores.DataSource = dataTable;
+                    // Verificar si hay datos
+                    if (dataTable.Rows.Count > 0)
+                    {
+                        dgvAutores.AutoGenerateColumns = true;  // Asegura que el DataGridView genere las columnas automáticamente
+                        dgvAutores.DataSource = dataTable;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontraron resultados.");
+                    }
                 }
                 catch (Exception ex)
                 {

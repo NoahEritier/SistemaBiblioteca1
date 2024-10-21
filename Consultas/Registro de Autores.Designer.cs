@@ -64,13 +64,12 @@
             // 
             this.txtFiltroNacionalidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFiltroNacionalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtFiltroNacionalidad.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtFiltroNacionalidad.ForeColor = System.Drawing.SystemColors.InfoText;
             this.txtFiltroNacionalidad.Location = new System.Drawing.Point(557, 51);
             this.txtFiltroNacionalidad.Multiline = true;
             this.txtFiltroNacionalidad.Name = "txtFiltroNacionalidad";
             this.txtFiltroNacionalidad.Size = new System.Drawing.Size(446, 41);
             this.txtFiltroNacionalidad.TabIndex = 9;
-            this.txtFiltroNacionalidad.Text = "Ingrese la nacionalidad del autor";
             // 
             // lblFiltroNacionalidad
             // 
@@ -91,7 +90,7 @@
             this.dgvAutores.Name = "dgvAutores";
             this.dgvAutores.RowHeadersWidth = 51;
             this.dgvAutores.RowTemplate.Height = 24;
-            this.dgvAutores.Size = new System.Drawing.Size(968, 415);
+            this.dgvAutores.Size = new System.Drawing.Size(736, 415);
             this.dgvAutores.TabIndex = 7;
             // 
             // btnNuevoAutor
@@ -141,13 +140,12 @@
             // 
             this.txtFiltroAutor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFiltroAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtFiltroAutor.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtFiltroAutor.ForeColor = System.Drawing.SystemColors.InfoText;
             this.txtFiltroAutor.Location = new System.Drawing.Point(35, 51);
             this.txtFiltroAutor.Multiline = true;
             this.txtFiltroAutor.Name = "txtFiltroAutor";
             this.txtFiltroAutor.Size = new System.Drawing.Size(501, 41);
             this.txtFiltroAutor.TabIndex = 4;
-            this.txtFiltroAutor.Text = "Ingrese el nombre o apellido del autor";
             // 
             // lblFiltroPeriodo
             // 
@@ -195,7 +193,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Registro_de_Autores";
             this.Text = "Registro_de_Autores";
-            this.Load += new System.EventHandler(this.Registro_de_Autores_Load);
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAutores)).EndInit();
