@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCancelar = new WindowsFormsApp1.PillButton();
-            this.btnConfirmarRegistro = new WindowsFormsApp1.PillButton();
             this.txtNacionalidadAutor = new System.Windows.Forms.TextBox();
             this.lblNacionalidadAutor = new System.Windows.Forms.Label();
             this.txtApellidoAutor = new System.Windows.Forms.TextBox();
@@ -38,6 +36,8 @@
             this.txtNombreAutor = new System.Windows.Forms.TextBox();
             this.lblNombreAutor = new System.Windows.Forms.Label();
             this.lblNuevoAutor = new System.Windows.Forms.Label();
+            this.btnCancelar = new WindowsFormsApp1.PillButton();
+            this.btnConfirmarRegistro = new WindowsFormsApp1.PillButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,39 +56,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1129, 715);
             this.panel1.TabIndex = 5;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.Color.LightGray;
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
-            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCancelar.Location = new System.Drawing.Point(41, 347);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(127, 38);
-            this.btnCancelar.TabIndex = 31;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            // 
-            // btnConfirmarRegistro
-            // 
-            this.btnConfirmarRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(126)))));
-            this.btnConfirmarRegistro.FlatAppearance.BorderSize = 0;
-            this.btnConfirmarRegistro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(146)))));
-            this.btnConfirmarRegistro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(126)))));
-            this.btnConfirmarRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmarRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmarRegistro.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnConfirmarRegistro.Location = new System.Drawing.Point(184, 347);
-            this.btnConfirmarRegistro.Name = "btnConfirmarRegistro";
-            this.btnConfirmarRegistro.Size = new System.Drawing.Size(107, 38);
-            this.btnConfirmarRegistro.TabIndex = 30;
-            this.btnConfirmarRegistro.Text = "Aceptar";
-            this.btnConfirmarRegistro.UseVisualStyleBackColor = false;
-            this.btnConfirmarRegistro.Click += new System.EventHandler(this.btnConfirmarRegistro_Click);
             // 
             // txtNacionalidadAutor
             // 
@@ -169,6 +136,40 @@
             this.lblNuevoAutor.TabIndex = 4;
             this.lblNuevoAutor.Text = "Nuevo Autor";
             this.lblNuevoAutor.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.LightGray;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCancelar.Location = new System.Drawing.Point(41, 347);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(127, 38);
+            this.btnCancelar.TabIndex = 31;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
+            // 
+            // btnConfirmarRegistro
+            // 
+            this.btnConfirmarRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(126)))));
+            this.btnConfirmarRegistro.FlatAppearance.BorderSize = 0;
+            this.btnConfirmarRegistro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(146)))));
+            this.btnConfirmarRegistro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(126)))));
+            this.btnConfirmarRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirmarRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmarRegistro.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnConfirmarRegistro.Location = new System.Drawing.Point(184, 347);
+            this.btnConfirmarRegistro.Name = "btnConfirmarRegistro";
+            this.btnConfirmarRegistro.Size = new System.Drawing.Size(107, 38);
+            this.btnConfirmarRegistro.TabIndex = 30;
+            this.btnConfirmarRegistro.Text = "Aceptar";
+            this.btnConfirmarRegistro.UseVisualStyleBackColor = false;
+            this.btnConfirmarRegistro.Click += new System.EventHandler(this.btnConfirmarRegistro_Click);
             // 
             // NuevoAutor
             // 

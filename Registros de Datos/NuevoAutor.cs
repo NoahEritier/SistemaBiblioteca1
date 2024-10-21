@@ -97,7 +97,7 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void btnCancelar_CLick(object sender, EventArgs e)
+        private void btnCancelar_Click_1(object sender, EventArgs e)
         {
             Close();
         }
