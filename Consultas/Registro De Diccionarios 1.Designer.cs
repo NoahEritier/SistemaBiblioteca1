@@ -37,6 +37,8 @@
             this.btnNuevoDiccionario = new WindowsFormsApp1.PillButton();
             this.btnBuscarDiccionario = new WindowsFormsApp1.PillButton();
             this.lblDiccionariosRegistrados = new System.Windows.Forms.Label();
+            this.btnModificarDiccionarios = new WindowsFormsApp1.PillButton();
+            this.btnEliminarDiccionarios = new WindowsFormsApp1.PillButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiccionarios)).BeginInit();
             this.SuspendLayout();
@@ -44,6 +46,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.Controls.Add(this.btnEliminarDiccionarios);
+            this.panel1.Controls.Add(this.btnModificarDiccionarios);
             this.panel1.Controls.Add(this.cmbFiltroPeriodo);
             this.panel1.Controls.Add(this.lblPeriodoTema);
             this.panel1.Controls.Add(this.cmbFiltroIdiomas);
@@ -51,18 +55,21 @@
             this.panel1.Controls.Add(this.dgvDiccionarios);
             this.panel1.Controls.Add(this.btnNuevoDiccionario);
             this.panel1.Controls.Add(this.btnBuscarDiccionario);
-            this.panel1.Location = new System.Drawing.Point(39, 89);
+            this.panel1.Location = new System.Drawing.Point(29, 72);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1129, 715);
+            this.panel1.Size = new System.Drawing.Size(847, 581);
             this.panel1.TabIndex = 5;
             // 
             // cmbFiltroPeriodo
             // 
             this.cmbFiltroPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cmbFiltroPeriodo.ForeColor = System.Drawing.Color.Black;
             this.cmbFiltroPeriodo.FormattingEnabled = true;
-            this.cmbFiltroPeriodo.Location = new System.Drawing.Point(35, 129);
+            this.cmbFiltroPeriodo.Location = new System.Drawing.Point(26, 105);
+            this.cmbFiltroPeriodo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbFiltroPeriodo.Name = "cmbFiltroPeriodo";
-            this.cmbFiltroPeriodo.Size = new System.Drawing.Size(338, 33);
+            this.cmbFiltroPeriodo.Size = new System.Drawing.Size(254, 28);
             this.cmbFiltroPeriodo.TabIndex = 22;
             // 
             // lblPeriodoTema
@@ -70,9 +77,10 @@
             this.lblPeriodoTema.AutoSize = true;
             this.lblPeriodoTema.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblPeriodoTema.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblPeriodoTema.Location = new System.Drawing.Point(35, 100);
+            this.lblPeriodoTema.Location = new System.Drawing.Point(26, 81);
+            this.lblPeriodoTema.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPeriodoTema.Name = "lblPeriodoTema";
-            this.lblPeriodoTema.Size = new System.Drawing.Size(76, 24);
+            this.lblPeriodoTema.Size = new System.Drawing.Size(60, 18);
             this.lblPeriodoTema.TabIndex = 23;
             this.lblPeriodoTema.Text = "Periodo";
             this.lblPeriodoTema.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -80,11 +88,13 @@
             // cmbFiltroIdiomas
             // 
             this.cmbFiltroIdiomas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cmbFiltroIdiomas.ForeColor = System.Drawing.Color.Black;
             this.cmbFiltroIdiomas.FormattingEnabled = true;
-            this.cmbFiltroIdiomas.ItemHeight = 25;
-            this.cmbFiltroIdiomas.Location = new System.Drawing.Point(35, 62);
+            this.cmbFiltroIdiomas.ItemHeight = 20;
+            this.cmbFiltroIdiomas.Location = new System.Drawing.Point(26, 50);
+            this.cmbFiltroIdiomas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbFiltroIdiomas.Name = "cmbFiltroIdiomas";
-            this.cmbFiltroIdiomas.Size = new System.Drawing.Size(338, 33);
+            this.cmbFiltroIdiomas.Size = new System.Drawing.Size(254, 28);
             this.cmbFiltroIdiomas.TabIndex = 21;
             // 
             // lblFiltroIdioma
@@ -92,9 +102,10 @@
             this.lblFiltroIdioma.AutoSize = true;
             this.lblFiltroIdioma.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblFiltroIdioma.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblFiltroIdioma.Location = new System.Drawing.Point(35, 33);
+            this.lblFiltroIdioma.Location = new System.Drawing.Point(26, 27);
+            this.lblFiltroIdioma.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFiltroIdioma.Name = "lblFiltroIdioma";
-            this.lblFiltroIdioma.Size = new System.Drawing.Size(66, 24);
+            this.lblFiltroIdioma.Size = new System.Drawing.Size(52, 18);
             this.lblFiltroIdioma.TabIndex = 20;
             this.lblFiltroIdioma.Text = "Idioma";
             this.lblFiltroIdioma.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -103,11 +114,12 @@
             // 
             this.dgvDiccionarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDiccionarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDiccionarios.Location = new System.Drawing.Point(35, 262);
+            this.dgvDiccionarios.Location = new System.Drawing.Point(26, 213);
+            this.dgvDiccionarios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvDiccionarios.Name = "dgvDiccionarios";
             this.dgvDiccionarios.RowHeadersWidth = 51;
             this.dgvDiccionarios.RowTemplate.Height = 24;
-            this.dgvDiccionarios.Size = new System.Drawing.Size(968, 415);
+            this.dgvDiccionarios.Size = new System.Drawing.Size(726, 337);
             this.dgvDiccionarios.TabIndex = 7;
             // 
             // btnNuevoDiccionario
@@ -119,9 +131,10 @@
             this.btnNuevoDiccionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevoDiccionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoDiccionario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnNuevoDiccionario.Location = new System.Drawing.Point(167, 196);
+            this.btnNuevoDiccionario.Location = new System.Drawing.Point(125, 159);
+            this.btnNuevoDiccionario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNuevoDiccionario.Name = "btnNuevoDiccionario";
-            this.btnNuevoDiccionario.Size = new System.Drawing.Size(245, 38);
+            this.btnNuevoDiccionario.Size = new System.Drawing.Size(184, 31);
             this.btnNuevoDiccionario.TabIndex = 6;
             this.btnNuevoDiccionario.Text = "+ Nuevo Diccionario";
             this.btnNuevoDiccionario.UseVisualStyleBackColor = false;
@@ -136,9 +149,10 @@
             this.btnBuscarDiccionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarDiccionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarDiccionario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnBuscarDiccionario.Location = new System.Drawing.Point(44, 196);
+            this.btnBuscarDiccionario.Location = new System.Drawing.Point(33, 159);
+            this.btnBuscarDiccionario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBuscarDiccionario.Name = "btnBuscarDiccionario";
-            this.btnBuscarDiccionario.Size = new System.Drawing.Size(101, 38);
+            this.btnBuscarDiccionario.Size = new System.Drawing.Size(76, 31);
             this.btnBuscarDiccionario.TabIndex = 5;
             this.btnBuscarDiccionario.Text = "Buscar";
             this.btnBuscarDiccionario.UseVisualStyleBackColor = false;
@@ -147,22 +161,58 @@
             // 
             this.lblDiccionariosRegistrados.AutoSize = true;
             this.lblDiccionariosRegistrados.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.lblDiccionariosRegistrados.Location = new System.Drawing.Point(94, 39);
+            this.lblDiccionariosRegistrados.Location = new System.Drawing.Point(70, 32);
+            this.lblDiccionariosRegistrados.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDiccionariosRegistrados.Name = "lblDiccionariosRegistrados";
-            this.lblDiccionariosRegistrados.Size = new System.Drawing.Size(316, 31);
+            this.lblDiccionariosRegistrados.Size = new System.Drawing.Size(253, 26);
             this.lblDiccionariosRegistrados.TabIndex = 4;
             this.lblDiccionariosRegistrados.Text = "Diccionarios Registrados";
             this.lblDiccionariosRegistrados.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // btnModificarDiccionarios
+            // 
+            this.btnModificarDiccionarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(205)))));
+            this.btnModificarDiccionarios.FlatAppearance.BorderSize = 0;
+            this.btnModificarDiccionarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(205)))));
+            this.btnModificarDiccionarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnModificarDiccionarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificarDiccionarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificarDiccionarios.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnModificarDiccionarios.Location = new System.Drawing.Point(330, 159);
+            this.btnModificarDiccionarios.Margin = new System.Windows.Forms.Padding(2);
+            this.btnModificarDiccionarios.Name = "btnModificarDiccionarios";
+            this.btnModificarDiccionarios.Size = new System.Drawing.Size(82, 31);
+            this.btnModificarDiccionarios.TabIndex = 24;
+            this.btnModificarDiccionarios.Text = "Modificar";
+            this.btnModificarDiccionarios.UseVisualStyleBackColor = false;
+            // 
+            // btnEliminarDiccionarios
+            // 
+            this.btnEliminarDiccionarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.btnEliminarDiccionarios.FlatAppearance.BorderSize = 0;
+            this.btnEliminarDiccionarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.btnEliminarDiccionarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.btnEliminarDiccionarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarDiccionarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarDiccionarios.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnEliminarDiccionarios.Location = new System.Drawing.Point(431, 159);
+            this.btnEliminarDiccionarios.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminarDiccionarios.Name = "btnEliminarDiccionarios";
+            this.btnEliminarDiccionarios.Size = new System.Drawing.Size(76, 31);
+            this.btnEliminarDiccionarios.TabIndex = 25;
+            this.btnEliminarDiccionarios.Text = "Eliminar";
+            this.btnEliminarDiccionarios.UseVisualStyleBackColor = false;
+            // 
             // Registro_De_Diccionarios_1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1207, 843);
+            this.ClientSize = new System.Drawing.Size(905, 640);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblDiccionariosRegistrados);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Registro_De_Diccionarios_1";
             this.Text = "Registro_De_Diccionarios_1";
             this.panel1.ResumeLayout(false);
@@ -184,5 +234,7 @@
         private PillButton btnNuevoDiccionario;
         private PillButton btnBuscarDiccionario;
         private System.Windows.Forms.Label lblDiccionariosRegistrados;
+        private PillButton btnModificarDiccionarios;
+        private PillButton btnEliminarDiccionarios;
     }
 }

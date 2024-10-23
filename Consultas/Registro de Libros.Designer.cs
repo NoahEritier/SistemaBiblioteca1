@@ -37,6 +37,8 @@
             this.txtFiltroLibro = new System.Windows.Forms.TextBox();
             this.lblFiltroPeriodo = new System.Windows.Forms.Label();
             this.lblFiltroAutorTitulo = new System.Windows.Forms.Label();
+            this.btnModificarLibros = new WindowsFormsApp1.PillButton();
+            this.btnEliminarLibros = new WindowsFormsApp1.PillButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibros)).BeginInit();
             this.SuspendLayout();
@@ -45,9 +47,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.label1.Location = new System.Drawing.Point(103, 36);
+            this.label1.Location = new System.Drawing.Point(77, 29);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(241, 31);
+            this.label1.Size = new System.Drawing.Size(193, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Libros Registrados";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -55,6 +58,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.Controls.Add(this.btnEliminarLibros);
+            this.panel1.Controls.Add(this.btnModificarLibros);
             this.panel1.Controls.Add(this.dgvLibros);
             this.panel1.Controls.Add(this.btnNuevoLibro);
             this.panel1.Controls.Add(this.btnBuscarLibro);
@@ -62,20 +67,22 @@
             this.panel1.Controls.Add(this.txtFiltroLibro);
             this.panel1.Controls.Add(this.lblFiltroPeriodo);
             this.panel1.Controls.Add(this.lblFiltroAutorTitulo);
-            this.panel1.Location = new System.Drawing.Point(48, 86);
+            this.panel1.Location = new System.Drawing.Point(36, 70);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1129, 715);
+            this.panel1.Size = new System.Drawing.Size(847, 581);
             this.panel1.TabIndex = 1;
             // 
             // dgvLibros
             // 
             this.dgvLibros.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLibros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLibros.Location = new System.Drawing.Point(35, 262);
+            this.dgvLibros.Location = new System.Drawing.Point(26, 213);
+            this.dgvLibros.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvLibros.Name = "dgvLibros";
             this.dgvLibros.RowHeadersWidth = 51;
             this.dgvLibros.RowTemplate.Height = 24;
-            this.dgvLibros.Size = new System.Drawing.Size(968, 415);
+            this.dgvLibros.Size = new System.Drawing.Size(726, 337);
             this.dgvLibros.TabIndex = 7;
             // 
             // btnNuevoLibro
@@ -87,9 +94,10 @@
             this.btnNuevoLibro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevoLibro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoLibro.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnNuevoLibro.Location = new System.Drawing.Point(167, 196);
+            this.btnNuevoLibro.Location = new System.Drawing.Point(125, 159);
+            this.btnNuevoLibro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNuevoLibro.Name = "btnNuevoLibro";
-            this.btnNuevoLibro.Size = new System.Drawing.Size(165, 38);
+            this.btnNuevoLibro.Size = new System.Drawing.Size(124, 31);
             this.btnNuevoLibro.TabIndex = 6;
             this.btnNuevoLibro.Text = "+ Nuevo Libro";
             this.btnNuevoLibro.UseVisualStyleBackColor = false;
@@ -104,9 +112,10 @@
             this.btnBuscarLibro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarLibro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarLibro.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnBuscarLibro.Location = new System.Drawing.Point(44, 196);
+            this.btnBuscarLibro.Location = new System.Drawing.Point(33, 159);
+            this.btnBuscarLibro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBuscarLibro.Name = "btnBuscarLibro";
-            this.btnBuscarLibro.Size = new System.Drawing.Size(101, 38);
+            this.btnBuscarLibro.Size = new System.Drawing.Size(76, 31);
             this.btnBuscarLibro.TabIndex = 5;
             this.btnBuscarLibro.Text = "Buscar";
             this.btnBuscarLibro.UseVisualStyleBackColor = false;
@@ -115,21 +124,24 @@
             // cmbFiltroPeriodo
             // 
             this.cmbFiltroPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cmbFiltroPeriodo.ForeColor = System.Drawing.Color.Black;
             this.cmbFiltroPeriodo.FormattingEnabled = true;
-            this.cmbFiltroPeriodo.Location = new System.Drawing.Point(35, 139);
+            this.cmbFiltroPeriodo.Location = new System.Drawing.Point(26, 113);
+            this.cmbFiltroPeriodo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbFiltroPeriodo.Name = "cmbFiltroPeriodo";
-            this.cmbFiltroPeriodo.Size = new System.Drawing.Size(338, 33);
+            this.cmbFiltroPeriodo.Size = new System.Drawing.Size(254, 28);
             this.cmbFiltroPeriodo.TabIndex = 2;
             // 
             // txtFiltroLibro
             // 
             this.txtFiltroLibro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFiltroLibro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtFiltroLibro.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtFiltroLibro.Location = new System.Drawing.Point(35, 51);
+            this.txtFiltroLibro.ForeColor = System.Drawing.Color.Black;
+            this.txtFiltroLibro.Location = new System.Drawing.Point(26, 41);
+            this.txtFiltroLibro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtFiltroLibro.Multiline = true;
             this.txtFiltroLibro.Name = "txtFiltroLibro";
-            this.txtFiltroLibro.Size = new System.Drawing.Size(728, 41);
+            this.txtFiltroLibro.Size = new System.Drawing.Size(546, 34);
             this.txtFiltroLibro.TabIndex = 4;
             // 
             // lblFiltroPeriodo
@@ -137,9 +149,10 @@
             this.lblFiltroPeriodo.AutoSize = true;
             this.lblFiltroPeriodo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblFiltroPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblFiltroPeriodo.Location = new System.Drawing.Point(40, 112);
+            this.lblFiltroPeriodo.Location = new System.Drawing.Point(30, 91);
+            this.lblFiltroPeriodo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFiltroPeriodo.Name = "lblFiltroPeriodo";
-            this.lblFiltroPeriodo.Size = new System.Drawing.Size(76, 24);
+            this.lblFiltroPeriodo.Size = new System.Drawing.Size(60, 18);
             this.lblFiltroPeriodo.TabIndex = 3;
             this.lblFiltroPeriodo.Text = "Período";
             this.lblFiltroPeriodo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -149,22 +162,58 @@
             this.lblFiltroAutorTitulo.AutoSize = true;
             this.lblFiltroAutorTitulo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblFiltroAutorTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblFiltroAutorTitulo.Location = new System.Drawing.Point(40, 24);
+            this.lblFiltroAutorTitulo.Location = new System.Drawing.Point(30, 20);
+            this.lblFiltroAutorTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFiltroAutorTitulo.Name = "lblFiltroAutorTitulo";
-            this.lblFiltroAutorTitulo.Size = new System.Drawing.Size(116, 24);
+            this.lblFiltroAutorTitulo.Size = new System.Drawing.Size(91, 18);
             this.lblFiltroAutorTitulo.TabIndex = 2;
             this.lblFiltroAutorTitulo.Text = "Autor / Título";
             this.lblFiltroAutorTitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // btnModificarLibros
+            // 
+            this.btnModificarLibros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(205)))));
+            this.btnModificarLibros.FlatAppearance.BorderSize = 0;
+            this.btnModificarLibros.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(205)))));
+            this.btnModificarLibros.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnModificarLibros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificarLibros.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificarLibros.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnModificarLibros.Location = new System.Drawing.Point(265, 159);
+            this.btnModificarLibros.Margin = new System.Windows.Forms.Padding(2);
+            this.btnModificarLibros.Name = "btnModificarLibros";
+            this.btnModificarLibros.Size = new System.Drawing.Size(82, 31);
+            this.btnModificarLibros.TabIndex = 11;
+            this.btnModificarLibros.Text = "Modificar";
+            this.btnModificarLibros.UseVisualStyleBackColor = false;
+            // 
+            // btnEliminarLibros
+            // 
+            this.btnEliminarLibros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.btnEliminarLibros.FlatAppearance.BorderSize = 0;
+            this.btnEliminarLibros.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.btnEliminarLibros.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.btnEliminarLibros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarLibros.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarLibros.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnEliminarLibros.Location = new System.Drawing.Point(363, 159);
+            this.btnEliminarLibros.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminarLibros.Name = "btnEliminarLibros";
+            this.btnEliminarLibros.Size = new System.Drawing.Size(76, 31);
+            this.btnEliminarLibros.TabIndex = 12;
+            this.btnEliminarLibros.Text = "Eliminar";
+            this.btnEliminarLibros.UseVisualStyleBackColor = false;
+            // 
             // Registro_de_Libros
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1225, 854);
+            this.ClientSize = new System.Drawing.Size(919, 640);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Registro_de_Libros";
             this.Text = "Registro_de_Libros";
             this.panel1.ResumeLayout(false);
@@ -186,5 +235,7 @@
         private System.Windows.Forms.ComboBox cmbFiltroPeriodo;
         private PillButton btnNuevoLibro;
         private System.Windows.Forms.DataGridView dgvLibros;
+        private PillButton btnModificarLibros;
+        private PillButton btnEliminarLibros;
     }
 }

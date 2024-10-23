@@ -52,20 +52,22 @@
             this.panel1.Controls.Add(this.btnCancelarRegistro);
             this.panel1.Controls.Add(this.cmbCarreras);
             this.panel1.Controls.Add(this.lblCarrera);
-            this.panel1.Location = new System.Drawing.Point(48, 92);
+            this.panel1.Location = new System.Drawing.Point(36, 75);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1129, 763);
+            this.panel1.Size = new System.Drawing.Size(847, 620);
             this.panel1.TabIndex = 7;
             // 
             // txtAño
             // 
             this.txtAño.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAño.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtAño.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtAño.Location = new System.Drawing.Point(36, 213);
+            this.txtAño.ForeColor = System.Drawing.Color.Black;
+            this.txtAño.Location = new System.Drawing.Point(27, 173);
+            this.txtAño.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtAño.Multiline = true;
             this.txtAño.Name = "txtAño";
-            this.txtAño.Size = new System.Drawing.Size(93, 41);
+            this.txtAño.Size = new System.Drawing.Size(70, 34);
             this.txtAño.TabIndex = 34;
             // 
             // lblAño
@@ -73,9 +75,10 @@
             this.lblAño.AutoSize = true;
             this.lblAño.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblAño.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblAño.Location = new System.Drawing.Point(37, 186);
+            this.lblAño.Location = new System.Drawing.Point(28, 151);
+            this.lblAño.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAño.Name = "lblAño";
-            this.lblAño.Size = new System.Drawing.Size(45, 24);
+            this.lblAño.Size = new System.Drawing.Size(34, 18);
             this.lblAño.TabIndex = 33;
             this.lblAño.Text = "Año";
             this.lblAño.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -84,11 +87,12 @@
             // 
             this.txtTomos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTomos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtTomos.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtTomos.Location = new System.Drawing.Point(36, 142);
+            this.txtTomos.ForeColor = System.Drawing.Color.Black;
+            this.txtTomos.Location = new System.Drawing.Point(27, 115);
+            this.txtTomos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTomos.Multiline = true;
             this.txtTomos.Name = "txtTomos";
-            this.txtTomos.Size = new System.Drawing.Size(403, 41);
+            this.txtTomos.Size = new System.Drawing.Size(303, 34);
             this.txtTomos.TabIndex = 32;
             // 
             // lblDocente
@@ -96,9 +100,10 @@
             this.lblDocente.AutoSize = true;
             this.lblDocente.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblDocente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblDocente.Location = new System.Drawing.Point(37, 115);
+            this.lblDocente.Location = new System.Drawing.Point(28, 93);
+            this.lblDocente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDocente.Name = "lblDocente";
-            this.lblDocente.Size = new System.Drawing.Size(81, 24);
+            this.lblDocente.Size = new System.Drawing.Size(64, 18);
             this.lblDocente.TabIndex = 31;
             this.lblDocente.Text = "Docente";
             this.lblDocente.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -112,9 +117,10 @@
             this.btnConfirmarRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmarRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmarRegistro.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnConfirmarRegistro.Location = new System.Drawing.Point(183, 299);
+            this.btnConfirmarRegistro.Location = new System.Drawing.Point(137, 243);
+            this.btnConfirmarRegistro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnConfirmarRegistro.Name = "btnConfirmarRegistro";
-            this.btnConfirmarRegistro.Size = new System.Drawing.Size(107, 38);
+            this.btnConfirmarRegistro.Size = new System.Drawing.Size(80, 31);
             this.btnConfirmarRegistro.TabIndex = 28;
             this.btnConfirmarRegistro.Text = "Aceptar";
             this.btnConfirmarRegistro.UseVisualStyleBackColor = false;
@@ -129,9 +135,10 @@
             this.btnCancelarRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarRegistro.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCancelarRegistro.Location = new System.Drawing.Point(41, 299);
+            this.btnCancelarRegistro.Location = new System.Drawing.Point(31, 243);
+            this.btnCancelarRegistro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelarRegistro.Name = "btnCancelarRegistro";
-            this.btnCancelarRegistro.Size = new System.Drawing.Size(127, 38);
+            this.btnCancelarRegistro.Size = new System.Drawing.Size(95, 31);
             this.btnCancelarRegistro.TabIndex = 27;
             this.btnCancelarRegistro.Text = "Cancelar";
             this.btnCancelarRegistro.UseVisualStyleBackColor = false;
@@ -140,11 +147,13 @@
             // cmbCarreras
             // 
             this.cmbCarreras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cmbCarreras.ForeColor = System.Drawing.Color.Black;
             this.cmbCarreras.FormattingEnabled = true;
-            this.cmbCarreras.ItemHeight = 25;
-            this.cmbCarreras.Location = new System.Drawing.Point(36, 79);
+            this.cmbCarreras.ItemHeight = 20;
+            this.cmbCarreras.Location = new System.Drawing.Point(27, 64);
+            this.cmbCarreras.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbCarreras.Name = "cmbCarreras";
-            this.cmbCarreras.Size = new System.Drawing.Size(403, 33);
+            this.cmbCarreras.Size = new System.Drawing.Size(303, 28);
             this.cmbCarreras.TabIndex = 13;
             // 
             // lblCarrera
@@ -152,9 +161,10 @@
             this.lblCarrera.AutoSize = true;
             this.lblCarrera.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblCarrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblCarrera.Location = new System.Drawing.Point(37, 49);
+            this.lblCarrera.Location = new System.Drawing.Point(28, 40);
+            this.lblCarrera.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCarrera.Name = "lblCarrera";
-            this.lblCarrera.Size = new System.Drawing.Size(84, 24);
+            this.lblCarrera.Size = new System.Drawing.Size(68, 18);
             this.lblCarrera.TabIndex = 11;
             this.lblCarrera.Text = "* Carrera";
             this.lblCarrera.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -163,22 +173,24 @@
             // 
             this.lblProyectosDeCatedra.AutoSize = true;
             this.lblProyectosDeCatedra.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.lblProyectosDeCatedra.Location = new System.Drawing.Point(103, 36);
+            this.lblProyectosDeCatedra.Location = new System.Drawing.Point(77, 29);
+            this.lblProyectosDeCatedra.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProyectosDeCatedra.Name = "lblProyectosDeCatedra";
-            this.lblProyectosDeCatedra.Size = new System.Drawing.Size(282, 31);
+            this.lblProyectosDeCatedra.Size = new System.Drawing.Size(226, 26);
             this.lblProyectosDeCatedra.TabIndex = 6;
             this.lblProyectosDeCatedra.Text = "Proyectos De Catedra";
             this.lblProyectosDeCatedra.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // NuevoProyectoDeCatedra
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1225, 890);
+            this.ClientSize = new System.Drawing.Size(919, 640);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblProyectosDeCatedra);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "NuevoProyectoDeCatedra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NuevoProyectoDeCatedra";

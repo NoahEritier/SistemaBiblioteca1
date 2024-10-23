@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtApellidodelAutor = new System.Windows.Forms.TextBox();
+            this.lblApellido = new System.Windows.Forms.Label();
+            this.txtFiltroTitulo = new System.Windows.Forms.TextBox();
             this.txtNombredelAutor = new System.Windows.Forms.TextBox();
             this.lblNombredelAutor = new System.Windows.Forms.Label();
             this.txtFiltroAño = new System.Windows.Forms.TextBox();
@@ -37,9 +40,6 @@
             this.btnCancelarRegistro = new WindowsFormsApp1.PillButton();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblNuevaTesis = new System.Windows.Forms.Label();
-            this.txtFiltroTitulo = new System.Windows.Forms.TextBox();
-            this.txtApellidodelAutor = new System.Windows.Forms.TextBox();
-            this.lblApellido = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,11 +62,48 @@
             this.panel1.Size = new System.Drawing.Size(847, 620);
             this.panel1.TabIndex = 8;
             // 
+            // txtApellidodelAutor
+            // 
+            this.txtApellidodelAutor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtApellidodelAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.txtApellidodelAutor.ForeColor = System.Drawing.Color.Black;
+            this.txtApellidodelAutor.Location = new System.Drawing.Point(27, 245);
+            this.txtApellidodelAutor.Margin = new System.Windows.Forms.Padding(2);
+            this.txtApellidodelAutor.Multiline = true;
+            this.txtApellidodelAutor.Name = "txtApellidodelAutor";
+            this.txtApellidodelAutor.Size = new System.Drawing.Size(376, 34);
+            this.txtApellidodelAutor.TabIndex = 38;
+            // 
+            // lblApellido
+            // 
+            this.lblApellido.AutoSize = true;
+            this.lblApellido.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblApellido.Location = new System.Drawing.Point(28, 223);
+            this.lblApellido.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblApellido.Name = "lblApellido";
+            this.lblApellido.Size = new System.Drawing.Size(131, 18);
+            this.lblApellido.TabIndex = 37;
+            this.lblApellido.Text = " *Apellido del Autor";
+            this.lblApellido.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // txtFiltroTitulo
+            // 
+            this.txtFiltroTitulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFiltroTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.txtFiltroTitulo.ForeColor = System.Drawing.Color.Black;
+            this.txtFiltroTitulo.Location = new System.Drawing.Point(27, 57);
+            this.txtFiltroTitulo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFiltroTitulo.Multiline = true;
+            this.txtFiltroTitulo.Name = "txtFiltroTitulo";
+            this.txtFiltroTitulo.Size = new System.Drawing.Size(376, 34);
+            this.txtFiltroTitulo.TabIndex = 36;
+            // 
             // txtNombredelAutor
             // 
             this.txtNombredelAutor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombredelAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtNombredelAutor.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtNombredelAutor.ForeColor = System.Drawing.Color.Black;
             this.txtNombredelAutor.Location = new System.Drawing.Point(27, 178);
             this.txtNombredelAutor.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombredelAutor.Multiline = true;
@@ -91,7 +128,7 @@
             // 
             this.txtFiltroAño.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFiltroAño.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtFiltroAño.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtFiltroAño.ForeColor = System.Drawing.Color.Black;
             this.txtFiltroAño.Location = new System.Drawing.Point(27, 115);
             this.txtFiltroAño.Margin = new System.Windows.Forms.Padding(2);
             this.txtFiltroAño.Multiline = true;
@@ -171,43 +208,6 @@
             this.lblNuevaTesis.TabIndex = 9;
             this.lblNuevaTesis.Text = "Nueva Tesis";
             this.lblNuevaTesis.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // txtFiltroTitulo
-            // 
-            this.txtFiltroTitulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFiltroTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtFiltroTitulo.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtFiltroTitulo.Location = new System.Drawing.Point(27, 57);
-            this.txtFiltroTitulo.Margin = new System.Windows.Forms.Padding(2);
-            this.txtFiltroTitulo.Multiline = true;
-            this.txtFiltroTitulo.Name = "txtFiltroTitulo";
-            this.txtFiltroTitulo.Size = new System.Drawing.Size(376, 34);
-            this.txtFiltroTitulo.TabIndex = 36;
-            // 
-            // txtApellidodelAutor
-            // 
-            this.txtApellidodelAutor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtApellidodelAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtApellidodelAutor.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtApellidodelAutor.Location = new System.Drawing.Point(27, 245);
-            this.txtApellidodelAutor.Margin = new System.Windows.Forms.Padding(2);
-            this.txtApellidodelAutor.Multiline = true;
-            this.txtApellidodelAutor.Name = "txtApellidodelAutor";
-            this.txtApellidodelAutor.Size = new System.Drawing.Size(376, 34);
-            this.txtApellidodelAutor.TabIndex = 38;
-            // 
-            // lblApellido
-            // 
-            this.lblApellido.AutoSize = true;
-            this.lblApellido.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.lblApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblApellido.Location = new System.Drawing.Point(28, 223);
-            this.lblApellido.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(131, 18);
-            this.lblApellido.TabIndex = 37;
-            this.lblApellido.Text = " *Apellido del Autor";
-            this.lblApellido.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // NuevaTesis
             // 

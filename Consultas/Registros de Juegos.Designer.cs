@@ -30,8 +30,6 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtFiltroNombre = new System.Windows.Forms.TextBox();
-            this.cmbFiltroCantidad = new System.Windows.Forms.ComboBox();
-            this.lblFiltroCantidad = new System.Windows.Forms.Label();
             this.lblFiltroNombre = new System.Windows.Forms.Label();
             this.dgvJuegos = new System.Windows.Forms.DataGridView();
             this.btnNuevoJuego = new WindowsFormsApp1.PillButton();
@@ -39,6 +37,8 @@
             this.cmbFiltroPeriodo = new System.Windows.Forms.ComboBox();
             this.lblFiltroPeriodo = new System.Windows.Forms.Label();
             this.lblJuegosRegistrados = new System.Windows.Forms.Label();
+            this.btnModificarJuegos = new WindowsFormsApp1.PillButton();
+            this.btnEliminarJuegos = new WindowsFormsApp1.PillButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJuegos)).BeginInit();
             this.SuspendLayout();
@@ -46,60 +46,42 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.Controls.Add(this.btnEliminarJuegos);
+            this.panel1.Controls.Add(this.btnModificarJuegos);
             this.panel1.Controls.Add(this.txtFiltroNombre);
-            this.panel1.Controls.Add(this.cmbFiltroCantidad);
-            this.panel1.Controls.Add(this.lblFiltroCantidad);
             this.panel1.Controls.Add(this.lblFiltroNombre);
             this.panel1.Controls.Add(this.dgvJuegos);
             this.panel1.Controls.Add(this.btnNuevoJuego);
             this.panel1.Controls.Add(this.btnBuscarJuego);
             this.panel1.Controls.Add(this.cmbFiltroPeriodo);
             this.panel1.Controls.Add(this.lblFiltroPeriodo);
-            this.panel1.Location = new System.Drawing.Point(39, 89);
+            this.panel1.Location = new System.Drawing.Point(29, 72);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1129, 715);
+            this.panel1.Size = new System.Drawing.Size(847, 581);
             this.panel1.TabIndex = 11;
             // 
             // txtFiltroNombre
             // 
             this.txtFiltroNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFiltroNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtFiltroNombre.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtFiltroNombre.Location = new System.Drawing.Point(35, 59);
+            this.txtFiltroNombre.ForeColor = System.Drawing.Color.Black;
+            this.txtFiltroNombre.Location = new System.Drawing.Point(26, 48);
+            this.txtFiltroNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtFiltroNombre.Multiline = true;
             this.txtFiltroNombre.Name = "txtFiltroNombre";
-            this.txtFiltroNombre.Size = new System.Drawing.Size(403, 41);
+            this.txtFiltroNombre.Size = new System.Drawing.Size(303, 34);
             this.txtFiltroNombre.TabIndex = 36;
-            // 
-            // cmbFiltroCantidad
-            // 
-            this.cmbFiltroCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cmbFiltroCantidad.FormattingEnabled = true;
-            this.cmbFiltroCantidad.Location = new System.Drawing.Point(35, 126);
-            this.cmbFiltroCantidad.Name = "cmbFiltroCantidad";
-            this.cmbFiltroCantidad.Size = new System.Drawing.Size(84, 33);
-            this.cmbFiltroCantidad.TabIndex = 10;
-            // 
-            // lblFiltroCantidad
-            // 
-            this.lblFiltroCantidad.AutoSize = true;
-            this.lblFiltroCantidad.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.lblFiltroCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblFiltroCantidad.Location = new System.Drawing.Point(35, 99);
-            this.lblFiltroCantidad.Name = "lblFiltroCantidad";
-            this.lblFiltroCantidad.Size = new System.Drawing.Size(84, 24);
-            this.lblFiltroCantidad.TabIndex = 11;
-            this.lblFiltroCantidad.Text = "Cantidad";
-            this.lblFiltroCantidad.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblFiltroNombre
             // 
             this.lblFiltroNombre.AutoSize = true;
             this.lblFiltroNombre.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblFiltroNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblFiltroNombre.Location = new System.Drawing.Point(35, 32);
+            this.lblFiltroNombre.Location = new System.Drawing.Point(26, 26);
+            this.lblFiltroNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFiltroNombre.Name = "lblFiltroNombre";
-            this.lblFiltroNombre.Size = new System.Drawing.Size(79, 24);
+            this.lblFiltroNombre.Size = new System.Drawing.Size(62, 18);
             this.lblFiltroNombre.TabIndex = 9;
             this.lblFiltroNombre.Text = "Nombre";
             this.lblFiltroNombre.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -108,11 +90,12 @@
             // 
             this.dgvJuegos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvJuegos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvJuegos.Location = new System.Drawing.Point(35, 314);
+            this.dgvJuegos.Location = new System.Drawing.Point(29, 218);
+            this.dgvJuegos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvJuegos.Name = "dgvJuegos";
             this.dgvJuegos.RowHeadersWidth = 51;
             this.dgvJuegos.RowTemplate.Height = 24;
-            this.dgvJuegos.Size = new System.Drawing.Size(968, 363);
+            this.dgvJuegos.Size = new System.Drawing.Size(726, 295);
             this.dgvJuegos.TabIndex = 7;
             // 
             // btnNuevoJuego
@@ -124,9 +107,10 @@
             this.btnNuevoJuego.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevoJuego.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoJuego.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnNuevoJuego.Location = new System.Drawing.Point(168, 248);
+            this.btnNuevoJuego.Location = new System.Drawing.Point(120, 167);
+            this.btnNuevoJuego.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNuevoJuego.Name = "btnNuevoJuego";
-            this.btnNuevoJuego.Size = new System.Drawing.Size(190, 38);
+            this.btnNuevoJuego.Size = new System.Drawing.Size(142, 31);
             this.btnNuevoJuego.TabIndex = 6;
             this.btnNuevoJuego.Text = "+ Nuevo Juego";
             this.btnNuevoJuego.UseVisualStyleBackColor = false;
@@ -141,9 +125,10 @@
             this.btnBuscarJuego.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarJuego.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarJuego.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnBuscarJuego.Location = new System.Drawing.Point(45, 248);
+            this.btnBuscarJuego.Location = new System.Drawing.Point(29, 167);
+            this.btnBuscarJuego.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBuscarJuego.Name = "btnBuscarJuego";
-            this.btnBuscarJuego.Size = new System.Drawing.Size(101, 38);
+            this.btnBuscarJuego.Size = new System.Drawing.Size(76, 31);
             this.btnBuscarJuego.TabIndex = 5;
             this.btnBuscarJuego.Text = "Buscar";
             this.btnBuscarJuego.UseVisualStyleBackColor = false;
@@ -151,10 +136,12 @@
             // cmbFiltroPeriodo
             // 
             this.cmbFiltroPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cmbFiltroPeriodo.ForeColor = System.Drawing.Color.Black;
             this.cmbFiltroPeriodo.FormattingEnabled = true;
-            this.cmbFiltroPeriodo.Location = new System.Drawing.Point(35, 195);
+            this.cmbFiltroPeriodo.Location = new System.Drawing.Point(26, 122);
+            this.cmbFiltroPeriodo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbFiltroPeriodo.Name = "cmbFiltroPeriodo";
-            this.cmbFiltroPeriodo.Size = new System.Drawing.Size(338, 33);
+            this.cmbFiltroPeriodo.Size = new System.Drawing.Size(254, 28);
             this.cmbFiltroPeriodo.TabIndex = 2;
             // 
             // lblFiltroPeriodo
@@ -162,9 +149,10 @@
             this.lblFiltroPeriodo.AutoSize = true;
             this.lblFiltroPeriodo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblFiltroPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblFiltroPeriodo.Location = new System.Drawing.Point(35, 168);
+            this.lblFiltroPeriodo.Location = new System.Drawing.Point(26, 93);
+            this.lblFiltroPeriodo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFiltroPeriodo.Name = "lblFiltroPeriodo";
-            this.lblFiltroPeriodo.Size = new System.Drawing.Size(76, 24);
+            this.lblFiltroPeriodo.Size = new System.Drawing.Size(60, 18);
             this.lblFiltroPeriodo.TabIndex = 3;
             this.lblFiltroPeriodo.Text = "Período";
             this.lblFiltroPeriodo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -173,22 +161,58 @@
             // 
             this.lblJuegosRegistrados.AutoSize = true;
             this.lblJuegosRegistrados.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.lblJuegosRegistrados.Location = new System.Drawing.Point(94, 39);
+            this.lblJuegosRegistrados.Location = new System.Drawing.Point(70, 32);
+            this.lblJuegosRegistrados.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblJuegosRegistrados.Name = "lblJuegosRegistrados";
-            this.lblJuegosRegistrados.Size = new System.Drawing.Size(255, 31);
+            this.lblJuegosRegistrados.Size = new System.Drawing.Size(204, 26);
             this.lblJuegosRegistrados.TabIndex = 10;
             this.lblJuegosRegistrados.Text = "Juegos Registrados";
             this.lblJuegosRegistrados.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // btnModificarJuegos
+            // 
+            this.btnModificarJuegos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(205)))));
+            this.btnModificarJuegos.FlatAppearance.BorderSize = 0;
+            this.btnModificarJuegos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(46)))), ((int)(((byte)(205)))));
+            this.btnModificarJuegos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btnModificarJuegos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificarJuegos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificarJuegos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnModificarJuegos.Location = new System.Drawing.Point(280, 167);
+            this.btnModificarJuegos.Margin = new System.Windows.Forms.Padding(2);
+            this.btnModificarJuegos.Name = "btnModificarJuegos";
+            this.btnModificarJuegos.Size = new System.Drawing.Size(82, 31);
+            this.btnModificarJuegos.TabIndex = 37;
+            this.btnModificarJuegos.Text = "Modificar";
+            this.btnModificarJuegos.UseVisualStyleBackColor = false;
+            // 
+            // btnEliminarJuegos
+            // 
+            this.btnEliminarJuegos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.btnEliminarJuegos.FlatAppearance.BorderSize = 0;
+            this.btnEliminarJuegos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.btnEliminarJuegos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.btnEliminarJuegos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarJuegos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarJuegos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnEliminarJuegos.Location = new System.Drawing.Point(390, 167);
+            this.btnEliminarJuegos.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminarJuegos.Name = "btnEliminarJuegos";
+            this.btnEliminarJuegos.Size = new System.Drawing.Size(76, 31);
+            this.btnEliminarJuegos.TabIndex = 38;
+            this.btnEliminarJuegos.Text = "Eliminar";
+            this.btnEliminarJuegos.UseVisualStyleBackColor = false;
+            // 
             // Registros_de_Juegos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1207, 843);
+            this.ClientSize = new System.Drawing.Size(905, 640);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblJuegosRegistrados);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Registros_de_Juegos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registros_de_Juegos";
@@ -203,8 +227,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox cmbFiltroCantidad;
-        private System.Windows.Forms.Label lblFiltroCantidad;
         private System.Windows.Forms.Label lblFiltroNombre;
         private System.Windows.Forms.DataGridView dgvJuegos;
         private PillButton btnNuevoJuego;
@@ -213,5 +235,7 @@
         private System.Windows.Forms.Label lblFiltroPeriodo;
         private System.Windows.Forms.Label lblJuegosRegistrados;
         private System.Windows.Forms.TextBox txtFiltroNombre;
+        private PillButton btnModificarJuegos;
+        private PillButton btnEliminarJuegos;
     }
 }
