@@ -109,12 +109,13 @@
             // 
             // dgvEnciclopedia
             // 
+            this.dgvEnciclopedia.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEnciclopedia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEnciclopedia.Location = new System.Drawing.Point(29, 381);
             this.dgvEnciclopedia.Name = "dgvEnciclopedia";
             this.dgvEnciclopedia.RowHeadersWidth = 51;
             this.dgvEnciclopedia.RowTemplate.Height = 24;
-            this.dgvEnciclopedia.Size = new System.Drawing.Size(949, 320);
+            this.dgvEnciclopedia.Size = new System.Drawing.Size(968, 415);
             this.dgvEnciclopedia.TabIndex = 7;
             // 
             // btnNuevaEnciclopedia

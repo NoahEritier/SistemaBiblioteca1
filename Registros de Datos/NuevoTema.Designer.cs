@@ -102,6 +102,7 @@
             this.btnConfirmarRegistro.TabIndex = 28;
             this.btnConfirmarRegistro.Text = "Aceptar";
             this.btnConfirmarRegistro.UseVisualStyleBackColor = false;
+            this.btnConfirmarRegistro.Click += new System.EventHandler(this.btnConfirmarRegistro_Click);
             // 
             // btnCancelarRegistro
             // 

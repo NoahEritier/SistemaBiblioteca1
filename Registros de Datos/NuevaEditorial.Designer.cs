@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pillButton1 = new WindowsFormsApp1.PillButton();
+            this.btnCancelar = new WindowsFormsApp1.PillButton();
             this.btnConfirmarRegistro = new WindowsFormsApp1.PillButton();
-            this.txtNombreAutor = new System.Windows.Forms.TextBox();
+            this.txtNombreEditorial = new System.Windows.Forms.TextBox();
             this.lblNombreEditorial = new System.Windows.Forms.Label();
             this.lblNuevaEditorial = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -40,31 +40,31 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel1.Controls.Add(this.pillButton1);
+            this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.btnConfirmarRegistro);
-            this.panel1.Controls.Add(this.txtNombreAutor);
+            this.panel1.Controls.Add(this.txtNombreEditorial);
             this.panel1.Controls.Add(this.lblNombreEditorial);
             this.panel1.Location = new System.Drawing.Point(48, 99);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1129, 715);
             this.panel1.TabIndex = 7;
             // 
-            // pillButton1
+            // btnCancelar
             // 
-            this.pillButton1.BackColor = System.Drawing.Color.LightGray;
-            this.pillButton1.FlatAppearance.BorderSize = 0;
-            this.pillButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
-            this.pillButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
-            this.pillButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.pillButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pillButton1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pillButton1.Location = new System.Drawing.Point(40, 156);
-            this.pillButton1.Name = "pillButton1";
-            this.pillButton1.Size = new System.Drawing.Size(127, 38);
-            this.pillButton1.TabIndex = 31;
-            this.pillButton1.Text = "Cancelar";
-            this.pillButton1.UseVisualStyleBackColor = false;
-            this.pillButton1.Click += new System.EventHandler(this.pillButton1_Click);
+            this.btnCancelar.BackColor = System.Drawing.Color.LightGray;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCancelar.Location = new System.Drawing.Point(40, 156);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(127, 38);
+            this.btnCancelar.TabIndex = 31;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnConfirmarRegistro
             // 
@@ -81,17 +81,18 @@
             this.btnConfirmarRegistro.TabIndex = 30;
             this.btnConfirmarRegistro.Text = "Aceptar";
             this.btnConfirmarRegistro.UseVisualStyleBackColor = false;
+            this.btnConfirmarRegistro.Click += new System.EventHandler(this.btnConfirmarRegistro_Click);
             // 
-            // txtNombreAutor
+            // txtNombreEditorial
             // 
-            this.txtNombreAutor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNombreAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtNombreAutor.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtNombreAutor.Location = new System.Drawing.Point(35, 89);
-            this.txtNombreAutor.Multiline = true;
-            this.txtNombreAutor.Name = "txtNombreAutor";
-            this.txtNombreAutor.Size = new System.Drawing.Size(403, 41);
-            this.txtNombreAutor.TabIndex = 4;
+            this.txtNombreEditorial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNombreEditorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.txtNombreEditorial.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtNombreEditorial.Location = new System.Drawing.Point(35, 89);
+            this.txtNombreEditorial.Multiline = true;
+            this.txtNombreEditorial.Name = "txtNombreEditorial";
+            this.txtNombreEditorial.Size = new System.Drawing.Size(403, 41);
+            this.txtNombreEditorial.TabIndex = 4;
             // 
             // lblNombreEditorial
             // 
@@ -138,9 +139,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private PillButton pillButton1;
+        private PillButton btnCancelar;
         private PillButton btnConfirmarRegistro;
-        private System.Windows.Forms.TextBox txtNombreAutor;
+        private System.Windows.Forms.TextBox txtNombreEditorial;
         private System.Windows.Forms.Label lblNombreEditorial;
         private System.Windows.Forms.Label lblNuevaEditorial;
     }

@@ -106,6 +106,7 @@
             // 
             // dgvMapas
             // 
+            this.dgvMapas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMapas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMapas.Location = new System.Drawing.Point(35, 314);
             this.dgvMapas.Name = "dgvMapas";

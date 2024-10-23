@@ -106,6 +106,7 @@
             // 
             // dgvJuegos
             // 
+            this.dgvJuegos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvJuegos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvJuegos.Location = new System.Drawing.Point(35, 314);
             this.dgvJuegos.Name = "dgvJuegos";

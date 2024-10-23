@@ -58,6 +58,7 @@
             // 
             // dgvTemas
             // 
+            this.dgvTemas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTemas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTemas.Location = new System.Drawing.Point(35, 262);
             this.dgvTemas.Name = "dgvTemas";
@@ -98,6 +99,7 @@
             this.btnBuscarTema.TabIndex = 5;
             this.btnBuscarTema.Text = "Buscar";
             this.btnBuscarTema.UseVisualStyleBackColor = false;
+            this.btnBuscarTema.Click += new System.EventHandler(this.btnBuscarTema_Click);
             // 
             // cmbFiltroPeriodo
             // 
@@ -165,7 +167,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "registro_de_temas";
             this.Text = "registro_de_temas";
-            this.Load += new System.EventHandler(this.registro_de_temas_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTemas)).EndInit();

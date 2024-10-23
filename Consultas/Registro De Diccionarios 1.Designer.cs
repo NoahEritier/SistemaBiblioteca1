@@ -101,6 +101,7 @@
             // 
             // dgvDiccionarios
             // 
+            this.dgvDiccionarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDiccionarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDiccionarios.Location = new System.Drawing.Point(35, 262);
             this.dgvDiccionarios.Name = "dgvDiccionarios";

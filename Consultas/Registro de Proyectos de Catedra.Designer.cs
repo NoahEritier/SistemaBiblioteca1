@@ -57,7 +57,7 @@
             this.panel1.Controls.Add(this.lblFiltroPeriodo);
             this.panel1.Location = new System.Drawing.Point(39, 89);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1129, 715);
+            this.panel1.Size = new System.Drawing.Size(1129, 742);
             this.panel1.TabIndex = 9;
             // 
             // cmbFiltroAño
@@ -104,12 +104,13 @@
             // 
             // dgvProyecto
             // 
+            this.dgvProyecto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProyecto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProyecto.Location = new System.Drawing.Point(35, 314);
             this.dgvProyecto.Name = "dgvProyecto";
             this.dgvProyecto.RowHeadersWidth = 51;
             this.dgvProyecto.RowTemplate.Height = 24;
-            this.dgvProyecto.Size = new System.Drawing.Size(968, 363);
+            this.dgvProyecto.Size = new System.Drawing.Size(968, 415);
             this.dgvProyecto.TabIndex = 7;
             // 
             // btnNuevoProyecto
@@ -182,7 +183,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1207, 843);
+            this.ClientSize = new System.Drawing.Size(1207, 871);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblProyectosDeCatedraRegistrados);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

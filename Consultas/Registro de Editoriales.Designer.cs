@@ -30,13 +30,13 @@
         {
             this.panel = new System.Windows.Forms.Panel();
             this.dgvEditoriales = new System.Windows.Forms.DataGridView();
-            this.btnNuevaEditorial = new WindowsFormsApp1.PillButton();
-            this.btnBuscarEditorial = new WindowsFormsApp1.PillButton();
             this.cmbFiltroPeriodo = new System.Windows.Forms.ComboBox();
             this.txtFiltroNombre = new System.Windows.Forms.TextBox();
             this.lblFiltroPeriodo = new System.Windows.Forms.Label();
             this.lblFiltroNombreEditorial = new System.Windows.Forms.Label();
             this.lblEditorialesRegistradas = new System.Windows.Forms.Label();
+            this.btnNuevaEditorial = new WindowsFormsApp1.PillButton();
+            this.btnBuscarEditorial = new WindowsFormsApp1.PillButton();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEditoriales)).BeginInit();
             this.SuspendLayout();
@@ -58,6 +58,7 @@
             // 
             // dgvEditoriales
             // 
+            this.dgvEditoriales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEditoriales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEditoriales.Location = new System.Drawing.Point(35, 262);
             this.dgvEditoriales.Name = "dgvEditoriales";
@@ -65,39 +66,6 @@
             this.dgvEditoriales.RowTemplate.Height = 24;
             this.dgvEditoriales.Size = new System.Drawing.Size(968, 415);
             this.dgvEditoriales.TabIndex = 7;
-            // 
-            // btnNuevaEditorial
-            // 
-            this.btnNuevaEditorial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(98)))), ((int)(((byte)(229)))));
-            this.btnNuevaEditorial.FlatAppearance.BorderSize = 0;
-            this.btnNuevaEditorial.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(98)))), ((int)(((byte)(229)))));
-            this.btnNuevaEditorial.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(76)))), ((int)(((byte)(201)))));
-            this.btnNuevaEditorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevaEditorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevaEditorial.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnNuevaEditorial.Location = new System.Drawing.Point(167, 196);
-            this.btnNuevaEditorial.Name = "btnNuevaEditorial";
-            this.btnNuevaEditorial.Size = new System.Drawing.Size(206, 38);
-            this.btnNuevaEditorial.TabIndex = 6;
-            this.btnNuevaEditorial.Text = "+ Nueva Editorial";
-            this.btnNuevaEditorial.UseVisualStyleBackColor = false;
-            this.btnNuevaEditorial.Click += new System.EventHandler(this.btnNuevaEditorial_Click);
-            // 
-            // btnBuscarEditorial
-            // 
-            this.btnBuscarEditorial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(126)))));
-            this.btnBuscarEditorial.FlatAppearance.BorderSize = 0;
-            this.btnBuscarEditorial.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(146)))));
-            this.btnBuscarEditorial.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(126)))));
-            this.btnBuscarEditorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarEditorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarEditorial.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnBuscarEditorial.Location = new System.Drawing.Point(44, 196);
-            this.btnBuscarEditorial.Name = "btnBuscarEditorial";
-            this.btnBuscarEditorial.Size = new System.Drawing.Size(101, 38);
-            this.btnBuscarEditorial.TabIndex = 5;
-            this.btnBuscarEditorial.Text = "Buscar";
-            this.btnBuscarEditorial.UseVisualStyleBackColor = false;
             // 
             // cmbFiltroPeriodo
             // 
@@ -154,6 +122,40 @@
             this.lblEditorialesRegistradas.Text = "Editoriales Registradas";
             this.lblEditorialesRegistradas.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // btnNuevaEditorial
+            // 
+            this.btnNuevaEditorial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(98)))), ((int)(((byte)(229)))));
+            this.btnNuevaEditorial.FlatAppearance.BorderSize = 0;
+            this.btnNuevaEditorial.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(98)))), ((int)(((byte)(229)))));
+            this.btnNuevaEditorial.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(76)))), ((int)(((byte)(201)))));
+            this.btnNuevaEditorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevaEditorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevaEditorial.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnNuevaEditorial.Location = new System.Drawing.Point(167, 196);
+            this.btnNuevaEditorial.Name = "btnNuevaEditorial";
+            this.btnNuevaEditorial.Size = new System.Drawing.Size(206, 38);
+            this.btnNuevaEditorial.TabIndex = 6;
+            this.btnNuevaEditorial.Text = "+ Nueva Editorial";
+            this.btnNuevaEditorial.UseVisualStyleBackColor = false;
+            this.btnNuevaEditorial.Click += new System.EventHandler(this.btnNuevaEditorial_Click);
+            // 
+            // btnBuscarEditorial
+            // 
+            this.btnBuscarEditorial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(126)))));
+            this.btnBuscarEditorial.FlatAppearance.BorderSize = 0;
+            this.btnBuscarEditorial.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(146)))));
+            this.btnBuscarEditorial.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(144)))), ((int)(((byte)(126)))));
+            this.btnBuscarEditorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarEditorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarEditorial.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnBuscarEditorial.Location = new System.Drawing.Point(44, 196);
+            this.btnBuscarEditorial.Name = "btnBuscarEditorial";
+            this.btnBuscarEditorial.Size = new System.Drawing.Size(101, 38);
+            this.btnBuscarEditorial.TabIndex = 5;
+            this.btnBuscarEditorial.Text = "Buscar";
+            this.btnBuscarEditorial.UseVisualStyleBackColor = false;
+            this.btnBuscarEditorial.Click += new System.EventHandler(this.btnBuscarEditorial_Click);
+            // 
             // Registro_de_Editoriales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -165,7 +167,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Registro_de_Editoriales";
             this.Text = "Registro_de_Editoriales";
-            this.Load += new System.EventHandler(this.Registro_de_Editoriales_Load);
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEditoriales)).EndInit();
