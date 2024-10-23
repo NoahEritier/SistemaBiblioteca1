@@ -62,7 +62,7 @@ namespace WindowsFormsApp1
 
         private void btnTemas_Click(object sender, EventArgs e)
         {
-            openChildForm(new registro_de_temas());
+            openChildForm(new registro_de_temas("Libros"));
             HideSubMenu();
         }
 
@@ -91,7 +91,7 @@ namespace WindowsFormsApp1
 
         private void btnTemasCiclo_Click_1(object sender, EventArgs e)
         {
-            openChildForm(new registro_de_temas());
+            openChildForm(new registro_de_temas("Enciclopedias"));
             HideSubMenu();
         }
 
@@ -131,7 +131,7 @@ namespace WindowsFormsApp1
 
         private void btnTemasMap_Click(object sender, EventArgs e)
         {
-            openChildForm(new registro_de_temas());
+            openChildForm(new registro_de_temas("Mapas"));
             HideSubMenu();
         }
 

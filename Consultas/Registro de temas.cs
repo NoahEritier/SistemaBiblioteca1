@@ -16,7 +16,8 @@ namespace WindowsFormsApp1.Consultas
 {
     public partial class registro_de_temas : Form
     {
-        public registro_de_temas()
+        public string Grupo = string.Empty;
+        public registro_de_temas(string grupo)
         {
             InitializeComponent();
             // Inicializar ComboBox con opciones de periodo
@@ -25,12 +26,13 @@ namespace WindowsFormsApp1.Consultas
             cmbFiltroPeriodo.Items.Add("6 meses");
             cmbFiltroPeriodo.Items.Add("Cualquier momento");
             cmbFiltroPeriodo.SelectedIndex = 3; // Por defecto: "Cualquier momento"
+            Grupo = grupo;
         }
 
 
         private void btnNuevoTema_Click(object sender, EventArgs e)
         {
-            NuevoTema nuevoTema = new NuevoTema();
+            NuevoTema nuevoTema = new NuevoTema(Grupo);
             nuevoTema.ShowDialog(this);
         }
 
@@ -41,7 +43,10 @@ namespace WindowsFormsApp1.Consultas
             string filtroPeriodo = cmbFiltroPeriodo.SelectedItem.ToString();
 
             // Construir la sentencia SQL dinámica
-            string consulta = "SELECT * FROM temas WHERE 1=1";
+            string consulta = "SELECT Id, Nombre, NumeroTema FROM temas WHERE 1=1";
+
+            // Filtrar por grupo
+            consulta += " AND grupo = @Grupo";
 
             // Filtrar por nombre de autor si no está vacío
             if (!string.IsNullOrEmpty(nroTema))
@@ -91,6 +96,8 @@ namespace WindowsFormsApp1.Consultas
                     {
                         sqlCommand.Parameters.AddWithValue("@fechaFiltro", fechaFiltro);
                     }
+
+                    sqlCommand.Parameters.AddWithValue("@grupo", Grupo);
 
                     // Ejecutar la consulta y cargar los resultados en un DataTable
                     MySqlDataAdapter dataAdapter = new MySqlDataAdapter(sqlCommand);

@@ -34,7 +34,7 @@
             this.btnConfirmarRegistro = new WindowsFormsApp1.PillButton();
             this.btnCancelarRegistro = new WindowsFormsApp1.PillButton();
             this.cmbTema = new System.Windows.Forms.ComboBox();
-            this.btnAgregarNuevaEditorial = new System.Windows.Forms.Button();
+            this.btnAgregarNuevoTema = new System.Windows.Forms.Button();
             this.lblTema = new System.Windows.Forms.Label();
             this.lblProyectosDeCatedra = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -48,7 +48,7 @@
             this.panel1.Controls.Add(this.btnConfirmarRegistro);
             this.panel1.Controls.Add(this.btnCancelarRegistro);
             this.panel1.Controls.Add(this.cmbTema);
-            this.panel1.Controls.Add(this.btnAgregarNuevaEditorial);
+            this.panel1.Controls.Add(this.btnAgregarNuevoTema);
             this.panel1.Controls.Add(this.lblTema);
             this.panel1.Location = new System.Drawing.Point(48, 92);
             this.panel1.Name = "panel1";
@@ -124,18 +124,18 @@
             this.cmbTema.Size = new System.Drawing.Size(403, 33);
             this.cmbTema.TabIndex = 13;
             // 
-            // btnAgregarNuevaEditorial
+            // btnAgregarNuevoTema
             // 
-            this.btnAgregarNuevaEditorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarNuevaEditorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.btnAgregarNuevaEditorial.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnAgregarNuevaEditorial.Location = new System.Drawing.Point(445, 79);
-            this.btnAgregarNuevaEditorial.Name = "btnAgregarNuevaEditorial";
-            this.btnAgregarNuevaEditorial.Size = new System.Drawing.Size(36, 33);
-            this.btnAgregarNuevaEditorial.TabIndex = 12;
-            this.btnAgregarNuevaEditorial.Text = "+";
-            this.btnAgregarNuevaEditorial.UseVisualStyleBackColor = true;
-            this.btnAgregarNuevaEditorial.Click += new System.EventHandler(this.btnAgregarNuevaEditorial_Click);
+            this.btnAgregarNuevoTema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarNuevoTema.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.btnAgregarNuevoTema.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnAgregarNuevoTema.Location = new System.Drawing.Point(445, 79);
+            this.btnAgregarNuevoTema.Name = "btnAgregarNuevoTema";
+            this.btnAgregarNuevoTema.Size = new System.Drawing.Size(36, 33);
+            this.btnAgregarNuevoTema.TabIndex = 12;
+            this.btnAgregarNuevoTema.Text = "+";
+            this.btnAgregarNuevoTema.UseVisualStyleBackColor = true;
+            this.btnAgregarNuevoTema.Click += new System.EventHandler(this.btnAgregarNuevoTema_Click);
             // 
             // lblTema
             // 
@@ -186,7 +186,7 @@
         private PillButton btnConfirmarRegistro;
         private PillButton btnCancelarRegistro;
         private System.Windows.Forms.ComboBox cmbTema;
-        private System.Windows.Forms.Button btnAgregarNuevaEditorial;
+        private System.Windows.Forms.Button btnAgregarNuevoTema;
         private System.Windows.Forms.Label lblTema;
         private System.Windows.Forms.Label lblProyectosDeCatedra;
         private System.Windows.Forms.ComboBox cmbIlustraciones;

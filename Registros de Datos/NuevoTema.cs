@@ -15,9 +15,11 @@ namespace WindowsFormsApp1.Registros_de_Datos
 {
     public partial class NuevoTema : Form
     {
-        public NuevoTema()
+        public string Grupo = string.Empty;
+        public NuevoTema(string grupo)
         {
             InitializeComponent();
+            Grupo = grupo;
         }
 
         private void btnCancelarRegistro_Click(object sender, EventArgs e)
@@ -41,7 +43,7 @@ namespace WindowsFormsApp1.Registros_de_Datos
 
             if (string.IsNullOrEmpty(numeroTema))
             {
-                MessageBox.Show("El campo 'NumerodeTema' es obligatorio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El campo 'NumeroDeTema' es obligatorio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -55,7 +57,7 @@ namespace WindowsFormsApp1.Registros_de_Datos
                     mySqlConnection.Open();
 
                     // Sentencia SQL para insertar datos
-                    var sentencia = "INSERT INTO temas (nombre, numeroTema) VALUES (@nombre, @numeroTema)";
+                    var sentencia = "INSERT INTO temas (nombre, numeroTema, grupo) VALUES (@nombre, @numeroTema, @grupo)";
 
                     // Crear el comando SQL
                     using (MySqlCommand sqlCommand = new MySqlCommand(sentencia, mySqlConnection))
@@ -64,6 +66,7 @@ namespace WindowsFormsApp1.Registros_de_Datos
                         sqlCommand.Parameters.AddWithValue("@nombre", nombre);
                         sqlCommand.Parameters.AddWithValue("@numeroTema", numeroTema);
                         sqlCommand.Parameters.AddWithValue(@"fechaRegistro", fechaRegistro);
+                        sqlCommand.Parameters.AddWithValue(@"grupo", Grupo);
 
 
                         // Ejecutar la inserción

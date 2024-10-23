@@ -27,9 +27,9 @@ namespace WindowsFormsApp1.Registros_de_Datos
             Close();
         }
 
-        private void btnAgregarNuevaEditorial_Click(object sender, EventArgs e)
+        private void btnAgregarNuevoTema_Click(object sender, EventArgs e)
         {
-            NuevoTema nuevoTema = new NuevoTema();
+            NuevoTema nuevoTema = new NuevoTema("Mapas");
             nuevoTema.ShowDialog(this);
         }
     }
