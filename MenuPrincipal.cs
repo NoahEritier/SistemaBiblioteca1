@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Busqueda en las combobox
+//Agregar idiomas, carreras, etc. a combobox
+//cambiar tipo de herramienta en cantidad de nuevo juego
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

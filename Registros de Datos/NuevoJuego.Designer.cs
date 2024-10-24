@@ -110,6 +110,7 @@
             this.btnConfirmarRegistro.TabIndex = 28;
             this.btnConfirmarRegistro.Text = "Aceptar";
             this.btnConfirmarRegistro.UseVisualStyleBackColor = false;
+            this.btnConfirmarRegistro.Click += new System.EventHandler(this.btnConfirmarRegistro_Click);
             // 
             // btnCancelarRegistro
             // 
@@ -167,7 +168,6 @@
             this.Name = "NuevoJuego";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NuevoJuego";
-            this.Load += new System.EventHandler(this.NuevoJuego_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

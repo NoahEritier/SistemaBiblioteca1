@@ -132,6 +132,7 @@
             this.btnBuscarJuego.TabIndex = 5;
             this.btnBuscarJuego.Text = "Buscar";
             this.btnBuscarJuego.UseVisualStyleBackColor = false;
+            this.btnBuscarJuego.Click += new System.EventHandler(this.btnBuscarJuego_Click);
             // 
             // cmbFiltroPeriodo
             // 

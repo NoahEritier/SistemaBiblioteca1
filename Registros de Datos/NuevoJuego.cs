@@ -22,7 +22,7 @@ namespace WindowsFormsApp1.Registros_de_Datos
             Close();
         }
 
-        private void NuevoJuego_Load(object sender, EventArgs e)
+        private void btnConfirmarRegistro_Click(object sender, EventArgs e)
         {
 
         }
