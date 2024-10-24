@@ -33,7 +33,8 @@ namespace WindowsFormsApp1
             // Filtrar por nombre de autor si no está vacío
             if (!string.IsNullOrEmpty(filtroAutor))
             {
-                consulta += " AND nombre LIKE @filtroAutor";
+                // Buscar coincidencia en nombre o apellido
+                consulta += " AND (nombre LIKE @filtroAutor OR apellido LIKE @filtroAutor)";
             }
 
             // Filtrar por nacionalidad si no está vacío

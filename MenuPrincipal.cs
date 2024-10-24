@@ -1,6 +1,6 @@
 ﻿//Busqueda en las combobox
 //Agregar idiomas, carreras, etc. a combobox
-//cambiar tipo de herramienta en cantidad de nuevo juego
+//FATAL ERROR EN BUSQUEDA DE JUEGOS
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

@@ -44,7 +44,7 @@ namespace WindowsFormsApp1.Consultas
             // Filtrar por nombre de autor si no está vacío
             if (!string.IsNullOrEmpty(filtroNombre))
             {
-                consulta += " AND nombre LIKE @filtroAutor";
+                consulta += " AND nombre LIKE @filtroNombre";
             }
 
 
@@ -109,7 +109,7 @@ namespace WindowsFormsApp1.Consultas
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error al filtrar los autores: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Error al filtrar los juegos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 finally
                 {
