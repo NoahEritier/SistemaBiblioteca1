@@ -42,10 +42,7 @@ namespace WindowsFormsApp1.Consultas
                     MySqlCommand sqlCommand = new MySqlCommand(consulta, mySqlConnection);
                     MySqlDataReader reader = sqlCommand.ExecuteReader();
 
-                    // Limpiar la ComboBox antes de agregar nuevos elementos
-                    cmbFiltroTema.Items.Clear();
-
-                    // Agregar una opción que represente "todos los temas"
+                    // Agregar "Todos los temas" como opción predeterminada
                     cmbFiltroTema.Items.Add("Todos los temas");
 
                     // Llenar la ComboBox con los nombres de los temas
@@ -54,10 +51,9 @@ namespace WindowsFormsApp1.Consultas
                         cmbFiltroTema.Items.Add(reader["nombre"].ToString());
                     }
 
-                    // Seleccionar "Todos los temas" por defecto
-                    cmbFiltroTema.SelectedIndex = 0;
-
                     reader.Close();
+
+                    cmbFiltroTema.SelectedIndex = 0; // Seleccionar "Todos los temas" como opción predeterminada
                 }
                 catch (Exception ex)
                 {
@@ -90,12 +86,6 @@ namespace WindowsFormsApp1.Consultas
             if (!string.IsNullOrEmpty(titulo))
             {
                 consulta += " AND nombre LIKE @titulo";
-            }
-
-            // Filtrar por el tema seleccionado si no es "Todos los temas"
-            if (!temaSeleccionado.Equals("Todos los temas"))
-            {
-                consulta += " AND tema = @tema";
             }
 
             // Filtrar por el periodo de tiempo en FechaRegistro
@@ -136,9 +126,11 @@ namespace WindowsFormsApp1.Consultas
                         sqlCommand.Parameters.AddWithValue("@titulo", "%" + titulo + "%"); // Agrega los comodines %
                     }
 
-                    if (!temaSeleccionado.Equals("Todos los temas"))
+                    // Solo filtrar por tema si se seleccionó uno distinto de "Todos los temas"
+                    if (cmbFiltroTema.SelectedIndex != 0) // "Todos los temas" es la primera opción
                     {
                         sqlCommand.Parameters.AddWithValue("@tema", temaSeleccionado);
+                        consulta += " AND tema = @tema"; // Asegúrate de agregar la condición para el tema en la consulta.
                     }
 
                     if (filtroPeriodo != "Cualquier momento")

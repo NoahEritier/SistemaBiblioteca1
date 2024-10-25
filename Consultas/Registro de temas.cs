@@ -39,19 +39,28 @@ namespace WindowsFormsApp1.Consultas
         private void btnBuscarTema_Click(object sender, EventArgs e)
         {
             // Obtener los valores de los filtros
-            string nroTema = txtFiltroNombreNroTema.Text.Trim();
+            string nombreNroTema = txtFiltroNombreNroTema.Text.Trim();
             string filtroPeriodo = cmbFiltroPeriodo.SelectedItem.ToString();
 
             // Construir la sentencia SQL dinámica
             string consulta = "SELECT Id, Nombre, NumeroTema FROM temas WHERE 1=1";
 
             // Filtrar por grupo
-            consulta += " AND grupo = @Grupo";
+            consulta += " AND grupo = @grupo";
 
-            // Filtrar por nombre de autor si no está vacío
-            if (!string.IsNullOrEmpty(nroTema))
+            // Verificar si el valor de nombreNroTema es numérico o texto
+            int numeroTema;
+            bool esNumero = int.TryParse(nombreNroTema, out numeroTema);
+
+            if (esNumero)
             {
-                consulta += " AND nroTema LIKE @nroTema";
+                // Si es numérico, aplicar coincidencia exacta en numeroTema
+                consulta += " AND numeroTema = @numeroTema";
+            }
+            else if (!string.IsNullOrEmpty(nombreNroTema))
+            {
+                // Si no es numérico, aplicar coincidencia parcial en nombre
+                consulta += " AND nombre LIKE @nombre";
             }
 
             // Filtrar por el periodo de tiempo en FechaRegistro
@@ -86,18 +95,22 @@ namespace WindowsFormsApp1.Consultas
                     // Crear el comando SQL con la consulta
                     MySqlCommand sqlCommand = new MySqlCommand(consulta, mySqlConnection);
 
-                    // Asignar valores a los parámetros si son necesarios
-                    if (!string.IsNullOrEmpty(nroTema))
+                    // Asignar valores a los parámetros según el tipo de valor ingresado en nombreNroTema
+                    sqlCommand.Parameters.AddWithValue("@grupo", Grupo);
+
+                    if (esNumero)
                     {
-                        sqlCommand.Parameters.AddWithValue("@nroTema", "%" + nroTema + "%"); // Agrega los comodines %
+                        sqlCommand.Parameters.AddWithValue("@numeroTema", numeroTema);
+                    }
+                    else if (!string.IsNullOrEmpty(nombreNroTema))
+                    {
+                        sqlCommand.Parameters.AddWithValue("@nombre", "%" + nombreNroTema + "%");
                     }
 
                     if (filtroPeriodo != "Cualquier momento")
                     {
                         sqlCommand.Parameters.AddWithValue("@fechaFiltro", fechaFiltro);
                     }
-
-                    sqlCommand.Parameters.AddWithValue("@grupo", Grupo);
 
                     // Ejecutar la consulta y cargar los resultados en un DataTable
                     MySqlDataAdapter dataAdapter = new MySqlDataAdapter(sqlCommand);
@@ -125,5 +138,6 @@ namespace WindowsFormsApp1.Consultas
                 }
             }
         }
+
     }
 }

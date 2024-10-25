@@ -70,7 +70,7 @@ namespace WindowsFormsApp1.Consultas
             }
             if (!string.IsNullOrEmpty(filtroTitulo))
             {
-                consulta += " AND (titulo LIKE @filtroTitulo)";
+                consulta += " AND titulo LIKE @filtroTitulo";
             }
 
             // Filtrar por el periodo de tiempo en FechaRegistro
@@ -112,7 +112,7 @@ namespace WindowsFormsApp1.Consultas
                     }
                     if (!string.IsNullOrEmpty(filtroTitulo))
                     {
-                        sqlCommand.Parameters.AddWithValue("@filtroTitullo", "%" + filtroTitulo + "%"); // Agrega los comodines %
+                        sqlCommand.Parameters.AddWithValue("@filtroTitulo", "%" + filtroTitulo + "%"); // Agrega los comodines %
                     }
                     if (filtroPeriodo != "Cualquier momento")
                     {

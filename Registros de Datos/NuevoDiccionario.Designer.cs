@@ -120,6 +120,7 @@
             this.cmbIdiomas.ItemHeight = 25;
             this.cmbIdiomas.Items.AddRange(new object[] {
             "Alemán",
+            "Chino",
             "Español",
             "Francés",
             "Inglés",

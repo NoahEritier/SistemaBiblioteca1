@@ -145,9 +145,9 @@
             this.cmbFiltroIdioma.FormattingEnabled = true;
             this.cmbFiltroIdioma.Items.AddRange(new object[] {
             "Español",
+            "Francés",
             "Inglés",
-            "Italiano",
-            "Francés"});
+            "Italiano"});
             this.cmbFiltroIdioma.Location = new System.Drawing.Point(54, 128);
             this.cmbFiltroIdioma.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbFiltroIdioma.Name = "cmbFiltroIdioma";
