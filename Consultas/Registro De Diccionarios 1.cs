@@ -23,5 +23,10 @@ namespace WindowsFormsApp1.Consultas
             NuevoDiccionario nuevoDiccionario = new NuevoDiccionario();
             nuevoDiccionario.ShowDialog(this);
         }
+
+        private void btnBuscarDiccionario_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -176,7 +176,7 @@
             this.btnNuevoDiccionario.Location = new System.Drawing.Point(151, 196);
             this.btnNuevoDiccionario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNuevoDiccionario.Name = "btnNuevoDiccionario";
-            this.btnNuevoDiccionario.Size = new System.Drawing.Size(245, 38);
+            this.btnNuevoDiccionario.Size = new System.Drawing.Size(204, 38);
             this.btnNuevoDiccionario.TabIndex = 6;
             this.btnNuevoDiccionario.Text = "+ Nuevo Diccionario";
             this.btnNuevoDiccionario.UseVisualStyleBackColor = false;
@@ -198,6 +198,7 @@
             this.btnBuscarDiccionario.TabIndex = 5;
             this.btnBuscarDiccionario.Text = "Buscar";
             this.btnBuscarDiccionario.UseVisualStyleBackColor = false;
+            this.btnBuscarDiccionario.Click += new System.EventHandler(this.btnBuscarDiccionario_Click);
             // 
             // lblDiccionariosRegistrados
             // 
