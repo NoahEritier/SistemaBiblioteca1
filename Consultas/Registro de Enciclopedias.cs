@@ -20,6 +20,8 @@ namespace WindowsFormsApp1.Consultas
             cmbFiltroPeriodo.Items.Add("Cualquier momento");
             cmbFiltroPeriodo.SelectedIndex = 3; // Por defecto: "Cualquier momento"
 
+
+            cmbFiltroIdioma.SelectedIndex = 0;
             // Llamar al método para cargar los temas en la ComboBox
             CargarTemas();
         }
@@ -78,6 +80,7 @@ namespace WindowsFormsApp1.Consultas
             string titulo = txtFiltroTituloEnciclopedia.Text.Trim();
             string filtroPeriodo = cmbFiltroPeriodo.SelectedItem.ToString();
             string temaSeleccionado = cmbFiltroTema.SelectedItem.ToString();
+            string filtroIdioma = cmbFiltroIdioma.SelectedItem.ToString();
 
             // Construir la sentencia SQL dinámica
             string consulta = "SELECT * FROM enciclopedias WHERE 1=1";
@@ -124,6 +127,12 @@ namespace WindowsFormsApp1.Consultas
                     if (!string.IsNullOrEmpty(titulo))
                     {
                         sqlCommand.Parameters.AddWithValue("@titulo", "%" + titulo + "%"); // Agrega los comodines %
+                    }
+
+                    if (filtroIdioma != "Cualquier idioma")
+                    {
+                        sqlCommand.Parameters.AddWithValue("@idioma", filtroIdioma);
+                        consulta += " AND idioma = @filtroIdioma";
                     }
 
                     // Solo filtrar por tema si se seleccionó uno distinto de "Todos los temas"

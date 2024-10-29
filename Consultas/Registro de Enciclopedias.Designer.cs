@@ -148,6 +148,7 @@
             this.cmbFiltroIdioma.ForeColor = System.Drawing.Color.Black;
             this.cmbFiltroIdioma.FormattingEnabled = true;
             this.cmbFiltroIdioma.Items.AddRange(new object[] {
+            "Cualquier idioma",
             "Español",
             "Francés",
             "Inglés",

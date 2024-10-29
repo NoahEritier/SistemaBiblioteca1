@@ -52,10 +52,10 @@
             this.panel1.Controls.Add(this.lblApellidoAutor);
             this.panel1.Controls.Add(this.txtNombreAutor);
             this.panel1.Controls.Add(this.lblNombreAutor);
-            this.panel1.Location = new System.Drawing.Point(35, 75);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(47, 92);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(847, 581);
+            this.panel1.Size = new System.Drawing.Size(1129, 627);
             this.panel1.TabIndex = 5;
             // 
             // btnCancelar
@@ -67,10 +67,10 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCancelar.Location = new System.Drawing.Point(31, 282);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelar.Location = new System.Drawing.Point(41, 347);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(95, 31);
+            this.btnCancelar.Size = new System.Drawing.Size(127, 38);
             this.btnCancelar.TabIndex = 31;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -85,10 +85,10 @@
             this.btnConfirmarRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmarRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmarRegistro.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnConfirmarRegistro.Location = new System.Drawing.Point(138, 282);
-            this.btnConfirmarRegistro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnConfirmarRegistro.Location = new System.Drawing.Point(184, 347);
+            this.btnConfirmarRegistro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConfirmarRegistro.Name = "btnConfirmarRegistro";
-            this.btnConfirmarRegistro.Size = new System.Drawing.Size(80, 31);
+            this.btnConfirmarRegistro.Size = new System.Drawing.Size(107, 38);
             this.btnConfirmarRegistro.TabIndex = 30;
             this.btnConfirmarRegistro.Text = "Aceptar";
             this.btnConfirmarRegistro.UseVisualStyleBackColor = false;
@@ -99,11 +99,11 @@
             this.txtNacionalidadAutor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNacionalidadAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtNacionalidadAutor.ForeColor = System.Drawing.Color.Black;
-            this.txtNacionalidadAutor.Location = new System.Drawing.Point(26, 220);
-            this.txtNacionalidadAutor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNacionalidadAutor.Location = new System.Drawing.Point(35, 271);
+            this.txtNacionalidadAutor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNacionalidadAutor.Multiline = true;
             this.txtNacionalidadAutor.Name = "txtNacionalidadAutor";
-            this.txtNacionalidadAutor.Size = new System.Drawing.Size(303, 34);
+            this.txtNacionalidadAutor.Size = new System.Drawing.Size(403, 41);
             this.txtNacionalidadAutor.TabIndex = 8;
             // 
             // lblNacionalidadAutor
@@ -111,10 +111,9 @@
             this.lblNacionalidadAutor.AutoSize = true;
             this.lblNacionalidadAutor.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblNacionalidadAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblNacionalidadAutor.Location = new System.Drawing.Point(27, 190);
-            this.lblNacionalidadAutor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNacionalidadAutor.Location = new System.Drawing.Point(36, 234);
             this.lblNacionalidadAutor.Name = "lblNacionalidadAutor";
-            this.lblNacionalidadAutor.Size = new System.Drawing.Size(93, 18);
+            this.lblNacionalidadAutor.Size = new System.Drawing.Size(120, 24);
             this.lblNacionalidadAutor.TabIndex = 7;
             this.lblNacionalidadAutor.Text = "Nacionalidad";
             this.lblNacionalidadAutor.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -124,11 +123,11 @@
             this.txtApellidoAutor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtApellidoAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtApellidoAutor.ForeColor = System.Drawing.Color.Black;
-            this.txtApellidoAutor.Location = new System.Drawing.Point(26, 146);
-            this.txtApellidoAutor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtApellidoAutor.Location = new System.Drawing.Point(35, 180);
+            this.txtApellidoAutor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtApellidoAutor.Multiline = true;
             this.txtApellidoAutor.Name = "txtApellidoAutor";
-            this.txtApellidoAutor.Size = new System.Drawing.Size(303, 34);
+            this.txtApellidoAutor.Size = new System.Drawing.Size(403, 41);
             this.txtApellidoAutor.TabIndex = 6;
             // 
             // lblApellidoAutor
@@ -136,10 +135,9 @@
             this.lblApellidoAutor.AutoSize = true;
             this.lblApellidoAutor.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblApellidoAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblApellidoAutor.Location = new System.Drawing.Point(27, 116);
-            this.lblApellidoAutor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblApellidoAutor.Location = new System.Drawing.Point(36, 143);
             this.lblApellidoAutor.Name = "lblApellidoAutor";
-            this.lblApellidoAutor.Size = new System.Drawing.Size(69, 18);
+            this.lblApellidoAutor.Size = new System.Drawing.Size(91, 24);
             this.lblApellidoAutor.TabIndex = 5;
             this.lblApellidoAutor.Text = "* Apellido";
             this.lblApellidoAutor.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -149,11 +147,11 @@
             this.txtNombreAutor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombreAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtNombreAutor.ForeColor = System.Drawing.Color.Black;
-            this.txtNombreAutor.Location = new System.Drawing.Point(26, 72);
-            this.txtNombreAutor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombreAutor.Location = new System.Drawing.Point(35, 89);
+            this.txtNombreAutor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombreAutor.Multiline = true;
             this.txtNombreAutor.Name = "txtNombreAutor";
-            this.txtNombreAutor.Size = new System.Drawing.Size(303, 34);
+            this.txtNombreAutor.Size = new System.Drawing.Size(403, 41);
             this.txtNombreAutor.TabIndex = 4;
             // 
             // lblNombreAutor
@@ -161,10 +159,9 @@
             this.lblNombreAutor.AutoSize = true;
             this.lblNombreAutor.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblNombreAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblNombreAutor.Location = new System.Drawing.Point(27, 42);
-            this.lblNombreAutor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNombreAutor.Location = new System.Drawing.Point(36, 52);
             this.lblNombreAutor.Name = "lblNombreAutor";
-            this.lblNombreAutor.Size = new System.Drawing.Size(72, 18);
+            this.lblNombreAutor.Size = new System.Drawing.Size(91, 24);
             this.lblNombreAutor.TabIndex = 2;
             this.lblNombreAutor.Text = "* Nombre";
             this.lblNombreAutor.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -173,24 +170,23 @@
             // 
             this.lblNuevoAutor.AutoSize = true;
             this.lblNuevoAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.lblNuevoAutor.Location = new System.Drawing.Point(70, 26);
-            this.lblNuevoAutor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNuevoAutor.Location = new System.Drawing.Point(93, 32);
             this.lblNuevoAutor.Name = "lblNuevoAutor";
-            this.lblNuevoAutor.Size = new System.Drawing.Size(133, 26);
+            this.lblNuevoAutor.Size = new System.Drawing.Size(165, 31);
             this.lblNuevoAutor.TabIndex = 4;
             this.lblNuevoAutor.Text = "Nuevo Autor";
             this.lblNuevoAutor.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // NuevoAutor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(919, 640);
+            this.ClientSize = new System.Drawing.Size(1225, 788);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblNuevoAutor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "NuevoAutor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NuevoAutor";

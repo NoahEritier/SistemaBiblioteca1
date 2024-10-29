@@ -26,5 +26,10 @@ namespace WindowsFormsApp1.Registros_de_Datos
         {
             Close();
         }
+
+        private void cmbCarreras_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
