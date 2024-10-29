@@ -1,6 +1,8 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -19,6 +21,12 @@ namespace WindowsFormsApp1.Consultas
         }
 
         private void btnNuevoProyecto_Click(object sender, EventArgs e)
+        {
+            NuevoProyectoDeCatedra nuevoProyectoDeCatedra = new NuevoProyectoDeCatedra();
+            nuevoProyectoDeCatedra.ShowDialog(this);
+        }
+
+        private void btnModificarProyectos_Click(object sender, EventArgs e)
         {
             NuevoProyectoDeCatedra nuevoProyectoDeCatedra = new NuevoProyectoDeCatedra();
             nuevoProyectoDeCatedra.ShowDialog(this);

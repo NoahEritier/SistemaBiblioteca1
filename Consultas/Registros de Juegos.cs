@@ -117,5 +117,58 @@ namespace WindowsFormsApp1.Consultas
                 }
             }
         }
+
+        private void btnModificarJuegos_Click(object sender, EventArgs e)
+        {
+            NuevoJuego nuevoJuego = new NuevoJuego();
+            nuevoJuego.ShowDialog(this);
+        }
+
+        private void btnEliminarJuegos_Click(object sender, EventArgs e)
+        {
+            // Verificar si hay una fila seleccionada en el DataGridView
+            if (dgvJuegos.SelectedRows.Count > 0)
+            {
+                // Obtener el ID del juego seleccionado (asumiendo que el ID está en la primera columna)
+                int idJuego = Convert.ToInt32(dgvJuegos.SelectedRows[0].Cells["Id"].Value);
+
+                // Confirmar la eliminación
+                if (MessageBox.Show("¿Estás seguro de que deseas eliminar este juego?", "Confirmar Eliminación", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    var stringConexion = ConfigurationManager.ConnectionStrings["MyDbContext"].ToString();
+                    using (MySqlConnection mySqlConnection = new MySqlConnection(stringConexion))
+                    {
+                        try
+                        {
+                            mySqlConnection.Open();
+
+                            // Crear el comando SQL para eliminar el juego
+                            string query = "DELETE FROM juegos WHERE Id = @Id";
+                            MySqlCommand sqlCommand = new MySqlCommand(query, mySqlConnection);
+                            sqlCommand.Parameters.AddWithValue("@Id", idJuego);
+
+                            // Ejecutar el comando
+                            sqlCommand.ExecuteNonQuery();
+                            MessageBox.Show("Juego eliminado exitosamente.");
+
+                            // Recargar la lista de juegos después de eliminar
+                            btnBuscarJuego_Click(sender, e); // Llama al método de búsqueda para actualizar la lista
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Error al eliminar el juego: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            mySqlConnection.Close();
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un juego para eliminar.");
+            }
+        }
     }
 }

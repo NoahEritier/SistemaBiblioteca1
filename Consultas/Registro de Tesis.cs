@@ -150,5 +150,57 @@ namespace WindowsFormsApp1.Consultas
             }
         }
 
+        private void btnModificarTesis_Click(object sender, EventArgs e)
+        {
+            NuevaTesis nuevaTesis = new NuevaTesis();
+            nuevaTesis.ShowDialog(this);
+        }
+
+        private void btnEliminarTesis_Click(object sender, EventArgs e)
+        {
+            // Verificar si hay una fila seleccionada en el DataGridView
+            if (dgvTesis.SelectedRows.Count > 0)
+            {
+                // Obtener el ID de la tesis seleccionada (asumiendo que el ID está en una columna llamada "Id")
+                int idTesis = Convert.ToInt32(dgvTesis.SelectedRows[0].Cells["Id"].Value);
+
+                // Confirmar la eliminación
+                if (MessageBox.Show("¿Estás seguro de que deseas eliminar esta tesis?", "Confirmar Eliminación", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    var stringConexion = ConfigurationManager.ConnectionStrings["MyDbContext"].ToString();
+                    using (MySqlConnection mySqlConnection = new MySqlConnection(stringConexion))
+                    {
+                        try
+                        {
+                            mySqlConnection.Open();
+
+                            // Crear el comando SQL para eliminar la tesis
+                            string query = "DELETE FROM tesis WHERE Id = @Id";
+                            MySqlCommand sqlCommand = new MySqlCommand(query, mySqlConnection);
+                            sqlCommand.Parameters.AddWithValue("@Id", idTesis);
+
+                            // Ejecutar el comando
+                            sqlCommand.ExecuteNonQuery();
+                            MessageBox.Show("Tesis eliminada exitosamente.");
+
+                            // Recargar la lista de tesis después de eliminar
+                            btnBuscarTesis_Click(sender, e); // Llama al método de búsqueda para actualizar la lista
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Error al eliminar la tesis: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            mySqlConnection.Close();
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una tesis para eliminar.");
+            }
+        }
     }
 }

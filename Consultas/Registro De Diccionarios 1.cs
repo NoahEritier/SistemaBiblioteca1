@@ -139,5 +139,58 @@ namespace WindowsFormsApp1.Consultas
                 }
             }
         }
+
+        private void btnModificarDiccionarios_Click(object sender, EventArgs e)
+        {
+            NuevoDiccionario nuevoDiccionario = new NuevoDiccionario();
+            nuevoDiccionario.ShowDialog(this);
+        }
+
+        private void btnEliminarDiccionarios_Click(object sender, EventArgs e)
+        {
+            // Verificar si hay una fila seleccionada en el DataGridView
+            if (dgvDiccionarios.SelectedRows.Count > 0)
+            {
+                // Obtener el ID del diccionario seleccionado (asumiendo que el ID está en la primera columna)
+                int idDiccionario = Convert.ToInt32(dgvDiccionarios.SelectedRows[0].Cells[0].Value);
+
+                // Confirmar la eliminación
+                if (MessageBox.Show("¿Estás seguro de que deseas eliminar este diccionario?", "Confirmar Eliminación", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    var stringConexion = ConfigurationManager.ConnectionStrings["MyDbContext"].ToString();
+                    using (MySqlConnection mySqlConnection = new MySqlConnection(stringConexion))
+                    {
+                        try
+                        {
+                            mySqlConnection.Open();
+
+                            // Crear el comando SQL para eliminar el diccionario
+                            string query = "DELETE FROM diccionarios WHERE Id = @Id"; // Asegúrate de que el nombre de la columna sea correcto
+                            MySqlCommand sqlCommand = new MySqlCommand(query, mySqlConnection);
+                            sqlCommand.Parameters.AddWithValue("@Id", idDiccionario);
+
+                            // Ejecutar el comando
+                            sqlCommand.ExecuteNonQuery();
+                            MessageBox.Show("Diccionario eliminado exitosamente.");
+
+                            // Recargar la lista de diccionarios después de eliminar
+                            btnBuscarDiccionario_Click(sender, e); // Llama a tu método de búsqueda para recargar
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Error al eliminar el diccionario: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            mySqlConnection.Close();
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un diccionario para eliminar.");
+            }
+        }
     }
 }

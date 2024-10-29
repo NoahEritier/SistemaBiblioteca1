@@ -123,5 +123,58 @@ namespace WindowsFormsApp1
             NuevoAutor nuevoAutor = new NuevoAutor();
             nuevoAutor.ShowDialog(this);
         }
+
+        private void btnModificarAutores_Click(object sender, EventArgs e)
+        {
+            NuevoAutor nuevoAutor = new NuevoAutor();
+            nuevoAutor.ShowDialog(this);
+        }
+
+        private void btnEliminarAutores_Click(object sender, EventArgs e)
+        {
+            // Verificar si hay una fila seleccionada en el DataGridView
+            if (dgvAutores.SelectedRows.Count > 0)
+            {
+                // Obtener el ID del autor seleccionado (asumiendo que el ID está en la primera columna)
+                int idAutor = Convert.ToInt32(dgvAutores.SelectedRows[0].Cells[0].Value);
+
+                // Confirmar la eliminación
+                if (MessageBox.Show("¿Estás seguro de que deseas eliminar este autor?", "Confirmar Eliminación", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    var stringConexion = ConfigurationManager.ConnectionStrings["MyDbContext"].ToString();
+                    using (MySqlConnection mySqlConnection = new MySqlConnection(stringConexion))
+                    {
+                        try
+                        {
+                            mySqlConnection.Open();
+
+                            // Crear el comando SQL para eliminar el autor
+                            string query = "DELETE FROM autores WHERE Id = @Id"; // Asegúrate de que el nombre de la columna sea correcto
+                            MySqlCommand sqlCommand = new MySqlCommand(query, mySqlConnection);
+                            sqlCommand.Parameters.AddWithValue("@Id", idAutor);
+
+                            // Ejecutar el comando
+                            sqlCommand.ExecuteNonQuery();
+                            MessageBox.Show("Autor eliminado exitosamente.");
+
+                            // Recargar la lista de autores después de eliminar
+                            btnBuscarAutor_Click(sender, e); // Llama a tu método de búsqueda para recargar
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Error al eliminar el autor: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            mySqlConnection.Close();
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un autor para eliminar.");
+            }
+        }
     }
 }

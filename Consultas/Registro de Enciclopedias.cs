@@ -164,5 +164,58 @@ namespace WindowsFormsApp1.Consultas
                 }
             }
         }
+
+        private void btnModificarEnciclopedias_Click(object sender, EventArgs e)
+        {
+            NuevaEnciclopedia nuevaEnciclopedia = new NuevaEnciclopedia();
+            nuevaEnciclopedia.ShowDialog(this);
+        }
+
+        private void btnEliminarEnciclopedias_Click(object sender, EventArgs e)
+        {
+            // Verificar si hay una fila seleccionada en el DataGridView
+            if (dgvEnciclopedia.SelectedRows.Count > 0)
+            {
+                // Obtener el ID de la enciclopedia seleccionada (asumiendo que el ID está en la primera columna)
+                int idEnciclopedia = Convert.ToInt32(dgvEnciclopedia.SelectedRows[0].Cells[0].Value);
+
+                // Confirmar la eliminación
+                if (MessageBox.Show("¿Estás seguro de que deseas eliminar esta enciclopedia?", "Confirmar Eliminación", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    var stringConexion = ConfigurationManager.ConnectionStrings["MyDbContext"].ToString();
+                    using (MySqlConnection mySqlConnection = new MySqlConnection(stringConexion))
+                    {
+                        try
+                        {
+                            mySqlConnection.Open();
+
+                            // Crear el comando SQL para eliminar la enciclopedia
+                            string query = "DELETE FROM enciclopedias WHERE Id = @Id"; // Asegúrate de que el nombre de la columna sea correcto
+                            MySqlCommand sqlCommand = new MySqlCommand(query, mySqlConnection);
+                            sqlCommand.Parameters.AddWithValue("@Id", idEnciclopedia);
+
+                            // Ejecutar el comando
+                            sqlCommand.ExecuteNonQuery();
+                            MessageBox.Show("Enciclopedia eliminada exitosamente.");
+
+                            // Recargar la lista de enciclopedias después de eliminar
+                            btnBuscarEnciclopedia_Click(sender, e); // Llama a tu método de búsqueda para recargar
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Error al eliminar la enciclopedia: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            mySqlConnection.Close();
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una enciclopedia para eliminar.");
+            }
+        }
     }
 }

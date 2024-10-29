@@ -139,5 +139,57 @@ namespace WindowsFormsApp1.Consultas
             }
         }
 
+        private void btnModificarTemas_Click(object sender, EventArgs e)
+        {
+            NuevoTema nuevoTema = new NuevoTema(Grupo);
+            nuevoTema.ShowDialog(this);
+        }
+
+        private void btnEliminarTemas_Click(object sender, EventArgs e)
+        {
+            // Verificar si hay una fila seleccionada en el DataGridView
+            if (dgvTemas.SelectedRows.Count > 0)
+            {
+                // Obtener el ID del tema seleccionado (asumiendo que el ID está en la primera columna)
+                int idTema = Convert.ToInt32(dgvTemas.SelectedRows[0].Cells["Id"].Value);
+
+                // Confirmar la eliminación
+                if (MessageBox.Show("¿Estás seguro de que deseas eliminar este tema?", "Confirmar Eliminación", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    var stringConexion = ConfigurationManager.ConnectionStrings["MyDbContext"].ToString();
+                    using (MySqlConnection mySqlConnection = new MySqlConnection(stringConexion))
+                    {
+                        try
+                        {
+                            mySqlConnection.Open();
+
+                            // Crear el comando SQL para eliminar el tema
+                            string query = "DELETE FROM temas WHERE Id = @Id";
+                            MySqlCommand sqlCommand = new MySqlCommand(query, mySqlConnection);
+                            sqlCommand.Parameters.AddWithValue("@Id", idTema);
+
+                            // Ejecutar el comando
+                            sqlCommand.ExecuteNonQuery();
+                            MessageBox.Show("Tema eliminado exitosamente.");
+
+                            // Recargar la lista de temas después de eliminar
+                            btnBuscarTema_Click(sender, e); // Llama al método de búsqueda para actualizar la lista
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Error al eliminar el tema: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            mySqlConnection.Close();
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un tema para eliminar.");
+            }
+        }
     }
 }

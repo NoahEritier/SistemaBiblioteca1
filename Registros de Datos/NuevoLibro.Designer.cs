@@ -79,7 +79,7 @@
             this.panel1.Controls.Add(this.lblAutor);
             this.panel1.Controls.Add(this.lblTitulo);
             this.panel1.Location = new System.Drawing.Point(36, 70);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(847, 620);
             this.panel1.TabIndex = 3;
@@ -90,7 +90,7 @@
             this.txtEdicion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtEdicion.ForeColor = System.Drawing.Color.Black;
             this.txtEdicion.Location = new System.Drawing.Point(27, 219);
-            this.txtEdicion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEdicion.Margin = new System.Windows.Forms.Padding(2);
             this.txtEdicion.Multiline = true;
             this.txtEdicion.Name = "txtEdicion";
             this.txtEdicion.Size = new System.Drawing.Size(70, 34);
@@ -119,7 +119,7 @@
             this.btnConfirmarRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmarRegistro.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnConfirmarRegistro.Location = new System.Drawing.Point(138, 565);
-            this.btnConfirmarRegistro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnConfirmarRegistro.Margin = new System.Windows.Forms.Padding(2);
             this.btnConfirmarRegistro.Name = "btnConfirmarRegistro";
             this.btnConfirmarRegistro.Size = new System.Drawing.Size(80, 31);
             this.btnConfirmarRegistro.TabIndex = 28;
@@ -137,7 +137,7 @@
             this.btnCancelarRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarRegistro.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnCancelarRegistro.Location = new System.Drawing.Point(31, 565);
-            this.btnCancelarRegistro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelarRegistro.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelarRegistro.Name = "btnCancelarRegistro";
             this.btnCancelarRegistro.Size = new System.Drawing.Size(95, 31);
             this.btnCancelarRegistro.TabIndex = 27;
@@ -151,7 +151,7 @@
             this.txtPalabrasClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtPalabrasClave.ForeColor = System.Drawing.Color.Black;
             this.txtPalabrasClave.Location = new System.Drawing.Point(27, 498);
-            this.txtPalabrasClave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPalabrasClave.Margin = new System.Windows.Forms.Padding(2);
             this.txtPalabrasClave.Multiline = true;
             this.txtPalabrasClave.Name = "txtPalabrasClave";
             this.txtPalabrasClave.Size = new System.Drawing.Size(595, 34);
@@ -176,7 +176,7 @@
             this.txtResumen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtResumen.ForeColor = System.Drawing.Color.Black;
             this.txtResumen.Location = new System.Drawing.Point(27, 394);
-            this.txtResumen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtResumen.Margin = new System.Windows.Forms.Padding(2);
             this.txtResumen.Multiline = true;
             this.txtResumen.Name = "txtResumen";
             this.txtResumen.Size = new System.Drawing.Size(792, 75);
@@ -202,7 +202,7 @@
             this.cmbNiveles.FormattingEnabled = true;
             this.cmbNiveles.ItemHeight = 20;
             this.cmbNiveles.Location = new System.Drawing.Point(27, 338);
-            this.cmbNiveles.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbNiveles.Margin = new System.Windows.Forms.Padding(2);
             this.cmbNiveles.Name = "cmbNiveles";
             this.cmbNiveles.Size = new System.Drawing.Size(303, 28);
             this.cmbNiveles.TabIndex = 19;
@@ -227,7 +227,7 @@
             this.cmbTemas.FormattingEnabled = true;
             this.cmbTemas.ItemHeight = 20;
             this.cmbTemas.Location = new System.Drawing.Point(27, 282);
-            this.cmbTemas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbTemas.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTemas.Name = "cmbTemas";
             this.cmbTemas.Size = new System.Drawing.Size(303, 28);
             this.cmbTemas.TabIndex = 16;
@@ -238,7 +238,7 @@
             this.btnAgregarNuevoTema.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.btnAgregarNuevoTema.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnAgregarNuevoTema.Location = new System.Drawing.Point(333, 282);
-            this.btnAgregarNuevoTema.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregarNuevoTema.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarNuevoTema.Name = "btnAgregarNuevoTema";
             this.btnAgregarNuevoTema.Size = new System.Drawing.Size(27, 27);
             this.btnAgregarNuevoTema.TabIndex = 15;
@@ -266,7 +266,7 @@
             this.cmbEditoriales.FormattingEnabled = true;
             this.cmbEditoriales.ItemHeight = 20;
             this.cmbEditoriales.Location = new System.Drawing.Point(26, 163);
-            this.cmbEditoriales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbEditoriales.Margin = new System.Windows.Forms.Padding(2);
             this.cmbEditoriales.Name = "cmbEditoriales";
             this.cmbEditoriales.Size = new System.Drawing.Size(303, 28);
             this.cmbEditoriales.TabIndex = 13;
@@ -277,7 +277,7 @@
             this.btnAgregarNuevaEditorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.btnAgregarNuevaEditorial.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnAgregarNuevaEditorial.Location = new System.Drawing.Point(333, 163);
-            this.btnAgregarNuevaEditorial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregarNuevaEditorial.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarNuevaEditorial.Name = "btnAgregarNuevaEditorial";
             this.btnAgregarNuevaEditorial.Size = new System.Drawing.Size(27, 27);
             this.btnAgregarNuevaEditorial.TabIndex = 12;
@@ -305,7 +305,7 @@
             this.cmbAutores.FormattingEnabled = true;
             this.cmbAutores.ItemHeight = 20;
             this.cmbAutores.Location = new System.Drawing.Point(26, 107);
-            this.cmbAutores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbAutores.Margin = new System.Windows.Forms.Padding(2);
             this.cmbAutores.Name = "cmbAutores";
             this.cmbAutores.Size = new System.Drawing.Size(303, 28);
             this.cmbAutores.TabIndex = 10;
@@ -316,7 +316,7 @@
             this.btnAgregarNuevoAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.btnAgregarNuevoAutor.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnAgregarNuevoAutor.Location = new System.Drawing.Point(333, 107);
-            this.btnAgregarNuevoAutor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregarNuevoAutor.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarNuevoAutor.Name = "btnAgregarNuevoAutor";
             this.btnAgregarNuevoAutor.Size = new System.Drawing.Size(27, 27);
             this.btnAgregarNuevoAutor.TabIndex = 9;
@@ -330,7 +330,7 @@
             this.txtTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtTitulo.ForeColor = System.Drawing.Color.Black;
             this.txtTitulo.Location = new System.Drawing.Point(26, 45);
-            this.txtTitulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTitulo.Margin = new System.Windows.Forms.Padding(2);
             this.txtTitulo.Multiline = true;
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(595, 34);
@@ -379,11 +379,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(919, 640);
+            this.ClientSize = new System.Drawing.Size(919, 731);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblNuevoLibro);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "NuevoLibro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NuevoLibro";

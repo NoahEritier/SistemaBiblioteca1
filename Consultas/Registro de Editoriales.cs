@@ -119,5 +119,58 @@ namespace WindowsFormsApp1.Consultas
             NuevaEditorial nuevaEditorial = new NuevaEditorial();
             nuevaEditorial.ShowDialog(this);
         }
+
+        private void btnModificarEditoriales_Click(object sender, EventArgs e)
+        {
+            NuevaEditorial nuevaEditorial = new NuevaEditorial();
+            nuevaEditorial.ShowDialog(this);
+        }
+
+        private void btnEliminarEditoriales_Click(object sender, EventArgs e)
+        {
+            // Verificar si hay una fila seleccionada en el DataGridView
+            if (dgvEditoriales.SelectedRows.Count > 0)
+            {
+                // Obtener el ID de la editorial seleccionada (asumiendo que el ID está en la primera columna)
+                int idEditorial = Convert.ToInt32(dgvEditoriales.SelectedRows[0].Cells[0].Value);
+
+                // Confirmar la eliminación
+                if (MessageBox.Show("¿Estás seguro de que deseas eliminar esta editorial?", "Confirmar Eliminación", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    var stringConexion = ConfigurationManager.ConnectionStrings["MyDbContext"].ToString();
+                    using (MySqlConnection mySqlConnection = new MySqlConnection(stringConexion))
+                    {
+                        try
+                        {
+                            mySqlConnection.Open();
+
+                            // Crear el comando SQL para eliminar la editorial
+                            string query = "DELETE FROM editoriales WHERE Id = @Id"; // Asegúrate de que el nombre de la columna sea correcto
+                            MySqlCommand sqlCommand = new MySqlCommand(query, mySqlConnection);
+                            sqlCommand.Parameters.AddWithValue("@Id", idEditorial);
+
+                            // Ejecutar el comando
+                            sqlCommand.ExecuteNonQuery();
+                            MessageBox.Show("Editorial eliminada exitosamente.");
+
+                            // Recargar la lista de editoriales después de eliminar
+                            btnBuscarEditorial_Click(sender, e); // Llama a tu método de búsqueda para recargar
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Error al eliminar la editorial: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            mySqlConnection.Close();
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una editorial para eliminar.");
+            }
+        }
     }
 }

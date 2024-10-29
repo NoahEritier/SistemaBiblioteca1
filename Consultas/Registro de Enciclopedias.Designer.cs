@@ -63,10 +63,10 @@
             this.panel1.Controls.Add(this.txtFiltroTituloEnciclopedia);
             this.panel1.Controls.Add(this.lblFiltroTema);
             this.panel1.Controls.Add(this.lblFiltroTituloEnciclopedia);
-            this.panel1.Location = new System.Drawing.Point(48, 98);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(36, 80);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1129, 826);
+            this.panel1.Size = new System.Drawing.Size(847, 671);
             this.panel1.TabIndex = 9;
             // 
             // btnEliminarEnciclopedias
@@ -78,13 +78,14 @@
             this.btnEliminarEnciclopedias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarEnciclopedias.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarEnciclopedias.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEliminarEnciclopedias.Location = new System.Drawing.Point(886, 308);
-            this.btnEliminarEnciclopedias.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEliminarEnciclopedias.Location = new System.Drawing.Point(664, 250);
+            this.btnEliminarEnciclopedias.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarEnciclopedias.Name = "btnEliminarEnciclopedias";
-            this.btnEliminarEnciclopedias.Size = new System.Drawing.Size(101, 38);
+            this.btnEliminarEnciclopedias.Size = new System.Drawing.Size(76, 31);
             this.btnEliminarEnciclopedias.TabIndex = 13;
             this.btnEliminarEnciclopedias.Text = "Eliminar";
             this.btnEliminarEnciclopedias.UseVisualStyleBackColor = false;
+            this.btnEliminarEnciclopedias.Click += new System.EventHandler(this.btnEliminarEnciclopedias_Click);
             // 
             // btnModificarEnciclopedias
             // 
@@ -95,23 +96,24 @@
             this.btnModificarEnciclopedias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificarEnciclopedias.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarEnciclopedias.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnModificarEnciclopedias.Location = new System.Drawing.Point(771, 308);
-            this.btnModificarEnciclopedias.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnModificarEnciclopedias.Location = new System.Drawing.Point(578, 250);
+            this.btnModificarEnciclopedias.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificarEnciclopedias.Name = "btnModificarEnciclopedias";
-            this.btnModificarEnciclopedias.Size = new System.Drawing.Size(109, 38);
+            this.btnModificarEnciclopedias.Size = new System.Drawing.Size(82, 31);
             this.btnModificarEnciclopedias.TabIndex = 12;
             this.btnModificarEnciclopedias.Text = "Modificar";
             this.btnModificarEnciclopedias.UseVisualStyleBackColor = false;
+            this.btnModificarEnciclopedias.Click += new System.EventHandler(this.btnModificarEnciclopedias_Click);
             // 
             // cmbFiltroPeriodo
             // 
             this.cmbFiltroPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cmbFiltroPeriodo.ForeColor = System.Drawing.Color.Black;
             this.cmbFiltroPeriodo.FormattingEnabled = true;
-            this.cmbFiltroPeriodo.Location = new System.Drawing.Point(54, 254);
-            this.cmbFiltroPeriodo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbFiltroPeriodo.Location = new System.Drawing.Point(40, 206);
+            this.cmbFiltroPeriodo.Margin = new System.Windows.Forms.Padding(2);
             this.cmbFiltroPeriodo.Name = "cmbFiltroPeriodo";
-            this.cmbFiltroPeriodo.Size = new System.Drawing.Size(337, 33);
+            this.cmbFiltroPeriodo.Size = new System.Drawing.Size(254, 28);
             this.cmbFiltroPeriodo.TabIndex = 10;
             // 
             // lblPeriodoTema
@@ -119,9 +121,10 @@
             this.lblPeriodoTema.AutoSize = true;
             this.lblPeriodoTema.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblPeriodoTema.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblPeriodoTema.Location = new System.Drawing.Point(54, 227);
+            this.lblPeriodoTema.Location = new System.Drawing.Point(40, 184);
+            this.lblPeriodoTema.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPeriodoTema.Name = "lblPeriodoTema";
-            this.lblPeriodoTema.Size = new System.Drawing.Size(76, 24);
+            this.lblPeriodoTema.Size = new System.Drawing.Size(60, 18);
             this.lblPeriodoTema.TabIndex = 11;
             this.lblPeriodoTema.Text = "Periodo";
             this.lblPeriodoTema.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -131,9 +134,10 @@
             this.lblIdioma.AutoSize = true;
             this.lblIdioma.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblIdioma.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblIdioma.Location = new System.Drawing.Point(54, 101);
+            this.lblIdioma.Location = new System.Drawing.Point(40, 82);
+            this.lblIdioma.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblIdioma.Name = "lblIdioma";
-            this.lblIdioma.Size = new System.Drawing.Size(66, 24);
+            this.lblIdioma.Size = new System.Drawing.Size(52, 18);
             this.lblIdioma.TabIndex = 9;
             this.lblIdioma.Text = "Idioma";
             this.lblIdioma.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -148,10 +152,10 @@
             "Francés",
             "Inglés",
             "Italiano"});
-            this.cmbFiltroIdioma.Location = new System.Drawing.Point(54, 128);
-            this.cmbFiltroIdioma.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbFiltroIdioma.Location = new System.Drawing.Point(40, 104);
+            this.cmbFiltroIdioma.Margin = new System.Windows.Forms.Padding(2);
             this.cmbFiltroIdioma.Name = "cmbFiltroIdioma";
-            this.cmbFiltroIdioma.Size = new System.Drawing.Size(337, 33);
+            this.cmbFiltroIdioma.Size = new System.Drawing.Size(254, 28);
             this.cmbFiltroIdioma.TabIndex = 8;
             // 
             // dgvEnciclopedia
@@ -160,13 +164,13 @@
             this.dgvEnciclopedia.AllowUserToDeleteRows = false;
             this.dgvEnciclopedia.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEnciclopedia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEnciclopedia.Location = new System.Drawing.Point(29, 368);
-            this.dgvEnciclopedia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvEnciclopedia.Location = new System.Drawing.Point(22, 299);
+            this.dgvEnciclopedia.Margin = new System.Windows.Forms.Padding(2);
             this.dgvEnciclopedia.Name = "dgvEnciclopedia";
             this.dgvEnciclopedia.ReadOnly = true;
             this.dgvEnciclopedia.RowHeadersWidth = 51;
             this.dgvEnciclopedia.RowTemplate.Height = 24;
-            this.dgvEnciclopedia.Size = new System.Drawing.Size(968, 429);
+            this.dgvEnciclopedia.Size = new System.Drawing.Size(726, 349);
             this.dgvEnciclopedia.TabIndex = 7;
             // 
             // btnNuevaEnciclopedia
@@ -178,10 +182,10 @@
             this.btnNuevaEnciclopedia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevaEnciclopedia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevaEnciclopedia.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnNuevaEnciclopedia.Location = new System.Drawing.Point(150, 308);
-            this.btnNuevaEnciclopedia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNuevaEnciclopedia.Location = new System.Drawing.Point(112, 250);
+            this.btnNuevaEnciclopedia.Margin = new System.Windows.Forms.Padding(2);
             this.btnNuevaEnciclopedia.Name = "btnNuevaEnciclopedia";
-            this.btnNuevaEnciclopedia.Size = new System.Drawing.Size(243, 38);
+            this.btnNuevaEnciclopedia.Size = new System.Drawing.Size(182, 31);
             this.btnNuevaEnciclopedia.TabIndex = 6;
             this.btnNuevaEnciclopedia.Text = "+ Nueva Enciclopedia";
             this.btnNuevaEnciclopedia.UseVisualStyleBackColor = false;
@@ -196,10 +200,10 @@
             this.btnBuscarEnciclopedia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarEnciclopedia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarEnciclopedia.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnBuscarEnciclopedia.Location = new System.Drawing.Point(43, 308);
-            this.btnBuscarEnciclopedia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBuscarEnciclopedia.Location = new System.Drawing.Point(32, 250);
+            this.btnBuscarEnciclopedia.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscarEnciclopedia.Name = "btnBuscarEnciclopedia";
-            this.btnBuscarEnciclopedia.Size = new System.Drawing.Size(101, 38);
+            this.btnBuscarEnciclopedia.Size = new System.Drawing.Size(76, 31);
             this.btnBuscarEnciclopedia.TabIndex = 5;
             this.btnBuscarEnciclopedia.Text = "Buscar";
             this.btnBuscarEnciclopedia.UseVisualStyleBackColor = false;
@@ -210,10 +214,10 @@
             this.cmbFiltroTema.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cmbFiltroTema.ForeColor = System.Drawing.Color.Black;
             this.cmbFiltroTema.FormattingEnabled = true;
-            this.cmbFiltroTema.Location = new System.Drawing.Point(54, 191);
-            this.cmbFiltroTema.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbFiltroTema.Location = new System.Drawing.Point(40, 155);
+            this.cmbFiltroTema.Margin = new System.Windows.Forms.Padding(2);
             this.cmbFiltroTema.Name = "cmbFiltroTema";
-            this.cmbFiltroTema.Size = new System.Drawing.Size(337, 33);
+            this.cmbFiltroTema.Size = new System.Drawing.Size(254, 28);
             this.cmbFiltroTema.TabIndex = 2;
             // 
             // txtFiltroTituloEnciclopedia
@@ -221,11 +225,11 @@
             this.txtFiltroTituloEnciclopedia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFiltroTituloEnciclopedia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtFiltroTituloEnciclopedia.ForeColor = System.Drawing.Color.Black;
-            this.txtFiltroTituloEnciclopedia.Location = new System.Drawing.Point(54, 57);
-            this.txtFiltroTituloEnciclopedia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtFiltroTituloEnciclopedia.Location = new System.Drawing.Point(40, 46);
+            this.txtFiltroTituloEnciclopedia.Margin = new System.Windows.Forms.Padding(2);
             this.txtFiltroTituloEnciclopedia.Multiline = true;
             this.txtFiltroTituloEnciclopedia.Name = "txtFiltroTituloEnciclopedia";
-            this.txtFiltroTituloEnciclopedia.Size = new System.Drawing.Size(501, 41);
+            this.txtFiltroTituloEnciclopedia.Size = new System.Drawing.Size(376, 34);
             this.txtFiltroTituloEnciclopedia.TabIndex = 4;
             // 
             // lblFiltroTema
@@ -233,9 +237,10 @@
             this.lblFiltroTema.AutoSize = true;
             this.lblFiltroTema.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblFiltroTema.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblFiltroTema.Location = new System.Drawing.Point(54, 164);
+            this.lblFiltroTema.Location = new System.Drawing.Point(40, 133);
+            this.lblFiltroTema.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFiltroTema.Name = "lblFiltroTema";
-            this.lblFiltroTema.Size = new System.Drawing.Size(59, 24);
+            this.lblFiltroTema.Size = new System.Drawing.Size(46, 18);
             this.lblFiltroTema.TabIndex = 3;
             this.lblFiltroTema.Text = "Tema";
             this.lblFiltroTema.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -245,9 +250,10 @@
             this.lblFiltroTituloEnciclopedia.AutoSize = true;
             this.lblFiltroTituloEnciclopedia.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblFiltroTituloEnciclopedia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblFiltroTituloEnciclopedia.Location = new System.Drawing.Point(54, 30);
+            this.lblFiltroTituloEnciclopedia.Location = new System.Drawing.Point(40, 24);
+            this.lblFiltroTituloEnciclopedia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFiltroTituloEnciclopedia.Name = "lblFiltroTituloEnciclopedia";
-            this.lblFiltroTituloEnciclopedia.Size = new System.Drawing.Size(56, 24);
+            this.lblFiltroTituloEnciclopedia.Size = new System.Drawing.Size(44, 18);
             this.lblFiltroTituloEnciclopedia.TabIndex = 2;
             this.lblFiltroTituloEnciclopedia.Text = "Titulo";
             this.lblFiltroTituloEnciclopedia.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -256,23 +262,24 @@
             // 
             this.lblEnciclopediasRegistradas.AutoSize = true;
             this.lblEnciclopediasRegistradas.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.lblEnciclopediasRegistradas.Location = new System.Drawing.Point(100, 44);
+            this.lblEnciclopediasRegistradas.Location = new System.Drawing.Point(75, 36);
+            this.lblEnciclopediasRegistradas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEnciclopediasRegistradas.Name = "lblEnciclopediasRegistradas";
-            this.lblEnciclopediasRegistradas.Size = new System.Drawing.Size(335, 31);
+            this.lblEnciclopediasRegistradas.Size = new System.Drawing.Size(269, 26);
             this.lblEnciclopediasRegistradas.TabIndex = 8;
             this.lblEnciclopediasRegistradas.Text = "Enciclopedias Registradas";
             this.lblEnciclopediasRegistradas.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Registro_de_Diccionarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1225, 944);
+            this.ClientSize = new System.Drawing.Size(919, 640);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblEnciclopediasRegistradas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Registro_de_Diccionarios";
             this.Text = "Registro_de_Diccionarios";
             this.panel1.ResumeLayout(false);
