@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -18,85 +19,8 @@ namespace WindowsFormsApp1.Consultas
         public Registros_de_Mapas()
         {
             InitializeComponent();
-            CargarMapas();
         }
 
-        private void CargarMapas()
-        {
-            var stringConexion = ConfigurationManager.ConnectionStrings["MyDbContext"].ToString();
-            using (SqlConnection sqlConnection = new SqlConnection(stringConexion))
-            {
-                try
-                {
-                    sqlConnection.Open();
-
-                    // Crear el comando SQL para seleccionar todos los mapas
-                    string consulta = "SELECT * FROM mapas";
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter(consulta, sqlConnection);
-                    DataTable dataTable = new DataTable();
-                    dataAdapter.Fill(dataTable);
-
-                    // Asignar el DataTable como fuente de datos del DataGridView
-                    dgvMapas.AutoGenerateColumns = true;  // Asegura que se generen columnas automáticamente
-                    dgvMapas.DataSource = dataTable;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error al cargar los mapas: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
-        private void btnBuscarMapa_Click(object sender, EventArgs e)
-        {
-            // Obtener el valor de filtro desde el TextBox
-            string filtroNombre = txtFiltroTema.Text.Trim();
-
-            var stringConexion = ConfigurationManager.ConnectionStrings["MyDbContext"].ToString();
-            using (SqlConnection sqlConnection = new SqlConnection(stringConexion))
-            {
-                try
-                {
-                    sqlConnection.Open();
-
-                    // Crear la consulta SQL con filtro por nombre, si está especificado
-                    string consulta = "SELECT * FROM mapas WHERE 1=1";
-
-                    if (!string.IsNullOrEmpty(filtroNombre))
-                    {
-                        consulta += " AND nombre LIKE @filtroNombre";
-                    }
-
-                    // Crear el comando SQL y agregar parámetros si es necesario
-                    SqlCommand sqlCommand = new SqlCommand(consulta, sqlConnection);
-
-                    if (!string.IsNullOrEmpty(filtroNombre))
-                    {
-                        sqlCommand.Parameters.AddWithValue("@filtroNombre", "%" + filtroNombre + "%");
-                    }
-
-                    // Ejecutar la consulta y cargar los resultados en un DataTable
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlCommand);
-                    DataTable dataTable = new DataTable();
-                    dataAdapter.Fill(dataTable);
-
-                    // Verificar si hay datos y asignarlos al DataGridView
-                    if (dataTable.Rows.Count > 0)
-                    {
-                        dgvMapas.AutoGenerateColumns = true;  // Asegura que se generen columnas automáticamente
-                        dgvMapas.DataSource = dataTable;
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se encontraron resultados.");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error al buscar mapas: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
 
         private void btnNuevoMapa_Click(object sender, EventArgs e)
         {
@@ -138,8 +62,6 @@ namespace WindowsFormsApp1.Consultas
                             sqlCommand.ExecuteNonQuery();
                             MessageBox.Show("Mapa eliminado exitosamente.");
 
-                            // Recargar la lista de mapas después de eliminar
-                            btnBuscarMapa_Click(sender, e); // Llama al método de búsqueda para actualizar la lista
                         }
                         catch (Exception ex)
                         {

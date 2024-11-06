@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1.Registros_de_Datos
+﻿namespace WindowsFormsApp1
 {
     partial class NuevoProyectoDeCatedra
     {
@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtAño = new System.Windows.Forms.TextBox();
+            this.txtProfesor = new System.Windows.Forms.TextBox();
+            this.lblProfesor = new System.Windows.Forms.Label();
+            this.cmbMaterias = new System.Windows.Forms.ComboBox();
             this.lblAño = new System.Windows.Forms.Label();
             this.lblDocente = new System.Windows.Forms.Label();
             this.btnConfirmarRegistro = new WindowsFormsApp1.PillButton();
@@ -36,19 +40,15 @@
             this.cmbCarreras = new System.Windows.Forms.ComboBox();
             this.lblCarrera = new System.Windows.Forms.Label();
             this.lblProyectosDeCatedra = new System.Windows.Forms.Label();
-            this.cmbMaterias = new System.Windows.Forms.ComboBox();
-            this.cmbAño = new System.Windows.Forms.ComboBox();
-            this.cmbProfesores = new System.Windows.Forms.ComboBox();
-            this.lblProfesor = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel1.Controls.Add(this.cmbProfesores);
+            this.panel1.Controls.Add(this.txtAño);
+            this.panel1.Controls.Add(this.txtProfesor);
             this.panel1.Controls.Add(this.lblProfesor);
-            this.panel1.Controls.Add(this.cmbAño);
             this.panel1.Controls.Add(this.cmbMaterias);
             this.panel1.Controls.Add(this.lblAño);
             this.panel1.Controls.Add(this.lblDocente);
@@ -62,12 +62,61 @@
             this.panel1.Size = new System.Drawing.Size(1129, 649);
             this.panel1.TabIndex = 7;
             // 
+            // txtAño
+            // 
+            this.txtAño.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAño.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.txtAño.ForeColor = System.Drawing.Color.Black;
+            this.txtAño.Location = new System.Drawing.Point(36, 213);
+            this.txtAño.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAño.Multiline = true;
+            this.txtAño.Name = "txtAño";
+            this.txtAño.Size = new System.Drawing.Size(110, 41);
+            this.txtAño.TabIndex = 39;
+            // 
+            // txtProfesor
+            // 
+            this.txtProfesor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtProfesor.Enabled = false;
+            this.txtProfesor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.txtProfesor.ForeColor = System.Drawing.Color.Black;
+            this.txtProfesor.Location = new System.Drawing.Point(36, 286);
+            this.txtProfesor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtProfesor.Multiline = true;
+            this.txtProfesor.Name = "txtProfesor";
+            this.txtProfesor.Size = new System.Drawing.Size(403, 41);
+            this.txtProfesor.TabIndex = 38;
+            // 
+            // lblProfesor
+            // 
+            this.lblProfesor.AutoSize = true;
+            this.lblProfesor.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblProfesor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblProfesor.Location = new System.Drawing.Point(37, 256);
+            this.lblProfesor.Name = "lblProfesor";
+            this.lblProfesor.Size = new System.Drawing.Size(92, 24);
+            this.lblProfesor.TabIndex = 37;
+            this.lblProfesor.Text = "* Profesor";
+            this.lblProfesor.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // cmbMaterias
+            // 
+            this.cmbMaterias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cmbMaterias.ForeColor = System.Drawing.Color.Black;
+            this.cmbMaterias.FormattingEnabled = true;
+            this.cmbMaterias.ItemHeight = 25;
+            this.cmbMaterias.Location = new System.Drawing.Point(36, 148);
+            this.cmbMaterias.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbMaterias.Name = "cmbMaterias";
+            this.cmbMaterias.Size = new System.Drawing.Size(403, 33);
+            this.cmbMaterias.TabIndex = 35;
+            // 
             // lblAño
             // 
             this.lblAño.AutoSize = true;
             this.lblAño.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblAño.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblAño.Location = new System.Drawing.Point(37, 191);
+            this.lblAño.Location = new System.Drawing.Point(37, 187);
             this.lblAño.Name = "lblAño";
             this.lblAño.Size = new System.Drawing.Size(57, 24);
             this.lblAño.TabIndex = 33;
@@ -79,7 +128,7 @@
             this.lblDocente.AutoSize = true;
             this.lblDocente.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblDocente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblDocente.Location = new System.Drawing.Point(37, 120);
+            this.lblDocente.Location = new System.Drawing.Point(37, 118);
             this.lblDocente.Name = "lblDocente";
             this.lblDocente.Size = new System.Drawing.Size(83, 24);
             this.lblDocente.TabIndex = 31;
@@ -128,12 +177,11 @@
             this.cmbCarreras.ForeColor = System.Drawing.Color.Black;
             this.cmbCarreras.FormattingEnabled = true;
             this.cmbCarreras.ItemHeight = 25;
-            this.cmbCarreras.Location = new System.Drawing.Point(36, 80);
+            this.cmbCarreras.Location = new System.Drawing.Point(36, 79);
             this.cmbCarreras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbCarreras.Name = "cmbCarreras";
             this.cmbCarreras.Size = new System.Drawing.Size(403, 33);
             this.cmbCarreras.TabIndex = 13;
-            this.cmbCarreras.SelectedIndexChanged += new System.EventHandler(this.cmbCarreras_SelectedIndexChanged);
             // 
             // lblCarrera
             // 
@@ -157,54 +205,6 @@
             this.lblProyectosDeCatedra.TabIndex = 6;
             this.lblProyectosDeCatedra.Text = "Proyectos De Catedra";
             this.lblProyectosDeCatedra.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // cmbMaterias
-            // 
-            this.cmbMaterias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cmbMaterias.ForeColor = System.Drawing.Color.Black;
-            this.cmbMaterias.FormattingEnabled = true;
-            this.cmbMaterias.ItemHeight = 25;
-            this.cmbMaterias.Location = new System.Drawing.Point(36, 151);
-            this.cmbMaterias.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmbMaterias.Name = "cmbMaterias";
-            this.cmbMaterias.Size = new System.Drawing.Size(403, 33);
-            this.cmbMaterias.TabIndex = 35;
-            // 
-            // cmbAño
-            // 
-            this.cmbAño.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cmbAño.ForeColor = System.Drawing.Color.Black;
-            this.cmbAño.FormattingEnabled = true;
-            this.cmbAño.ItemHeight = 25;
-            this.cmbAño.Location = new System.Drawing.Point(36, 222);
-            this.cmbAño.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmbAño.Name = "cmbAño";
-            this.cmbAño.Size = new System.Drawing.Size(223, 33);
-            this.cmbAño.TabIndex = 36;
-            // 
-            // cmbProfesores
-            // 
-            this.cmbProfesores.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cmbProfesores.ForeColor = System.Drawing.Color.Black;
-            this.cmbProfesores.FormattingEnabled = true;
-            this.cmbProfesores.ItemHeight = 25;
-            this.cmbProfesores.Location = new System.Drawing.Point(36, 293);
-            this.cmbProfesores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmbProfesores.Name = "cmbProfesores";
-            this.cmbProfesores.Size = new System.Drawing.Size(403, 33);
-            this.cmbProfesores.TabIndex = 38;
-            // 
-            // lblProfesor
-            // 
-            this.lblProfesor.AutoSize = true;
-            this.lblProfesor.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.lblProfesor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblProfesor.Location = new System.Drawing.Point(37, 262);
-            this.lblProfesor.Name = "lblProfesor";
-            this.lblProfesor.Size = new System.Drawing.Size(92, 24);
-            this.lblProfesor.TabIndex = 37;
-            this.lblProfesor.Text = "* Profesor";
-            this.lblProfesor.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // NuevoProyectoDeCatedra
             // 
@@ -237,8 +237,8 @@
         private System.Windows.Forms.Label lblCarrera;
         private System.Windows.Forms.Label lblProyectosDeCatedra;
         private System.Windows.Forms.ComboBox cmbMaterias;
-        private System.Windows.Forms.ComboBox cmbProfesores;
         private System.Windows.Forms.Label lblProfesor;
-        private System.Windows.Forms.ComboBox cmbAño;
+        private System.Windows.Forms.TextBox txtProfesor;
+        private System.Windows.Forms.TextBox txtAño;
     }
 }
