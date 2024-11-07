@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtAño = new System.Windows.Forms.TextBox();
+            this.cmbMaterias = new System.Windows.Forms.ComboBox();
+            this.lblMateria = new System.Windows.Forms.Label();
             this.btnEliminarProyectos = new WindowsFormsApp1.PillButton();
             this.btnModificarProyectos = new WindowsFormsApp1.PillButton();
             this.lblFiltroAño = new System.Windows.Forms.Label();
@@ -40,9 +43,6 @@
             this.cmbFiltroPeriodo = new System.Windows.Forms.ComboBox();
             this.lblFiltroPeriodo = new System.Windows.Forms.Label();
             this.lblProyectosDeCatedraRegistrados = new System.Windows.Forms.Label();
-            this.cmbMaterias = new System.Windows.Forms.ComboBox();
-            this.lblMateria = new System.Windows.Forms.Label();
-            this.txtAño = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProyecto)).BeginInit();
             this.SuspendLayout();
@@ -68,6 +68,41 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1129, 742);
             this.panel1.TabIndex = 9;
+            // 
+            // txtAño
+            // 
+            this.txtAño.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAño.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.txtAño.ForeColor = System.Drawing.Color.Black;
+            this.txtAño.Location = new System.Drawing.Point(41, 124);
+            this.txtAño.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAño.Multiline = true;
+            this.txtAño.Name = "txtAño";
+            this.txtAño.Size = new System.Drawing.Size(110, 41);
+            this.txtAño.TabIndex = 40;
+            // 
+            // cmbMaterias
+            // 
+            this.cmbMaterias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cmbMaterias.ForeColor = System.Drawing.Color.Black;
+            this.cmbMaterias.FormattingEnabled = true;
+            this.cmbMaterias.Location = new System.Drawing.Point(416, 60);
+            this.cmbMaterias.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbMaterias.Name = "cmbMaterias";
+            this.cmbMaterias.Size = new System.Drawing.Size(337, 33);
+            this.cmbMaterias.TabIndex = 14;
+            // 
+            // lblMateria
+            // 
+            this.lblMateria.AutoSize = true;
+            this.lblMateria.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblMateria.Location = new System.Drawing.Point(416, 33);
+            this.lblMateria.Name = "lblMateria";
+            this.lblMateria.Size = new System.Drawing.Size(80, 24);
+            this.lblMateria.TabIndex = 15;
+            this.lblMateria.Text = "Materias";
+            this.lblMateria.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnEliminarProyectos
             // 
@@ -188,6 +223,7 @@
             this.btnBuscarProyecto.TabIndex = 5;
             this.btnBuscarProyecto.Text = "Buscar";
             this.btnBuscarProyecto.UseVisualStyleBackColor = false;
+            this.btnBuscarProyecto.Click += new System.EventHandler(this.btnBuscarProyecto_Click);
             // 
             // cmbFiltroPeriodo
             // 
@@ -223,47 +259,12 @@
             this.lblProyectosDeCatedraRegistrados.Text = "Proyectos de Catedra Registrados";
             this.lblProyectosDeCatedraRegistrados.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // cmbMaterias
-            // 
-            this.cmbMaterias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cmbMaterias.ForeColor = System.Drawing.Color.Black;
-            this.cmbMaterias.FormattingEnabled = true;
-            this.cmbMaterias.Location = new System.Drawing.Point(416, 60);
-            this.cmbMaterias.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmbMaterias.Name = "cmbMaterias";
-            this.cmbMaterias.Size = new System.Drawing.Size(337, 33);
-            this.cmbMaterias.TabIndex = 14;
-            // 
-            // lblMateria
-            // 
-            this.lblMateria.AutoSize = true;
-            this.lblMateria.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.lblMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblMateria.Location = new System.Drawing.Point(416, 33);
-            this.lblMateria.Name = "lblMateria";
-            this.lblMateria.Size = new System.Drawing.Size(80, 24);
-            this.lblMateria.TabIndex = 15;
-            this.lblMateria.Text = "Materias";
-            this.lblMateria.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // txtAño
-            // 
-            this.txtAño.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtAño.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtAño.ForeColor = System.Drawing.Color.Black;
-            this.txtAño.Location = new System.Drawing.Point(41, 124);
-            this.txtAño.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtAño.Multiline = true;
-            this.txtAño.Name = "txtAño";
-            this.txtAño.Size = new System.Drawing.Size(110, 41);
-            this.txtAño.TabIndex = 40;
-            // 
             // Registro_de_Proyecto_de_Catedra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1207, 788);
+            this.ClientSize = new System.Drawing.Size(1207, 854);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblProyectosDeCatedraRegistrados);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
