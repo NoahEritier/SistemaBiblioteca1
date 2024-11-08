@@ -30,6 +30,10 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.btnPasarAGrilla = new System.Windows.Forms.Button();
+            this.dgvAutores = new System.Windows.Forms.DataGridView();
             this.txtEdicion = new System.Windows.Forms.TextBox();
             this.lblEdicion = new System.Windows.Forms.Label();
             this.btnConfirmarRegistro = new WindowsFormsApp1.PillButton();
@@ -52,7 +56,6 @@
             this.lblAutor = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblNuevoLibro = new System.Windows.Forms.Label();
-            this.dgvAutores = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAutores)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +63,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.Controls.Add(this.btnEliminar);
+            this.panel1.Controls.Add(this.txtId);
+            this.panel1.Controls.Add(this.btnPasarAGrilla);
             this.panel1.Controls.Add(this.dgvAutores);
             this.panel1.Controls.Add(this.txtEdicion);
             this.panel1.Controls.Add(this.lblEdicion);
@@ -82,22 +88,92 @@
             this.panel1.Controls.Add(this.txtTitulo);
             this.panel1.Controls.Add(this.lblAutor);
             this.panel1.Controls.Add(this.lblTitulo);
-            this.panel1.Location = new System.Drawing.Point(48, 86);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(36, 70);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1129, 763);
+            this.panel1.Size = new System.Drawing.Size(847, 620);
             this.panel1.TabIndex = 3;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.btnEliminar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnEliminar.Location = new System.Drawing.Point(713, 108);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(27, 27);
+            this.btnEliminar.TabIndex = 35;
+            this.btnEliminar.Text = "B";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // txtId
+            // 
+            this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtId.Enabled = false;
+            this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.txtId.ForeColor = System.Drawing.Color.Black;
+            this.txtId.Location = new System.Drawing.Point(639, 45);
+            this.txtId.Margin = new System.Windows.Forms.Padding(2);
+            this.txtId.Multiline = true;
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(70, 34);
+            this.txtId.TabIndex = 34;
+            this.txtId.Visible = false;
+            // 
+            // btnPasarAGrilla
+            // 
+            this.btnPasarAGrilla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPasarAGrilla.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.btnPasarAGrilla.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnPasarAGrilla.Location = new System.Drawing.Point(362, 107);
+            this.btnPasarAGrilla.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPasarAGrilla.Name = "btnPasarAGrilla";
+            this.btnPasarAGrilla.Size = new System.Drawing.Size(27, 27);
+            this.btnPasarAGrilla.TabIndex = 33;
+            this.btnPasarAGrilla.Text = "A";
+            this.btnPasarAGrilla.UseVisualStyleBackColor = true;
+            this.btnPasarAGrilla.Click += new System.EventHandler(this.btnPasarAGrilla_Click);
+            // 
+            // dgvAutores
+            // 
+            this.dgvAutores.AllowUserToAddRows = false;
+            this.dgvAutores.AllowUserToDeleteRows = false;
+            this.dgvAutores.AllowUserToOrderColumns = true;
+            this.dgvAutores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAutores.BackgroundColor = System.Drawing.Color.IndianRed;
+            this.dgvAutores.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvAutores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAutores.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvAutores.GridColor = System.Drawing.SystemColors.Control;
+            this.dgvAutores.Location = new System.Drawing.Point(393, 107);
+            this.dgvAutores.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvAutores.Name = "dgvAutores";
+            this.dgvAutores.ReadOnly = true;
+            this.dgvAutores.RowHeadersWidth = 51;
+            this.dgvAutores.RowTemplate.Height = 24;
+            this.dgvAutores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAutores.Size = new System.Drawing.Size(316, 171);
+            this.dgvAutores.TabIndex = 4;
             // 
             // txtEdicion
             // 
             this.txtEdicion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEdicion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtEdicion.ForeColor = System.Drawing.Color.Black;
-            this.txtEdicion.Location = new System.Drawing.Point(36, 270);
-            this.txtEdicion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtEdicion.Location = new System.Drawing.Point(27, 219);
+            this.txtEdicion.Margin = new System.Windows.Forms.Padding(2);
             this.txtEdicion.Multiline = true;
             this.txtEdicion.Name = "txtEdicion";
-            this.txtEdicion.Size = new System.Drawing.Size(93, 41);
+            this.txtEdicion.Size = new System.Drawing.Size(70, 34);
             this.txtEdicion.TabIndex = 32;
             // 
             // lblEdicion
@@ -105,9 +181,10 @@
             this.lblEdicion.AutoSize = true;
             this.lblEdicion.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblEdicion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblEdicion.Location = new System.Drawing.Point(37, 240);
+            this.lblEdicion.Location = new System.Drawing.Point(28, 195);
+            this.lblEdicion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEdicion.Name = "lblEdicion";
-            this.lblEdicion.Size = new System.Drawing.Size(74, 24);
+            this.lblEdicion.Size = new System.Drawing.Size(57, 18);
             this.lblEdicion.TabIndex = 31;
             this.lblEdicion.Text = "Edición";
             this.lblEdicion.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -121,10 +198,10 @@
             this.btnConfirmarRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmarRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmarRegistro.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnConfirmarRegistro.Location = new System.Drawing.Point(184, 695);
-            this.btnConfirmarRegistro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnConfirmarRegistro.Location = new System.Drawing.Point(138, 565);
+            this.btnConfirmarRegistro.Margin = new System.Windows.Forms.Padding(2);
             this.btnConfirmarRegistro.Name = "btnConfirmarRegistro";
-            this.btnConfirmarRegistro.Size = new System.Drawing.Size(107, 38);
+            this.btnConfirmarRegistro.Size = new System.Drawing.Size(80, 31);
             this.btnConfirmarRegistro.TabIndex = 28;
             this.btnConfirmarRegistro.Text = "Aceptar";
             this.btnConfirmarRegistro.UseVisualStyleBackColor = false;
@@ -139,10 +216,10 @@
             this.btnCancelarRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarRegistro.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCancelarRegistro.Location = new System.Drawing.Point(41, 695);
-            this.btnCancelarRegistro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancelarRegistro.Location = new System.Drawing.Point(31, 565);
+            this.btnCancelarRegistro.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelarRegistro.Name = "btnCancelarRegistro";
-            this.btnCancelarRegistro.Size = new System.Drawing.Size(127, 38);
+            this.btnCancelarRegistro.Size = new System.Drawing.Size(95, 31);
             this.btnCancelarRegistro.TabIndex = 27;
             this.btnCancelarRegistro.Text = "Cancelar";
             this.btnCancelarRegistro.UseVisualStyleBackColor = false;
@@ -153,11 +230,11 @@
             this.txtPalabrasClave.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPalabrasClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtPalabrasClave.ForeColor = System.Drawing.Color.Black;
-            this.txtPalabrasClave.Location = new System.Drawing.Point(36, 613);
-            this.txtPalabrasClave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPalabrasClave.Location = new System.Drawing.Point(27, 498);
+            this.txtPalabrasClave.Margin = new System.Windows.Forms.Padding(2);
             this.txtPalabrasClave.Multiline = true;
             this.txtPalabrasClave.Name = "txtPalabrasClave";
-            this.txtPalabrasClave.Size = new System.Drawing.Size(793, 41);
+            this.txtPalabrasClave.Size = new System.Drawing.Size(595, 34);
             this.txtPalabrasClave.TabIndex = 26;
             // 
             // lblPalabrasClave
@@ -165,9 +242,10 @@
             this.lblPalabrasClave.AutoSize = true;
             this.lblPalabrasClave.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblPalabrasClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblPalabrasClave.Location = new System.Drawing.Point(37, 583);
+            this.lblPalabrasClave.Location = new System.Drawing.Point(28, 474);
+            this.lblPalabrasClave.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPalabrasClave.Name = "lblPalabrasClave";
-            this.lblPalabrasClave.Size = new System.Drawing.Size(131, 24);
+            this.lblPalabrasClave.Size = new System.Drawing.Size(104, 18);
             this.lblPalabrasClave.TabIndex = 25;
             this.lblPalabrasClave.Text = "Palabras clave";
             this.lblPalabrasClave.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -177,11 +255,11 @@
             this.txtResumen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtResumen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtResumen.ForeColor = System.Drawing.Color.Black;
-            this.txtResumen.Location = new System.Drawing.Point(36, 485);
-            this.txtResumen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtResumen.Location = new System.Drawing.Point(27, 394);
+            this.txtResumen.Margin = new System.Windows.Forms.Padding(2);
             this.txtResumen.Multiline = true;
             this.txtResumen.Name = "txtResumen";
-            this.txtResumen.Size = new System.Drawing.Size(1055, 92);
+            this.txtResumen.Size = new System.Drawing.Size(792, 75);
             this.txtResumen.TabIndex = 24;
             // 
             // lblResumen
@@ -189,9 +267,10 @@
             this.lblResumen.AutoSize = true;
             this.lblResumen.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblResumen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblResumen.Location = new System.Drawing.Point(37, 455);
+            this.lblResumen.Location = new System.Drawing.Point(28, 370);
+            this.lblResumen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblResumen.Name = "lblResumen";
-            this.lblResumen.Size = new System.Drawing.Size(92, 24);
+            this.lblResumen.Size = new System.Drawing.Size(72, 18);
             this.lblResumen.TabIndex = 23;
             this.lblResumen.Text = "Resumen";
             this.lblResumen.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -201,11 +280,11 @@
             this.cmbNiveles.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cmbNiveles.ForeColor = System.Drawing.Color.Black;
             this.cmbNiveles.FormattingEnabled = true;
-            this.cmbNiveles.ItemHeight = 25;
-            this.cmbNiveles.Location = new System.Drawing.Point(36, 416);
-            this.cmbNiveles.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbNiveles.ItemHeight = 20;
+            this.cmbNiveles.Location = new System.Drawing.Point(27, 338);
+            this.cmbNiveles.Margin = new System.Windows.Forms.Padding(2);
             this.cmbNiveles.Name = "cmbNiveles";
-            this.cmbNiveles.Size = new System.Drawing.Size(403, 33);
+            this.cmbNiveles.Size = new System.Drawing.Size(303, 28);
             this.cmbNiveles.TabIndex = 19;
             // 
             // lblNivel
@@ -213,9 +292,10 @@
             this.lblNivel.AutoSize = true;
             this.lblNivel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblNivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblNivel.Location = new System.Drawing.Point(37, 386);
+            this.lblNivel.Location = new System.Drawing.Point(28, 314);
+            this.lblNivel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNivel.Name = "lblNivel";
-            this.lblNivel.Size = new System.Drawing.Size(64, 24);
+            this.lblNivel.Size = new System.Drawing.Size(50, 18);
             this.lblNivel.TabIndex = 17;
             this.lblNivel.Text = "* Nivel";
             this.lblNivel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -225,22 +305,23 @@
             this.cmbTemas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cmbTemas.ForeColor = System.Drawing.Color.Black;
             this.cmbTemas.FormattingEnabled = true;
-            this.cmbTemas.ItemHeight = 25;
-            this.cmbTemas.Location = new System.Drawing.Point(36, 347);
-            this.cmbTemas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbTemas.ItemHeight = 20;
+            this.cmbTemas.Location = new System.Drawing.Point(27, 282);
+            this.cmbTemas.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTemas.Name = "cmbTemas";
-            this.cmbTemas.Size = new System.Drawing.Size(403, 33);
+            this.cmbTemas.Size = new System.Drawing.Size(303, 28);
             this.cmbTemas.TabIndex = 16;
+            this.cmbTemas.SelectedIndexChanged += new System.EventHandler(this.CmbTemas_SelectedIndexChanged);
             // 
             // btnAgregarNuevoTema
             // 
             this.btnAgregarNuevoTema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarNuevoTema.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.btnAgregarNuevoTema.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnAgregarNuevoTema.Location = new System.Drawing.Point(444, 347);
-            this.btnAgregarNuevoTema.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAgregarNuevoTema.Location = new System.Drawing.Point(333, 282);
+            this.btnAgregarNuevoTema.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarNuevoTema.Name = "btnAgregarNuevoTema";
-            this.btnAgregarNuevoTema.Size = new System.Drawing.Size(36, 33);
+            this.btnAgregarNuevoTema.Size = new System.Drawing.Size(27, 27);
             this.btnAgregarNuevoTema.TabIndex = 15;
             this.btnAgregarNuevoTema.Text = "+";
             this.btnAgregarNuevoTema.UseVisualStyleBackColor = true;
@@ -251,9 +332,10 @@
             this.lblTema.AutoSize = true;
             this.lblTema.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblTema.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblTema.Location = new System.Drawing.Point(37, 318);
+            this.lblTema.Location = new System.Drawing.Point(28, 258);
+            this.lblTema.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTema.Name = "lblTema";
-            this.lblTema.Size = new System.Drawing.Size(71, 24);
+            this.lblTema.Size = new System.Drawing.Size(56, 18);
             this.lblTema.TabIndex = 14;
             this.lblTema.Text = "* Tema";
             this.lblTema.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -263,11 +345,11 @@
             this.cmbEditoriales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cmbEditoriales.ForeColor = System.Drawing.Color.Black;
             this.cmbEditoriales.FormattingEnabled = true;
-            this.cmbEditoriales.ItemHeight = 25;
-            this.cmbEditoriales.Location = new System.Drawing.Point(35, 201);
-            this.cmbEditoriales.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbEditoriales.ItemHeight = 20;
+            this.cmbEditoriales.Location = new System.Drawing.Point(26, 163);
+            this.cmbEditoriales.Margin = new System.Windows.Forms.Padding(2);
             this.cmbEditoriales.Name = "cmbEditoriales";
-            this.cmbEditoriales.Size = new System.Drawing.Size(403, 33);
+            this.cmbEditoriales.Size = new System.Drawing.Size(303, 28);
             this.cmbEditoriales.TabIndex = 13;
             // 
             // btnAgregarNuevaEditorial
@@ -275,10 +357,10 @@
             this.btnAgregarNuevaEditorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarNuevaEditorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.btnAgregarNuevaEditorial.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnAgregarNuevaEditorial.Location = new System.Drawing.Point(444, 201);
-            this.btnAgregarNuevaEditorial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAgregarNuevaEditorial.Location = new System.Drawing.Point(333, 163);
+            this.btnAgregarNuevaEditorial.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarNuevaEditorial.Name = "btnAgregarNuevaEditorial";
-            this.btnAgregarNuevaEditorial.Size = new System.Drawing.Size(36, 33);
+            this.btnAgregarNuevaEditorial.Size = new System.Drawing.Size(27, 27);
             this.btnAgregarNuevaEditorial.TabIndex = 12;
             this.btnAgregarNuevaEditorial.Text = "+";
             this.btnAgregarNuevaEditorial.UseVisualStyleBackColor = true;
@@ -289,9 +371,10 @@
             this.lblEditorial.AutoSize = true;
             this.lblEditorial.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblEditorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblEditorial.Location = new System.Drawing.Point(36, 171);
+            this.lblEditorial.Location = new System.Drawing.Point(27, 139);
+            this.lblEditorial.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEditorial.Name = "lblEditorial";
-            this.lblEditorial.Size = new System.Drawing.Size(89, 24);
+            this.lblEditorial.Size = new System.Drawing.Size(71, 18);
             this.lblEditorial.TabIndex = 11;
             this.lblEditorial.Text = "* Editorial";
             this.lblEditorial.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -301,11 +384,11 @@
             this.cmbAutores.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cmbAutores.ForeColor = System.Drawing.Color.Black;
             this.cmbAutores.FormattingEnabled = true;
-            this.cmbAutores.ItemHeight = 25;
-            this.cmbAutores.Location = new System.Drawing.Point(35, 132);
-            this.cmbAutores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbAutores.ItemHeight = 20;
+            this.cmbAutores.Location = new System.Drawing.Point(26, 107);
+            this.cmbAutores.Margin = new System.Windows.Forms.Padding(2);
             this.cmbAutores.Name = "cmbAutores";
-            this.cmbAutores.Size = new System.Drawing.Size(403, 33);
+            this.cmbAutores.Size = new System.Drawing.Size(303, 28);
             this.cmbAutores.TabIndex = 10;
             // 
             // btnAgregarNuevoAutor
@@ -313,10 +396,10 @@
             this.btnAgregarNuevoAutor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarNuevoAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.btnAgregarNuevoAutor.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnAgregarNuevoAutor.Location = new System.Drawing.Point(444, 132);
-            this.btnAgregarNuevoAutor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAgregarNuevoAutor.Location = new System.Drawing.Point(333, 107);
+            this.btnAgregarNuevoAutor.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarNuevoAutor.Name = "btnAgregarNuevoAutor";
-            this.btnAgregarNuevoAutor.Size = new System.Drawing.Size(36, 33);
+            this.btnAgregarNuevoAutor.Size = new System.Drawing.Size(27, 27);
             this.btnAgregarNuevoAutor.TabIndex = 9;
             this.btnAgregarNuevoAutor.Text = "+";
             this.btnAgregarNuevoAutor.UseVisualStyleBackColor = true;
@@ -327,11 +410,11 @@
             this.txtTitulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtTitulo.ForeColor = System.Drawing.Color.Black;
-            this.txtTitulo.Location = new System.Drawing.Point(35, 55);
-            this.txtTitulo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTitulo.Location = new System.Drawing.Point(26, 45);
+            this.txtTitulo.Margin = new System.Windows.Forms.Padding(2);
             this.txtTitulo.Multiline = true;
             this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(793, 41);
+            this.txtTitulo.Size = new System.Drawing.Size(595, 34);
             this.txtTitulo.TabIndex = 4;
             // 
             // lblAutor
@@ -339,9 +422,10 @@
             this.lblAutor.AutoSize = true;
             this.lblAutor.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblAutor.Location = new System.Drawing.Point(36, 102);
+            this.lblAutor.Location = new System.Drawing.Point(27, 83);
+            this.lblAutor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAutor.Name = "lblAutor";
-            this.lblAutor.Size = new System.Drawing.Size(67, 24);
+            this.lblAutor.Size = new System.Drawing.Size(53, 18);
             this.lblAutor.TabIndex = 3;
             this.lblAutor.Text = "* Autor";
             this.lblAutor.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -351,9 +435,10 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblTitulo.Location = new System.Drawing.Point(36, 25);
+            this.lblTitulo.Location = new System.Drawing.Point(27, 20);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(68, 24);
+            this.lblTitulo.Size = new System.Drawing.Size(54, 18);
             this.lblTitulo.TabIndex = 2;
             this.lblTitulo.Text = "* Título";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -362,50 +447,28 @@
             // 
             this.lblNuevoLibro.AutoSize = true;
             this.lblNuevoLibro.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.lblNuevoLibro.Location = new System.Drawing.Point(103, 30);
+            this.lblNuevoLibro.Location = new System.Drawing.Point(77, 24);
+            this.lblNuevoLibro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNuevoLibro.Name = "lblNuevoLibro";
-            this.lblNuevoLibro.Size = new System.Drawing.Size(160, 31);
+            this.lblNuevoLibro.Size = new System.Drawing.Size(129, 26);
             this.lblNuevoLibro.TabIndex = 2;
             this.lblNuevoLibro.Text = "Nuevo Libro";
             this.lblNuevoLibro.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // dgvAutores
-            // 
-            this.dgvAutores.AllowUserToAddRows = false;
-            this.dgvAutores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvAutores.BackgroundColor = System.Drawing.Color.IndianRed;
-            this.dgvAutores.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvAutores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAutores.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvAutores.GridColor = System.Drawing.SystemColors.Control;
-            this.dgvAutores.Location = new System.Drawing.Point(524, 132);
-            this.dgvAutores.Name = "dgvAutores";
-            this.dgvAutores.ReadOnly = true;
-            this.dgvAutores.RowHeadersWidth = 51;
-            this.dgvAutores.RowTemplate.Height = 24;
-            this.dgvAutores.Size = new System.Drawing.Size(422, 210);
-            this.dgvAutores.TabIndex = 4;
-            // 
             // NuevoLibro
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1225, 873);
+            this.ClientSize = new System.Drawing.Size(919, 640);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblNuevoLibro);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "NuevoLibro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NuevoLibro";
+            this.Load += new System.EventHandler(this.NuevoLibro_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAutores)).EndInit();
@@ -440,5 +503,8 @@
         private System.Windows.Forms.TextBox txtEdicion;
         private System.Windows.Forms.Label lblEdicion;
         private System.Windows.Forms.DataGridView dgvAutores;
+        private System.Windows.Forms.Button btnPasarAGrilla;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

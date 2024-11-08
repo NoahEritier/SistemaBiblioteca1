@@ -136,11 +136,11 @@ namespace WindowsFormsApp1.Consultas
                     }
 
                     // Solo filtrar por tema si se seleccionó uno distinto de "Todos los temas"
-                    if (cmbFiltroTema.SelectedIndex != 0) // "Todos los temas" es la primera opción
-                    {
-                        sqlCommand.Parameters.AddWithValue("@tema", temaSeleccionado);
-                        consulta += " AND tema = @tema"; // Asegúrate de agregar la condición para el tema en la consulta.
-                    }
+                    //if (cmbFiltroTema.SelectedIndex != 0) // "Todos los temas" es la primera opción
+                    //{
+                      //  sqlCommand.Parameters.AddWithValue("@tema", temaSeleccionado);
+                        //consulta += " AND tema = @tema"; // Asegúrate de agregar la condición para el tema en la consulta.
+                    //}
 
                     if (filtroPeriodo != "Cualquier momento")
                     {

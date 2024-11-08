@@ -28,7 +28,7 @@ namespace WindowsFormsApp1.Consultas
             cmbFiltroPeriodo.SelectedIndex = 3; // Por defecto: "Cualquier momento"
         }
 
-    private void btnBuscarEditorial_Click(object sender, EventArgs e)
+        private void btnBuscarEditorial_Click(object sender, EventArgs e)
     {
         // Obtener los valores de los filtros
         string filtroNombre = txtFiltroNombre.Text.Trim();
@@ -113,8 +113,7 @@ namespace WindowsFormsApp1.Consultas
         }
     }
 
-
-    private void btnNuevaEditorial_Click(object sender, EventArgs e)
+        private void btnNuevaEditorial_Click(object sender, EventArgs e)
         {
             NuevaEditorial nuevaEditorial = new NuevaEditorial();
             nuevaEditorial.ShowDialog(this);
