@@ -14,19 +14,6 @@ namespace WindowsFormsApp1.Registros_de_Datos
 {
     public partial class NuevoDiccionario : Form
     {
-        // Clase para representar Editorial
-        public class Editorial
-        {
-            public int Id { get; set; }
-            public string Nombre { get; set; }
-
-            // Sobrescribir el método ToString() para que el ComboBox muestre solo el nombre
-            public override string ToString()
-            {
-                return Nombre;
-            }
-        }
-
             public NuevoDiccionario()
             {
                 InitializeComponent();
@@ -35,51 +22,55 @@ namespace WindowsFormsApp1.Registros_de_Datos
                 CargarEditoriales();
             }
 
-            // Método para cargar las editoriales en el ComboBox
-            private void CargarEditoriales()
+        // Método para cargar las editoriales en el ComboBox
+        private void CargarEditoriales()
+        {
+            // Consulta SQL para obtener las editoriales, ordenadas alfabéticamente
+            string consulta = "SELECT Id, Nombre FROM Editoriales ORDER BY Nombre";
+
+            // Obtener la cadena de conexión desde el archivo de configuración
+            var stringConexion = ConfigurationManager.ConnectionStrings["MyDbContext"].ToString();
+
+            using (MySqlConnection mySqlConnection = new MySqlConnection(stringConexion))
             {
-                var stringConexion = ConfigurationManager.ConnectionStrings["MyDbContext"].ToString();
-                using (MySqlConnection mySqlConnection = new MySqlConnection(stringConexion))
+                try
                 {
-                    try
+                    mySqlConnection.Open();
+
+                    // Crear el comando SQL y asignar la consulta
+                    MySqlCommand sqlCommand = new MySqlCommand(consulta, mySqlConnection);
+
+                    // Ejecutar la consulta y cargar los resultados en un DataTable
+                    MySqlDataAdapter dataAdapter = new MySqlDataAdapter(sqlCommand);
+                    DataTable dataTable = new DataTable();
+                    dataAdapter.Fill(dataTable);
+
+                    // Verificar si hay datos
+                    if (dataTable.Rows.Count > 0)
                     {
-                        mySqlConnection.Open();
-                        string query = "SELECT id, nombre FROM editoriales";
-
-                        using (MySqlCommand cmd = new MySqlCommand(query, mySqlConnection))
-                        {
-                            using (MySqlDataReader reader = cmd.ExecuteReader())
-                            {
-                                List<Editorial> editoriales = new List<Editorial>();
-                                while (reader.Read())
-                                {
-                                    // Crear instancias de la clase Editorial con los datos de la base de datos
-                                    editoriales.Add(new Editorial
-                                    {
-                                        Id = Convert.ToInt32(reader["id"]),
-                                        Nombre = reader["nombre"].ToString()
-                                    });
-                                }
-
-                                // Asignar la lista de editoriales al ComboBox
-                                cmbEditoriales.DataSource = editoriales;
-
-                                // Establecer el DisplayMember para mostrar el nombre y el ValueMember para el id
-                                cmbEditoriales.DisplayMember = "Nombre";  // Mostrará solo el nombre
-                                cmbEditoriales.ValueMember = "Id";        // Internamente trabajará con el id
-                                cmbEditoriales.SelectedIndex = -1; // Esto hace que no haya ninguna opción seleccionada
-                                cmbEditoriales.Text = "";
-                        }
-                        }
+                        // Configurar el ComboBox de editoriales
+                        cmbEditoriales.DataSource = dataTable;
+                        cmbEditoriales.DisplayMember = "Nombre";
+                        cmbEditoriales.ValueMember = "Id";
+                        cmbEditoriales.SelectedIndex = -1; // Opcional: No seleccionar ninguna editorial al inicio
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        MessageBox.Show($"Error al cargar las editoriales: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("No se encontraron editoriales en la base de datos.");
                     }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al cargar las editoriales: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    mySqlConnection.Close();
+                }
             }
+        }
 
-            private void btnRegistrarDiccionario_Click(object sender, EventArgs e)
+        private void btnRegistrarDiccionario_Click(object sender, EventArgs e)
             {
                 // Obtener el id de la editorial seleccionada
                 if (cmbEditoriales.SelectedItem == null)

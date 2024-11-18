@@ -62,20 +62,6 @@ namespace WindowsFormsApp1.Consultas
                             sqlCommand.ExecuteNonQuery();
                             MessageBox.Show("Mapa eliminado exitosamente.");
                         }
-
-                        // Recargar la lista de mapas después de eliminar
-                            btnBuscarMapa_Click(sender, e); // Llama al método de búsqueda para actualizar la lista
-                        }
-                            btnBuscarMapa_Click(sender, e); // Llama al método de búsqueda para actualizar la lista
-                        }
-                            btnBuscarMapa_Click(sender, e); // Llama al método de búsqueda para actualizar la lista
-                        }
-                            btnBuscarMapa_Click(sender, e); // Llama al método de búsqueda para actualizar la lista
-                        }
-                            btnBuscarMapa_Click(sender, e); // Llama al método de búsqueda para actualizar la lista
-                        }
-                            btnBuscarMapa_Click(sender, e); // Llama al método de búsqueda para actualizar la lista
-                        }
                         catch (Exception ex)
                         {
                             MessageBox.Show($"Error al eliminar el mapa: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

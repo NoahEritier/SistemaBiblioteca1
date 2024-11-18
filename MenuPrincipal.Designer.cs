@@ -519,9 +519,11 @@
             this.ClientSize = new System.Drawing.Size(1482, 1055);
             this.Controls.Add(this.panelChildForm);
             this.Controls.Add(this.panelSideView);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MenuPrincipal";
             this.Text = "Sistema de Gestion de Biblioteca";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.panelSideView.ResumeLayout(false);
             this.panelMapas_submenu.ResumeLayout(false);

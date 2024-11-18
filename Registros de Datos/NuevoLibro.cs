@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -31,10 +32,20 @@ namespace WindowsFormsApp1
 
         private void btnConfirmarRegistro_Click(object sender, EventArgs e)
         {
+            if (cmbEditoriales.SelectedIndex == -1 || cmbNiveles.SelectedIndex == -1 || cmbTemas.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor, complete todos los campos requeridos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             // Obtener los valores de los TextBox
             string titulo = txtTitulo.Text.Trim();
+            string ISBN = txtISBN.Text.Trim();
+            int idEditorial = Convert.ToInt32(cmbEditoriales.SelectedValue);
+            int idTema = Convert.ToInt32(cmbTemas.SelectedValue);
+            int idNivel = Convert.ToInt32(cmbNiveles.SelectedValue);
+
             int edicion;
-            if (!int.TryParse(txtEdicion.Text.Trim(), out edicion))
+            if (!int.TryParse(txtEdicion.Text.Trim(), out edicion ) && !string.IsNullOrEmpty(txtEdicion.Text))
             {
                 MessageBox.Show("Por favor, ingresa un número válido para la edición.");
                 return; // Salir de la función si no es un número válido.
@@ -51,7 +62,11 @@ namespace WindowsFormsApp1
                 MessageBox.Show("El campo 'Título' es obligatorio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
+            if (string.IsNullOrEmpty(ISBN))
+            {
+                MessageBox.Show("El campo 'ISBN' es obligatorio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             // Cadena de conexión desde el archivo de configuración
             var stringConexion = ConfigurationManager.ConnectionStrings["MyDbContext"].ToString();
 
@@ -62,14 +77,47 @@ namespace WindowsFormsApp1
                     mySqlConnection.Open();
 
                     // Sentencia SQL para insertar datos
-                    var sentenciaInsert = "INSERT INTO Libros (nombre, edicion) VALUES (@nombre, @edicion)";
+                    var sentenciaInsert = "UPDATE Libros SET titulo = @titulo, ISBN = @ISBN, edicion = @edicion, resumen = @resumen, palabrasClave = @palabrasClave, fechaRegistro = @fechaRegistro, idEditorial = @idEditorial, idTema = @idTema, idNivel = @idNivel WHERE id = @id";
 
-                    using (MySqlCommand sqlCommandInsert = new MySqlCommand(sentenciaInsert, mySqlConnection))
+                    using (MySqlCommand sqlCommand = new MySqlCommand(sentenciaInsert, mySqlConnection))
                     {
-                        sqlCommandInsert.Parameters.AddWithValue("@nombre", titulo);
-                        sqlCommandInsert.Parameters.AddWithValue("@edicion", edicion);
+                        sqlCommand.Parameters.AddWithValue("@id", txtId.Text);
+                        sqlCommand.Parameters.AddWithValue("@titulo", titulo);
+                        sqlCommand.Parameters.AddWithValue("@ISBN", ISBN);
+                        sqlCommand.Parameters.AddWithValue("@fechaRegistro", fechaRegistro);
+                        sqlCommand.Parameters.AddWithValue("@idEditorial", idEditorial);
+                        sqlCommand.Parameters.AddWithValue("@idTema", idTema);
+                        sqlCommand.Parameters.AddWithValue("@idNivel", idNivel);
 
-                        int registrosAfectados = sqlCommandInsert.ExecuteNonQuery();
+                        // Si resumen está vacía, se inserta como NULL
+                        if (string.IsNullOrEmpty(resumen))
+                        {
+                            sqlCommand.Parameters.AddWithValue("@resumen", DBNull.Value);
+                        }
+                        else
+                        {
+                            sqlCommand.Parameters.AddWithValue("@resumen", resumen);
+                        }
+                        // Si palabrasClave está vacía, se inserta como NULL
+                        if (string.IsNullOrEmpty(palabrasClave))
+                        {
+                            sqlCommand.Parameters.AddWithValue("@palabrasClave", DBNull.Value);
+                        }
+                        else
+                        {
+                            sqlCommand.Parameters.AddWithValue("@palabrasClave", palabrasClave);
+                        }
+
+                        if (string.IsNullOrEmpty(txtEdicion.Text))
+                        {
+                            sqlCommand.Parameters.AddWithValue("@edicion", DBNull.Value);
+                        }
+                        else
+                        {
+                            sqlCommand.Parameters.AddWithValue("@edicion", edicion);
+                        }
+
+                        int registrosAfectados = sqlCommand.ExecuteNonQuery();
 
                         if (registrosAfectados > 0)
                         {
@@ -79,10 +127,14 @@ namespace WindowsFormsApp1
                                 object result = sqlCommandSelect.ExecuteScalar();
                                 txtId.Text = result != null ? result.ToString() : "0";
                             }
+                            MessageBox.Show("Autor registrado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Close();
                         }
                         else
                         {
                             txtId.Text = "0";
+                            MessageBox.Show("No se pudo registrar el autor.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                         }
                     }
                 }
@@ -101,18 +153,21 @@ namespace WindowsFormsApp1
         {
             NuevoAutor nuevoAutor = new NuevoAutor();
             nuevoAutor.ShowDialog(this);
+            CargarAutores();
         }
 
         private void btnAgregarNuevaEditorial_Click(object sender, EventArgs e)
         {
             NuevaEditorial nuevaEditorial = new NuevaEditorial();
             nuevaEditorial.ShowDialog(this);
+            CargarEditorial();
         }
 
         private void btnAgregarNuevoTema_Click(object sender, EventArgs e)
         {
             NuevoTema nuevoTema = new NuevoTema("Libros");
             nuevoTema.ShowDialog(this);
+            CargarTemas();
         }
 
         private void btnPasarAGrilla_Click(object sender, EventArgs e)
@@ -144,7 +199,6 @@ namespace WindowsFormsApp1
                             {
                                 CargarGrillaAutores();
                                 // Confirmación de inserción exitosa
-                                MessageBox.Show("Autor agregado correctamente al libro.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             else
                             {
@@ -402,7 +456,7 @@ namespace WindowsFormsApp1
 
         private void CargarTemas()
         {
-            string consulta = "SELECT Id, Nombre FROM Temas ORDER BY Nombre";
+            string consulta = "SELECT Id, Nombre FROM Temas WHERE Grupo = 'Libros' ORDER BY Nombre";
             var stringConexion = ConfigurationManager.ConnectionStrings["MyDbContext"].ToString();
 
             using (MySqlConnection mySqlConnection = new MySqlConnection(stringConexion))
@@ -442,7 +496,7 @@ namespace WindowsFormsApp1
         private void CargarNivel()
         {
             // Consulta SQL para obtener los niveles, ordenados alfabéticamente
-            string consulta = "SELECT Id, Nombre FROM Niveles ORDER BY Nombre";
+            string consulta = "SELECT Id, Nombre FROM niveles ORDER BY Nombre";
 
             // Obtener la cadena de conexión desde el archivo de configuración
             var stringConexion = ConfigurationManager.ConnectionStrings["MyDbContext"].ToString();
@@ -486,65 +540,6 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void CmbTemas_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Verificar que haya un tema seleccionado y que no sea null
-            if (cmbTemas.SelectedIndex != -1)
-            {
-                // Obtener el ID del tema seleccionado
-                int idTema;
-                if (int.TryParse(cmbTemas.SelectedValue.ToString(), out idTema))
-                {
-                    // Cadena de conexión desde el archivo de configuración
-                    var stringConexion = ConfigurationManager.ConnectionStrings["MyDbContext"].ToString();
-
-                    using (MySqlConnection mySqlConnection = new MySqlConnection(stringConexion))
-                    {
-                        try
-                        {
-                            mySqlConnection.Open();
-
-                            // Consulta para obtener los libros relacionados con el tema seleccionado
-                            string consulta = "SELECT Id, Titulo FROM Libros WHERE idTema = @idTema"; 
-                            using (MySqlCommand sqlCommand = new MySqlCommand(consulta, mySqlConnection))
-                            {
-                                // Asignar el parámetro
-                                sqlCommand.Parameters.AddWithValue("@idTema", idTema);
-
-                                // Ejecutar la consulta y cargar los resultados en un DataTable
-                                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(sqlCommand);
-                                DataTable dataTable = new DataTable();
-                                dataAdapter.Fill(dataTable);
-
-                                // Verificar si hay libros disponibles
-                                if (dataTable.Rows.Count > 0)
-                                {
-                                    // Configurar el ComboBox de libros
-                                    cmbTemas.DataSource = dataTable; // Aquí cargamos los libros en el mismo ComboBox
-                                    cmbTemas.DisplayMember = "Titulo"; // Mostrar el título del libro
-                                    cmbTemas.ValueMember = "Id"; // Valor del libro seleccionado
-                                    cmbTemas.SelectedIndex = -1; // Sin selección inicial
-                                }
-                                else
-                                {
-                                    // Si no hay libros, limpiar el ComboBox de libros
-                                    MessageBox.Show("No se encontraron libros para el tema seleccionado.");
-                                    cmbTemas.DataSource = null;
-                                }
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show($"Error al cargar los libros: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        finally
-                        {
-                            mySqlConnection.Close();
-                        }
-                    }
-                }
-            }
-        }
 
     }
 }

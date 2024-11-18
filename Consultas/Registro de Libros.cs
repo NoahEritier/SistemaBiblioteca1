@@ -121,8 +121,11 @@ namespace WindowsFormsApp1
                             mySqlConnection.Open();
 
                             // Crear el comando SQL para eliminar el libro
+                            string consulta = "DELETE FROM libros_autores WHERE IdLibro = @Id";
                             string query = "DELETE FROM libros WHERE Id = @Id"; // Asegúrate de que el nombre de la columna sea correcto
-                            MySqlCommand sqlCommand = new MySqlCommand(query, mySqlConnection);
+                            MySqlCommand sqlCommand = new MySqlCommand(consulta, mySqlConnection);
+                            MySqlCommand sqlCommand2 = new MySqlCommand(query, mySqlConnection);
+
                             sqlCommand.Parameters.AddWithValue("@Id", idLibro);
 
                             // Ejecutar el comando

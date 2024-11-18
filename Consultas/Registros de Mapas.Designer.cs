@@ -200,7 +200,6 @@
             this.btnBuscarMapa.TabIndex = 5;
             this.btnBuscarMapa.Text = "Buscar";
             this.btnBuscarMapa.UseVisualStyleBackColor = false;
-            this.btnBuscarMapa.Click += new System.EventHandler(this.btnBuscarMapa_Click);
             // 
             // cmbFiltroPeriodo
             // 

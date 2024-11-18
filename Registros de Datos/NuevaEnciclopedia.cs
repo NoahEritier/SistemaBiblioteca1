@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Windows.Forms;
 using static WindowsFormsApp1.Registros_de_Datos.NuevoDiccionario;
 
@@ -18,83 +19,87 @@ namespace WindowsFormsApp1.Registros_de_Datos
 
         private void CargarEditoriales()
         {
+            // Consulta SQL para obtener las editoriales, ordenadas alfabéticamente
+            string consulta = "SELECT Id, Nombre FROM Editoriales ORDER BY Nombre";
+
+            // Obtener la cadena de conexión desde el archivo de configuración
             var stringConexion = ConfigurationManager.ConnectionStrings["MyDbContext"].ToString();
+
             using (MySqlConnection mySqlConnection = new MySqlConnection(stringConexion))
             {
                 try
                 {
                     mySqlConnection.Open();
-                    string query = "SELECT id, nombre FROM editoriales";
 
-                    using (MySqlCommand cmd = new MySqlCommand(query, mySqlConnection))
+                    // Crear el comando SQL y asignar la consulta
+                    MySqlCommand sqlCommand = new MySqlCommand(consulta, mySqlConnection);
+
+                    // Ejecutar la consulta y cargar los resultados en un DataTable
+                    MySqlDataAdapter dataAdapter = new MySqlDataAdapter(sqlCommand);
+                    DataTable dataTable = new DataTable();
+                    dataAdapter.Fill(dataTable);
+
+                    // Verificar si hay datos
+                    if (dataTable.Rows.Count > 0)
                     {
-                        using (MySqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            List<Editorial> editoriales = new List<Editorial>();
-                            while (reader.Read())
-                            {
-                                // Crear instancias de la clase Editorial con los datos de la base de datos
-                                editoriales.Add(new Editorial
-                                {
-                                    Id = Convert.ToInt32(reader["id"]),
-                                    Nombre = reader["nombre"].ToString()
-                                });
-                            }
-
-                            // Asignar la lista de editoriales al ComboBox
-                            cmbEditoriales.DataSource = editoriales;
-
-                            // Establecer el DisplayMember para mostrar el nombre y el ValueMember para el id
-                            cmbEditoriales.DisplayMember = "Nombre";  // Mostrará solo el nombre
-                            cmbEditoriales.ValueMember = "Id";        // Internamente trabajará con el id
-                            cmbEditoriales.SelectedIndex = -1; // Esto hace que no haya ninguna opción seleccionada
-                            cmbEditoriales.Text = "";
-                        }
+                        // Configurar el ComboBox de editoriales
+                        cmbEditoriales.DataSource = dataTable;
+                        cmbEditoriales.DisplayMember = "Nombre";
+                        cmbEditoriales.ValueMember = "Id";
+                        cmbEditoriales.SelectedIndex = -1; // Opcional: No seleccionar ninguna editorial al inicio
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontraron editoriales en la base de datos.");
                     }
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show($"Error al cargar las editoriales: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                finally
+                {
+                    mySqlConnection.Close();
+                }
             }
         }
 
         private void CargarTemas()
         {
+
+            string consulta = "SELECT Id, Nombre FROM Temas WHERE Grupo = 'Libros' ORDER BY Nombre";
             var stringConexion = ConfigurationManager.ConnectionStrings["MyDbContext"].ToString();
+
             using (MySqlConnection mySqlConnection = new MySqlConnection(stringConexion))
             {
                 try
                 {
                     mySqlConnection.Open();
-                    string query = "SELECT id, nombre FROM temas"; // Consulta para obtener los temas
+                    MySqlCommand sqlCommand = new MySqlCommand(consulta, mySqlConnection);
+                    MySqlDataAdapter dataAdapter = new MySqlDataAdapter(sqlCommand);
+                    DataTable dataTable = new DataTable();
+                    dataAdapter.Fill(dataTable);
 
-                    using (MySqlCommand cmd = new MySqlCommand(query, mySqlConnection))
+                    if (dataTable.Rows.Count > 0)
                     {
-                        using (MySqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            List<Tema> temas = new List<Tema>(); // Lista para almacenar objetos Tema
-                            while (reader.Read())
-                            {
-                                temas.Add(new Tema // Crear una instancia de Tema
-                                {
-                                    Id = Convert.ToInt32(reader["id"]),
-                                    Nombre = reader["nombre"].ToString()
-                                });
-                            }
-
-                            // Asignar la lista de temas al ComboBox
-                            cmbTemas.DataSource = temas; // Asumiendo que tienes un ComboBox para temas
-                            cmbTemas.DisplayMember = "Nombre"; // Muestra el nombre
-                            cmbTemas.ValueMember = "Id"; // Almacena el ID
-                            cmbTemas.SelectedIndex = -1; // Sin selección por defecto
-                            cmbTemas.Text = "";
-                        }
+                        cmbTemas.DataSource = dataTable;
+                        cmbTemas.DisplayMember = "Nombre";
+                        cmbTemas.ValueMember = "Id";
+                        cmbTemas.SelectedIndex = -1; // Sin selección inicial
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontraron temas.");
+                        cmbTemas.DataSource = null;
                     }
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show($"Error al cargar los temas: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    mySqlConnection.Close();
                 }
             }
         }
@@ -230,12 +235,5 @@ namespace WindowsFormsApp1.Registros_de_Datos
             nuevoTema.ShowDialog(this);
             CargarTemas(); // Cargar nuevamente los temas después de cerrar el formulario
         }
-    }
-
-    // Clase Tema para almacenar id y nombre
-    public class Tema
-    {
-        public int Id { get; set; }
-        public string Nombre { get; set; }
     }
 }
