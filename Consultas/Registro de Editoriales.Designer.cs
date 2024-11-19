@@ -58,7 +58,7 @@
             this.panel.Location = new System.Drawing.Point(37, 84);
             this.panel.Margin = new System.Windows.Forms.Padding(2);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(847, 581);
+            this.panel.Size = new System.Drawing.Size(1156, 657);
             this.panel.TabIndex = 5;
             // 
             // btnEliminarEditoriales
@@ -70,7 +70,7 @@
             this.btnEliminarEditoriales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarEditoriales.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarEditoriales.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEliminarEditoriales.Location = new System.Drawing.Point(667, 159);
+            this.btnEliminarEditoriales.Location = new System.Drawing.Point(1052, 159);
             this.btnEliminarEditoriales.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarEditoriales.Name = "btnEliminarEditoriales";
             this.btnEliminarEditoriales.Size = new System.Drawing.Size(76, 31);
@@ -88,7 +88,7 @@
             this.btnModificarEditoriales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificarEditoriales.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarEditoriales.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnModificarEditoriales.Location = new System.Drawing.Point(580, 159);
+            this.btnModificarEditoriales.Location = new System.Drawing.Point(966, 159);
             this.btnModificarEditoriales.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificarEditoriales.Name = "btnModificarEditoriales";
             this.btnModificarEditoriales.Size = new System.Drawing.Size(82, 31);
@@ -109,7 +109,7 @@
             this.dgvEditoriales.ReadOnly = true;
             this.dgvEditoriales.RowHeadersWidth = 51;
             this.dgvEditoriales.RowTemplate.Height = 24;
-            this.dgvEditoriales.Size = new System.Drawing.Size(726, 358);
+            this.dgvEditoriales.Size = new System.Drawing.Size(1109, 432);
             this.dgvEditoriales.TabIndex = 7;
             // 
             // btnNuevaEditorial
@@ -214,7 +214,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(919, 640);
+            this.ClientSize = new System.Drawing.Size(1229, 748);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.lblEditorialesRegistradas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

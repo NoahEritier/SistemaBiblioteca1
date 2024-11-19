@@ -142,33 +142,9 @@ namespace WindowsFormsApp1.Consultas
 
         private void btnModificarDiccionarios_Click(object sender, EventArgs e)
         {
-            // Verificar si hay una fila seleccionada en el DataGridView
-            if (dgvDiccionarios.SelectedRows.Count > 0)
-            {
-                DataGridViewRow filaSeleccionada = dgvDiccionarios.SelectedRows[0];
-
-                // Extraer los valores de la fila seleccionada
-                int idDiccionario = Convert.ToInt32(filaSeleccionada.Cells["Id"].Value);
-                int idEditorial = Convert.ToInt32(filaSeleccionada.Cells["IdEditorial"].Value);
-                string idioma = filaSeleccionada.Cells["Idioma"].Value.ToString();
-                int año = Convert.ToInt32(filaSeleccionada.Cells["Año"].Value);
-                int? tomos = filaSeleccionada.Cells["Tomos"].Value != DBNull.Value
-                    ? Convert.ToInt32(filaSeleccionada.Cells["Tomos"].Value)
-                    : (int?)null;
-
-                // Crear instancia del formulario para edición
-                NuevoDiccionario editarDiccionario = new NuevoDiccionario(idDiccionario, idEditorial, idioma, año, tomos);
-                editarDiccionario.ShowDialog();
-
-                // Refrescar la lista después de la edición
-                btnBuscarDiccionario_Click(sender, e); // Asume que este método recarga el DataGridView
-            }
-            else
-            {
-                MessageBox.Show("Por favor, selecciona un diccionario para modificar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            NuevoDiccionario nuevoDiccionario = new NuevoDiccionario();
+            nuevoDiccionario.ShowDialog(this);
         }
-
 
         private void btnEliminarDiccionarios_Click(object sender, EventArgs e)
         {

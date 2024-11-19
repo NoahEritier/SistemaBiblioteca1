@@ -15,39 +15,33 @@ namespace WindowsFormsApp1
 {
     public partial class NuevoAutor : Form
     {
-        private int? autorId = null; // ID del autor para edición
-
-        // Constructor para nuevo o existente
-        public NuevoAutor(int? id = null, string nombre = "", string apellido = "", string nacionalidad = "")
+        public NuevoAutor()
         {
             InitializeComponent();
-
-            autorId = id; // Si es null, es un nuevo autor
-
-            // Rellenar los campos si se pasa información
-            txtNombreAutor.Text = nombre;
-            txtApellidoAutor.Text = apellido;
-            txtNacionalidadAutor.Text = nacionalidad;
-
-            if (autorId != null)
-            {
-                this.Text = "Modificar Autor"; // Cambia el título de la ventana
-            }
         }
 
         private void btnConfirmarRegistro_Click(object sender, EventArgs e)
         {
+            // Obtener los valores de los TextBox
             string nombre = txtNombreAutor.Text.Trim();
             string apellido = txtApellidoAutor.Text.Trim();
-            string nacionalidad = txtNacionalidadAutor.Text.Trim();
+            string nacionalidad = txtNacionalidadAutor.Text.Trim(); // Campo no obligatorio
+            DateTime fechaRegistro = DateTime.Now;
 
             // Validar campos obligatorios
-            if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(apellido))
+            if (string.IsNullOrEmpty(nombre))
             {
-                MessageBox.Show("Los campos 'Nombre' y 'Apellido' son obligatorios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El campo 'Nombre' es obligatorio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
+            if (string.IsNullOrEmpty(apellido))
+            {
+                MessageBox.Show("El campo 'Apellido' es obligatorio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Cadena de conexión desde el archivo de configuración
             var stringConexion = ConfigurationManager.ConnectionStrings["MyDbContext"].ToString();
 
             using (MySqlConnection mySqlConnection = new MySqlConnection(stringConexion))
@@ -56,46 +50,49 @@ namespace WindowsFormsApp1
                 {
                     mySqlConnection.Open();
 
-                    string query;
-                    if (autorId == null) // Nuevo autor
-                    {
-                        query = "INSERT INTO autores (nombre, apellido, nacionalidad, fechaRegistro) VALUES (@nombre, @apellido, @nacionalidad, @fechaRegistro)";
-                    }
-                    else // Modificar autor existente
-                    {
-                        query = "UPDATE autores SET nombre = @nombre, apellido = @apellido, nacionalidad = @nacionalidad WHERE id = @id";
-                    }
+                    // Sentencia SQL para insertar datos
+                    var sentencia = "INSERT INTO autores (nombre, apellido, nacionalidad, fechaRegistro) VALUES (@nombre, @apellido, @nacionalidad, @fechaRegistro)";
 
-                    using (MySqlCommand sqlCommand = new MySqlCommand(query, mySqlConnection))
+                    // Crear el comando SQL
+                    using (MySqlCommand sqlCommand = new MySqlCommand(sentencia, mySqlConnection))
                     {
+                        // Asignar los valores a los parámetros
                         sqlCommand.Parameters.AddWithValue("@nombre", nombre);
                         sqlCommand.Parameters.AddWithValue("@apellido", apellido);
-                        sqlCommand.Parameters.AddWithValue("@nacionalidad", string.IsNullOrEmpty(nacionalidad) ? DBNull.Value : (object)nacionalidad);
+                        sqlCommand.Parameters.AddWithValue(@"fechaRegistro", fechaRegistro);
 
-                        if (autorId != null)
+                        // Si nacionalidad está vacía, se inserta como NULL
+                        if (string.IsNullOrEmpty(nacionalidad))
                         {
-                            sqlCommand.Parameters.AddWithValue("@id", autorId);
+                            sqlCommand.Parameters.AddWithValue("@nacionalidad", DBNull.Value);
                         }
                         else
                         {
-                            sqlCommand.Parameters.AddWithValue("@fechaRegistro", DateTime.Now);
+                            sqlCommand.Parameters.AddWithValue("@nacionalidad", nacionalidad);
                         }
 
+                        // Ejecutar la inserción
                         int registrosAfectados = sqlCommand.ExecuteNonQuery();
+
                         if (registrosAfectados > 0)
                         {
-                            MessageBox.Show(autorId == null ? "Autor registrado correctamente." : "Autor modificado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Autor registrado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             Close();
                         }
                         else
                         {
-                            MessageBox.Show("No se pudo guardar el autor.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("No se pudo registrar el autor.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error al guardar el autor: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Error al registrar el autor: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    // Cerrar la conexión
+                    mySqlConnection.Close();
                 }
             }
         }

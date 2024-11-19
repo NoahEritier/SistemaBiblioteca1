@@ -58,7 +58,7 @@
             this.panel1.Location = new System.Drawing.Point(29, 72);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(847, 581);
+            this.panel1.Size = new System.Drawing.Size(1156, 657);
             this.panel1.TabIndex = 11;
             // 
             // btnEliminarJuegos
@@ -70,7 +70,7 @@
             this.btnEliminarJuegos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarJuegos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarJuegos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEliminarJuegos.Location = new System.Drawing.Point(666, 167);
+            this.btnEliminarJuegos.Location = new System.Drawing.Point(1052, 159);
             this.btnEliminarJuegos.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarJuegos.Name = "btnEliminarJuegos";
             this.btnEliminarJuegos.Size = new System.Drawing.Size(76, 31);
@@ -88,7 +88,7 @@
             this.btnModificarJuegos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificarJuegos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarJuegos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnModificarJuegos.Location = new System.Drawing.Point(580, 167);
+            this.btnModificarJuegos.Location = new System.Drawing.Point(966, 159);
             this.btnModificarJuegos.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificarJuegos.Name = "btnModificarJuegos";
             this.btnModificarJuegos.Size = new System.Drawing.Size(82, 31);
@@ -134,7 +134,7 @@
             this.dgvJuegos.ReadOnly = true;
             this.dgvJuegos.RowHeadersWidth = 51;
             this.dgvJuegos.RowTemplate.Height = 24;
-            this.dgvJuegos.Size = new System.Drawing.Size(726, 295);
+            this.dgvJuegos.Size = new System.Drawing.Size(1109, 432);
             this.dgvJuegos.TabIndex = 7;
             // 
             // btnNuevoJuego
@@ -214,7 +214,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(905, 640);
+            this.ClientSize = new System.Drawing.Size(1229, 748);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblJuegosRegistrados);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

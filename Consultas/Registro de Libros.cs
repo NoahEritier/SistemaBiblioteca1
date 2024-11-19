@@ -151,5 +151,10 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Por favor, selecciona un libro para eliminar.");
             }
         }
+
+        private void cmbFiltroPeriodo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

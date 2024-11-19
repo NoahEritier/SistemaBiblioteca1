@@ -1,42 +1,34 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Configuration;
 using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1.Registros_de_Datos
 {
     public partial class NuevoDiccionario : Form
     {
-        private int? diccionarioId; // Identificador del diccionario (null si es nuevo)
-
-        public NuevoDiccionario(int? idDiccionario = null, int? idEditorial = null, string idioma = "", int año = 0, int? tomos = null)
-        {
-            InitializeComponent();
-            diccionarioId = idDiccionario;
-
-            // Cargar editoriales en el ComboBox
-            CargarEditoriales();
-
-            if (diccionarioId.HasValue)
+            public NuevoDiccionario()
             {
-                // Rellenar los campos si estamos editando
-                cmbEditoriales.SelectedValue = idEditorial;
-                cmbIdiomas.SelectedItem = idioma;
-                txtAño.Text = año.ToString();
-                txtTomos.Text = tomos?.ToString() ?? ""; // Mostrar tomos si hay un valor, o dejar vacío
-                this.Text = "Editar Diccionario";
+                InitializeComponent();
+
+                // Cargar las editoriales en el ComboBox
+                CargarEditoriales();
             }
-            else
-            {
-                this.Text = "Nuevo Diccionario";
-            }
-        }
 
         // Método para cargar las editoriales en el ComboBox
         private void CargarEditoriales()
         {
+            // Consulta SQL para obtener las editoriales, ordenadas alfabéticamente
             string consulta = "SELECT Id, Nombre FROM Editoriales ORDER BY Nombre";
+
+            // Obtener la cadena de conexión desde el archivo de configuración
             var stringConexion = ConfigurationManager.ConnectionStrings["MyDbContext"].ToString();
 
             using (MySqlConnection mySqlConnection = new MySqlConnection(stringConexion))
@@ -44,17 +36,23 @@ namespace WindowsFormsApp1.Registros_de_Datos
                 try
                 {
                     mySqlConnection.Open();
+
+                    // Crear el comando SQL y asignar la consulta
                     MySqlCommand sqlCommand = new MySqlCommand(consulta, mySqlConnection);
+
+                    // Ejecutar la consulta y cargar los resultados en un DataTable
                     MySqlDataAdapter dataAdapter = new MySqlDataAdapter(sqlCommand);
                     DataTable dataTable = new DataTable();
                     dataAdapter.Fill(dataTable);
 
+                    // Verificar si hay datos
                     if (dataTable.Rows.Count > 0)
                     {
+                        // Configurar el ComboBox de editoriales
                         cmbEditoriales.DataSource = dataTable;
                         cmbEditoriales.DisplayMember = "Nombre";
                         cmbEditoriales.ValueMember = "Id";
-                        cmbEditoriales.SelectedIndex = -1; // Sin selección inicial
+                        cmbEditoriales.SelectedIndex = -1; // Opcional: No seleccionar ninguna editorial al inicio
                     }
                     else
                     {
@@ -72,128 +70,115 @@ namespace WindowsFormsApp1.Registros_de_Datos
             }
         }
 
-        // Método para registrar o actualizar un diccionario
         private void btnRegistrarDiccionario_Click(object sender, EventArgs e)
-        {
-            if (cmbEditoriales.SelectedItem == null)
             {
-                MessageBox.Show("Seleccione una editorial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            int idEditorial = Convert.ToInt32(cmbEditoriales.SelectedValue);
-
-            if (cmbIdiomas.SelectedItem == null)
-            {
-                MessageBox.Show("Seleccione un idioma.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            string idioma = cmbIdiomas.SelectedItem.ToString();
-
-            if (!int.TryParse(txtAño.Text.Trim(), out int año))
-            {
-                MessageBox.Show("El campo 'Año' es obligatorio y debe ser un número válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            int? tomos = null;
-            if (!string.IsNullOrEmpty(txtTomos.Text.Trim()))
-            {
-                if (int.TryParse(txtTomos.Text.Trim(), out int valorTomos))
+                // Obtener el id de la editorial seleccionada
+                if (cmbEditoriales.SelectedItem == null)
                 {
-                    tomos = valorTomos;
-                }
-                else
-                {
-                    MessageBox.Show("El campo 'Tomos' debe ser un número.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Seleccione una editorial.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-            }
 
-            var stringConexion = ConfigurationManager.ConnectionStrings["MyDbContext"].ToString();
+                int idEditorial = Convert.ToInt32(cmbEditoriales.SelectedValue);  // Obtener el ID de la editorial seleccionada
 
-            using (MySqlConnection mySqlConnection = new MySqlConnection(stringConexion))
-            {
-                try
+                // Obtener el valor del idioma seleccionado
+                if (cmbIdiomas.SelectedItem == null)
                 {
-                    mySqlConnection.Open();
+                    MessageBox.Show("Seleccione un idioma.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
-                    string query;
+                string idioma = cmbIdiomas.SelectedItem.ToString(); // Idioma seleccionado
 
-                    if (diccionarioId.HasValue)
+                // Validar y obtener el año
+                int año;
+                if (string.IsNullOrEmpty(txtAño.Text.Trim()) || !int.TryParse(txtAño.Text.Trim(), out año))
+                {
+                    MessageBox.Show("El campo 'Año' es obligatorio y debe ser un número válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Obtener el número de tomos, que es opcional
+                int? tomos = null;
+                if (!string.IsNullOrEmpty(txtTomos.Text.Trim()))
+                {
+                    int valorTomos;
+                    if (int.TryParse(txtTomos.Text.Trim(), out valorTomos))
                     {
-                        query = @"
-                            UPDATE diccionarios 
-                            SET idEditorial = @idEditorial, idioma = @idioma, año = @año, tomos = @tomos
-                            WHERE Id = @idDiccionario";
+                        tomos = valorTomos; // Si se ingresa, se guarda
                     }
                     else
                     {
-                        query = @"
-                            INSERT INTO diccionarios (idEditorial, idioma, año, tomos)
-                            VALUES (@idEditorial, @idioma, @año, @tomos)";
+                        MessageBox.Show("El campo 'Tomos' debe ser un número.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
                     }
+                }
 
-                    using (MySqlCommand sqlCommand = new MySqlCommand(query, mySqlConnection))
+                // Cadena de conexión desde el archivo de configuración
+                var stringConexion = ConfigurationManager.ConnectionStrings["MyDbContext"].ToString();
+
+                using (MySqlConnection mySqlConnection = new MySqlConnection(stringConexion))
+                {
+                    try
                     {
-                        sqlCommand.Parameters.AddWithValue("@idEditorial", idEditorial);
-                        sqlCommand.Parameters.AddWithValue("@idioma", idioma);
-                        sqlCommand.Parameters.AddWithValue("@año", año);
+                        mySqlConnection.Open();
 
-                        if (tomos.HasValue)
-                        {
-                            sqlCommand.Parameters.AddWithValue("@tomos", tomos);
-                        }
-                        else
-                        {
-                            sqlCommand.Parameters.AddWithValue("@tomos", DBNull.Value);
-                        }
+                        // Sentencia SQL para insertar datos
+                        string sentencia = "INSERT INTO diccionarios (idEditorial, idioma, año, tomos) VALUES (@idEditorial, @idioma, @año, @tomos)";
 
-                        if (diccionarioId.HasValue)
+                        // Crear el comando SQL
+                        using (MySqlCommand sqlCommand = new MySqlCommand(sentencia, mySqlConnection))
                         {
-                            sqlCommand.Parameters.AddWithValue("@idDiccionario", diccionarioId);
-                        }
+                            // Asignar los valores a los parámetros
+                            sqlCommand.Parameters.AddWithValue("@idEditorial", idEditorial);
+                            sqlCommand.Parameters.AddWithValue("@idioma", idioma);
+                            sqlCommand.Parameters.AddWithValue("@año", año);
 
-                        int registrosAfectados = sqlCommand.ExecuteNonQuery();
+                            // Si no se ingresaron tomos, insertar NULL
+                            if (tomos.HasValue)
+                            {
+                                sqlCommand.Parameters.AddWithValue("@tomos", tomos);
+                            }
+                            else
+                            {
+                                sqlCommand.Parameters.AddWithValue("@tomos", DBNull.Value);
+                            }
 
-                        if (registrosAfectados > 0)
-                        {
-                            MessageBox.Show(diccionarioId.HasValue
-                                ? "Diccionario actualizado correctamente."
-                                : "Diccionario registrado correctamente.",
-                                "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            Close();
-                        }
-                        else
-                        {
-                            MessageBox.Show("No se pudo guardar el diccionario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            // Ejecutar la inserción
+                            int registrosAfectados = sqlCommand.ExecuteNonQuery();
+
+                            if (registrosAfectados > 0)
+                            {
+                                MessageBox.Show("Diccionario registrado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se pudo registrar el diccionario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error al guardar el diccionario: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                finally
-                {
-                    mySqlConnection.Close();
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error al registrar el diccionario: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        mySqlConnection.Close();
+                    }
                 }
             }
-        }
 
-        private void btnCancelarRegistro_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+            private void btnCancelarRegistro_Click(object sender, EventArgs e)
+            {
+                Close();
+            }
 
-        private void btnAgregarNuevaEditorial_Click(object sender, EventArgs e)
-        {
-            NuevaEditorial nuevaEditorial = new NuevaEditorial();
-            nuevaEditorial.ShowDialog();
-
-            // Refrescar el ComboBox de editoriales después de agregar una nueva
-            CargarEditoriales();
-        }
+            private void btnAgregarNuevaEditorial_Click(object sender, EventArgs e)
+            {
+                NuevaEditorial nuevaEditorial = new NuevaEditorial();
+                nuevaEditorial.ShowDialog();
+            }
+        
     }
 }

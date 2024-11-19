@@ -33,27 +33,21 @@
             this.lblIlustraciones = new System.Windows.Forms.Label();
             this.btnConfirmarRegistro = new WindowsFormsApp1.PillButton();
             this.btnCancelarRegistro = new WindowsFormsApp1.PillButton();
-            this.cmbTemas = new System.Windows.Forms.ComboBox();
+            this.cmbTema = new System.Windows.Forms.ComboBox();
             this.btnAgregarNuevoTema = new System.Windows.Forms.Button();
             this.lblTema = new System.Windows.Forms.Label();
             this.lblProyectosDeCatedra = new System.Windows.Forms.Label();
-            this.cmbEditoriales = new System.Windows.Forms.ComboBox();
-            this.btnAgregarNuevaEditorial = new System.Windows.Forms.Button();
-            this.lblEditorial = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel1.Controls.Add(this.cmbEditoriales);
-            this.panel1.Controls.Add(this.btnAgregarNuevaEditorial);
-            this.panel1.Controls.Add(this.lblEditorial);
             this.panel1.Controls.Add(this.cmbIlustraciones);
             this.panel1.Controls.Add(this.lblIlustraciones);
             this.panel1.Controls.Add(this.btnConfirmarRegistro);
             this.panel1.Controls.Add(this.btnCancelarRegistro);
-            this.panel1.Controls.Add(this.cmbTemas);
+            this.panel1.Controls.Add(this.cmbTema);
             this.panel1.Controls.Add(this.btnAgregarNuevoTema);
             this.panel1.Controls.Add(this.lblTema);
             this.panel1.Location = new System.Drawing.Point(48, 92);
@@ -71,7 +65,7 @@
             this.cmbIlustraciones.Items.AddRange(new object[] {
             "Si",
             "No"});
-            this.cmbIlustraciones.Location = new System.Drawing.Point(36, 232);
+            this.cmbIlustraciones.Location = new System.Drawing.Point(36, 142);
             this.cmbIlustraciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbIlustraciones.Name = "cmbIlustraciones";
             this.cmbIlustraciones.Size = new System.Drawing.Size(81, 33);
@@ -82,7 +76,7 @@
             this.lblIlustraciones.AutoSize = true;
             this.lblIlustraciones.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblIlustraciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblIlustraciones.Location = new System.Drawing.Point(37, 199);
+            this.lblIlustraciones.Location = new System.Drawing.Point(37, 114);
             this.lblIlustraciones.Name = "lblIlustraciones";
             this.lblIlustraciones.Size = new System.Drawing.Size(114, 24);
             this.lblIlustraciones.TabIndex = 31;
@@ -98,14 +92,13 @@
             this.btnConfirmarRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmarRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmarRegistro.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnConfirmarRegistro.Location = new System.Drawing.Point(193, 291);
+            this.btnConfirmarRegistro.Location = new System.Drawing.Point(193, 199);
             this.btnConfirmarRegistro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConfirmarRegistro.Name = "btnConfirmarRegistro";
             this.btnConfirmarRegistro.Size = new System.Drawing.Size(107, 38);
             this.btnConfirmarRegistro.TabIndex = 28;
             this.btnConfirmarRegistro.Text = "Aceptar";
             this.btnConfirmarRegistro.UseVisualStyleBackColor = false;
-            this.btnConfirmarRegistro.Click += new System.EventHandler(this.btnConfirmarRegistro_Click);
             // 
             // btnCancelarRegistro
             // 
@@ -116,7 +109,7 @@
             this.btnCancelarRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarRegistro.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCancelarRegistro.Location = new System.Drawing.Point(51, 291);
+            this.btnCancelarRegistro.Location = new System.Drawing.Point(51, 199);
             this.btnCancelarRegistro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancelarRegistro.Name = "btnCancelarRegistro";
             this.btnCancelarRegistro.Size = new System.Drawing.Size(127, 38);
@@ -125,24 +118,24 @@
             this.btnCancelarRegistro.UseVisualStyleBackColor = false;
             this.btnCancelarRegistro.Click += new System.EventHandler(this.btnCancelarRegistro_Click);
             // 
-            // cmbTemas
+            // cmbTema
             // 
-            this.cmbTemas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cmbTemas.ForeColor = System.Drawing.Color.Black;
-            this.cmbTemas.FormattingEnabled = true;
-            this.cmbTemas.ItemHeight = 25;
-            this.cmbTemas.Location = new System.Drawing.Point(36, 82);
-            this.cmbTemas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmbTemas.Name = "cmbTemas";
-            this.cmbTemas.Size = new System.Drawing.Size(403, 33);
-            this.cmbTemas.TabIndex = 13;
+            this.cmbTema.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cmbTema.ForeColor = System.Drawing.Color.Black;
+            this.cmbTema.FormattingEnabled = true;
+            this.cmbTema.ItemHeight = 25;
+            this.cmbTema.Location = new System.Drawing.Point(36, 79);
+            this.cmbTema.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbTema.Name = "cmbTema";
+            this.cmbTema.Size = new System.Drawing.Size(403, 33);
+            this.cmbTema.TabIndex = 13;
             // 
             // btnAgregarNuevoTema
             // 
             this.btnAgregarNuevoTema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarNuevoTema.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.btnAgregarNuevoTema.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnAgregarNuevoTema.Location = new System.Drawing.Point(445, 82);
+            this.btnAgregarNuevoTema.Location = new System.Drawing.Point(445, 79);
             this.btnAgregarNuevoTema.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAgregarNuevoTema.Name = "btnAgregarNuevoTema";
             this.btnAgregarNuevoTema.Size = new System.Drawing.Size(36, 33);
@@ -158,9 +151,9 @@
             this.lblTema.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lblTema.Location = new System.Drawing.Point(37, 49);
             this.lblTema.Name = "lblTema";
-            this.lblTema.Size = new System.Drawing.Size(71, 24);
+            this.lblTema.Size = new System.Drawing.Size(59, 24);
             this.lblTema.TabIndex = 11;
-            this.lblTema.Text = "* Tema";
+            this.lblTema.Text = "Tema";
             this.lblTema.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblProyectosDeCatedra
@@ -173,43 +166,6 @@
             this.lblProyectosDeCatedra.TabIndex = 8;
             this.lblProyectosDeCatedra.Text = "Nuevo Mapas";
             this.lblProyectosDeCatedra.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // cmbEditoriales
-            // 
-            this.cmbEditoriales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cmbEditoriales.ForeColor = System.Drawing.Color.Black;
-            this.cmbEditoriales.FormattingEnabled = true;
-            this.cmbEditoriales.ItemHeight = 25;
-            this.cmbEditoriales.Location = new System.Drawing.Point(36, 157);
-            this.cmbEditoriales.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmbEditoriales.Name = "cmbEditoriales";
-            this.cmbEditoriales.Size = new System.Drawing.Size(403, 33);
-            this.cmbEditoriales.TabIndex = 37;
-            // 
-            // btnAgregarNuevaEditorial
-            // 
-            this.btnAgregarNuevaEditorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarNuevaEditorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.btnAgregarNuevaEditorial.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnAgregarNuevaEditorial.Location = new System.Drawing.Point(445, 157);
-            this.btnAgregarNuevaEditorial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAgregarNuevaEditorial.Name = "btnAgregarNuevaEditorial";
-            this.btnAgregarNuevaEditorial.Size = new System.Drawing.Size(36, 33);
-            this.btnAgregarNuevaEditorial.TabIndex = 36;
-            this.btnAgregarNuevaEditorial.Text = "+";
-            this.btnAgregarNuevaEditorial.UseVisualStyleBackColor = true;
-            // 
-            // lblEditorial
-            // 
-            this.lblEditorial.AutoSize = true;
-            this.lblEditorial.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.lblEditorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblEditorial.Location = new System.Drawing.Point(37, 124);
-            this.lblEditorial.Name = "lblEditorial";
-            this.lblEditorial.Size = new System.Drawing.Size(89, 24);
-            this.lblEditorial.TabIndex = 35;
-            this.lblEditorial.Text = "* Editorial";
-            this.lblEditorial.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // NuevoMapas
             // 
@@ -237,13 +193,10 @@
         private System.Windows.Forms.Label lblIlustraciones;
         private PillButton btnConfirmarRegistro;
         private PillButton btnCancelarRegistro;
-        private System.Windows.Forms.ComboBox cmbTemas;
+        private System.Windows.Forms.ComboBox cmbTema;
         private System.Windows.Forms.Button btnAgregarNuevoTema;
         private System.Windows.Forms.Label lblTema;
         private System.Windows.Forms.Label lblProyectosDeCatedra;
         private System.Windows.Forms.ComboBox cmbIlustraciones;
-        private System.Windows.Forms.ComboBox cmbEditoriales;
-        private System.Windows.Forms.Button btnAgregarNuevaEditorial;
-        private System.Windows.Forms.Label lblEditorial;
     }
 }
