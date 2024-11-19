@@ -10,13 +10,15 @@ namespace WindowsFormsApp1.Registros_de_Datos
 {
     public partial class NuevaEnciclopedia : Form
     {
-        public NuevaEnciclopedia()
+        private int? idEnciclopedia = null;
+        public NuevaEnciclopedia(int? id = null, string nombre = "", string idioma = "", int? idEditorial = null, int? año = null, int? tomos = null, int? idTema = null)
         {
             InitializeComponent();
             CargarEditoriales();
             CargarTemas();
+            idEnciclopedia = id;
 
-            if (enciclopediaId.HasValue)
+            if (idEnciclopedia != null)
             {
                 // Rellenar los campos si estamos editando
                 txtTitulo.Text = nombre;

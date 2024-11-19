@@ -192,7 +192,7 @@ namespace WindowsFormsApp1.Consultas
 
 
                 // Abrir el formulario de edición con los datos seleccionados
-                NuevaEnciclopedia nuevaEnciclopedia = new NuevaEnciclopedia(idEnciclopedia, nombre, idEditorial, idioma, año, tomos, idTema);
+                NuevaEnciclopedia nuevaEnciclopedia = new NuevaEnciclopedia(idEnciclopedia, nombre, idioma, idEditorial, año, tomos, idTema);
                 nuevaEnciclopedia.ShowDialog(this);
 
                 // Refrescar la lista de autores después de guardar cambios

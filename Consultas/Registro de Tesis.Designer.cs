@@ -66,7 +66,7 @@
             this.panel1.Location = new System.Drawing.Point(48, 98);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1156, 657);
+            this.panel1.Size = new System.Drawing.Size(1439, 780);
             this.panel1.TabIndex = 10;
             // 
             // btnEliminarTesis
@@ -78,7 +78,7 @@
             this.btnEliminarTesis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarTesis.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarTesis.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEliminarTesis.Location = new System.Drawing.Point(1052, 159);
+            this.btnEliminarTesis.Location = new System.Drawing.Point(1293, 286);
             this.btnEliminarTesis.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarTesis.Name = "btnEliminarTesis";
             this.btnEliminarTesis.Size = new System.Drawing.Size(101, 38);
@@ -96,7 +96,7 @@
             this.btnModificarTesis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificarTesis.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarTesis.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnModificarTesis.Location = new System.Drawing.Point(966, 159);
+            this.btnModificarTesis.Location = new System.Drawing.Point(1180, 286);
             this.btnModificarTesis.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificarTesis.Name = "btnModificarTesis";
             this.btnModificarTesis.Size = new System.Drawing.Size(109, 38);
@@ -188,7 +188,7 @@
             this.dgvTesis.ReadOnly = true;
             this.dgvTesis.RowHeadersWidth = 51;
             this.dgvTesis.RowTemplate.Height = 24;
-            this.dgvTesis.Size = new System.Drawing.Size(1109, 432);
+            this.dgvTesis.Size = new System.Drawing.Size(1366, 432);
             this.dgvTesis.TabIndex = 7;
             // 
             // btnNuevaTesis
@@ -267,11 +267,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1229, 748);
+            this.ClientSize = new System.Drawing.Size(1515, 912);
             this.Controls.Add(this.lblTesisRegistradas);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Registro_de_Tesis";
             this.Text = "Registro_de_Tesis";
             this.panel1.ResumeLayout(false);

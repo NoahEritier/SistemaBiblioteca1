@@ -58,7 +58,7 @@
             this.panel1.Location = new System.Drawing.Point(39, 89);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1156, 657);
+            this.panel1.Size = new System.Drawing.Size(1455, 657);
             this.panel1.TabIndex = 7;
             // 
             // btnEliminarTemas
@@ -70,7 +70,7 @@
             this.btnEliminarTemas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarTemas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarTemas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEliminarTemas.Location = new System.Drawing.Point(1052, 159);
+            this.btnEliminarTemas.Location = new System.Drawing.Point(1313, 196);
             this.btnEliminarTemas.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarTemas.Name = "btnEliminarTemas";
             this.btnEliminarTemas.Size = new System.Drawing.Size(101, 38);
@@ -88,7 +88,7 @@
             this.btnModificarTemas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificarTemas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarTemas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnModificarTemas.Location = new System.Drawing.Point(966, 159);
+            this.btnModificarTemas.Location = new System.Drawing.Point(1200, 196);
             this.btnModificarTemas.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificarTemas.Name = "btnModificarTemas";
             this.btnModificarTemas.Size = new System.Drawing.Size(109, 38);
@@ -109,7 +109,7 @@
             this.dgvTemas.ReadOnly = true;
             this.dgvTemas.RowHeadersWidth = 51;
             this.dgvTemas.RowTemplate.Height = 24;
-            this.dgvTemas.Size = new System.Drawing.Size(1109, 432);
+            this.dgvTemas.Size = new System.Drawing.Size(1394, 432);
             this.dgvTemas.TabIndex = 7;
             // 
             // btnNuevoTema
@@ -211,7 +211,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1229, 748);
+            this.ClientSize = new System.Drawing.Size(1506, 748);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblTemasRegistrados);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

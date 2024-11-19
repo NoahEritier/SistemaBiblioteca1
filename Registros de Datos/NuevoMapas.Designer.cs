@@ -33,7 +33,7 @@
             this.lblIlustraciones = new System.Windows.Forms.Label();
             this.btnConfirmarRegistro = new WindowsFormsApp1.PillButton();
             this.btnCancelarRegistro = new WindowsFormsApp1.PillButton();
-            this.cmbTema = new System.Windows.Forms.ComboBox();
+            this.cmbTemas = new System.Windows.Forms.ComboBox();
             this.btnAgregarNuevoTema = new System.Windows.Forms.Button();
             this.lblTema = new System.Windows.Forms.Label();
             this.lblProyectosDeCatedra = new System.Windows.Forms.Label();
@@ -47,7 +47,7 @@
             this.panel1.Controls.Add(this.lblIlustraciones);
             this.panel1.Controls.Add(this.btnConfirmarRegistro);
             this.panel1.Controls.Add(this.btnCancelarRegistro);
-            this.panel1.Controls.Add(this.cmbTema);
+            this.panel1.Controls.Add(this.cmbTemas);
             this.panel1.Controls.Add(this.btnAgregarNuevoTema);
             this.panel1.Controls.Add(this.lblTema);
             this.panel1.Location = new System.Drawing.Point(48, 92);
@@ -99,6 +99,7 @@
             this.btnConfirmarRegistro.TabIndex = 28;
             this.btnConfirmarRegistro.Text = "Aceptar";
             this.btnConfirmarRegistro.UseVisualStyleBackColor = false;
+            this.btnConfirmarRegistro.Click += new System.EventHandler(this.btnConfirmarRegistro_Click);
             // 
             // btnCancelarRegistro
             // 
@@ -118,17 +119,17 @@
             this.btnCancelarRegistro.UseVisualStyleBackColor = false;
             this.btnCancelarRegistro.Click += new System.EventHandler(this.btnCancelarRegistro_Click);
             // 
-            // cmbTema
+            // cmbTemas
             // 
-            this.cmbTema.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cmbTema.ForeColor = System.Drawing.Color.Black;
-            this.cmbTema.FormattingEnabled = true;
-            this.cmbTema.ItemHeight = 25;
-            this.cmbTema.Location = new System.Drawing.Point(36, 79);
-            this.cmbTema.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmbTema.Name = "cmbTema";
-            this.cmbTema.Size = new System.Drawing.Size(403, 33);
-            this.cmbTema.TabIndex = 13;
+            this.cmbTemas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cmbTemas.ForeColor = System.Drawing.Color.Black;
+            this.cmbTemas.FormattingEnabled = true;
+            this.cmbTemas.ItemHeight = 25;
+            this.cmbTemas.Location = new System.Drawing.Point(36, 79);
+            this.cmbTemas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbTemas.Name = "cmbTemas";
+            this.cmbTemas.Size = new System.Drawing.Size(403, 33);
+            this.cmbTemas.TabIndex = 13;
             // 
             // btnAgregarNuevoTema
             // 
@@ -193,7 +194,7 @@
         private System.Windows.Forms.Label lblIlustraciones;
         private PillButton btnConfirmarRegistro;
         private PillButton btnCancelarRegistro;
-        private System.Windows.Forms.ComboBox cmbTema;
+        private System.Windows.Forms.ComboBox cmbTemas;
         private System.Windows.Forms.Button btnAgregarNuevoTema;
         private System.Windows.Forms.Label lblTema;
         private System.Windows.Forms.Label lblProyectosDeCatedra;
