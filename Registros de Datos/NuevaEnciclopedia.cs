@@ -14,7 +14,24 @@ namespace WindowsFormsApp1.Registros_de_Datos
         {
             InitializeComponent();
             CargarEditoriales();
-            CargarTemas();  // Cargar temas al iniciar el formulario
+            CargarTemas();
+
+            if (enciclopediaId.HasValue)
+            {
+                // Rellenar los campos si estamos editando
+                txtTitulo.Text = nombre;
+                cmbIdiomas.SelectedItem = idioma;
+                cmbEditoriales.SelectedValue = idEditorial;
+                txtAño.Text = año.ToString();
+                txtTomos.Text = tomos?.ToString() ?? ""; // Mostrar tomos si hay un valor, o dejar vacío
+                cmbTemas.SelectedValue = idTema;
+
+                this.Text = "Editar Enciclopedia";
+            }
+            else
+            {
+                this.Text = "Nueva Enciclopedia";
+            }
         }
 
         private void CargarEditoriales()

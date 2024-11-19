@@ -63,8 +63,8 @@
             this.panel1.Controls.Add(this.btnBuscarTesis);
             this.panel1.Controls.Add(this.txtFiltroNombreApellidodelAutor);
             this.panel1.Controls.Add(this.lblFiltroNombreApellidodelAutor);
-            this.panel1.Location = new System.Drawing.Point(36, 80);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(48, 98);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1156, 657);
             this.panel1.TabIndex = 10;
@@ -81,7 +81,7 @@
             this.btnEliminarTesis.Location = new System.Drawing.Point(1052, 159);
             this.btnEliminarTesis.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarTesis.Name = "btnEliminarTesis";
-            this.btnEliminarTesis.Size = new System.Drawing.Size(76, 31);
+            this.btnEliminarTesis.Size = new System.Drawing.Size(101, 38);
             this.btnEliminarTesis.TabIndex = 17;
             this.btnEliminarTesis.Text = "Eliminar";
             this.btnEliminarTesis.UseVisualStyleBackColor = false;
@@ -99,7 +99,7 @@
             this.btnModificarTesis.Location = new System.Drawing.Point(966, 159);
             this.btnModificarTesis.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificarTesis.Name = "btnModificarTesis";
-            this.btnModificarTesis.Size = new System.Drawing.Size(82, 31);
+            this.btnModificarTesis.Size = new System.Drawing.Size(109, 38);
             this.btnModificarTesis.TabIndex = 16;
             this.btnModificarTesis.Text = "Modificar";
             this.btnModificarTesis.UseVisualStyleBackColor = false;
@@ -110,11 +110,11 @@
             this.txtFiltroAño.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFiltroAño.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtFiltroAño.ForeColor = System.Drawing.Color.Black;
-            this.txtFiltroAño.Location = new System.Drawing.Point(451, 47);
-            this.txtFiltroAño.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFiltroAño.Location = new System.Drawing.Point(601, 58);
+            this.txtFiltroAño.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFiltroAño.Multiline = true;
             this.txtFiltroAño.Name = "txtFiltroAño";
-            this.txtFiltroAño.Size = new System.Drawing.Size(79, 34);
+            this.txtFiltroAño.Size = new System.Drawing.Size(105, 41);
             this.txtFiltroAño.TabIndex = 15;
             // 
             // lblFiltroAño
@@ -122,10 +122,9 @@
             this.lblFiltroAño.AutoSize = true;
             this.lblFiltroAño.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblFiltroAño.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblFiltroAño.Location = new System.Drawing.Point(454, 20);
-            this.lblFiltroAño.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFiltroAño.Location = new System.Drawing.Point(605, 25);
             this.lblFiltroAño.Name = "lblFiltroAño";
-            this.lblFiltroAño.Size = new System.Drawing.Size(34, 18);
+            this.lblFiltroAño.Size = new System.Drawing.Size(45, 24);
             this.lblFiltroAño.TabIndex = 14;
             this.lblFiltroAño.Text = "Año";
             this.lblFiltroAño.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -135,11 +134,11 @@
             this.txtFiltroTitulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFiltroTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtFiltroTitulo.ForeColor = System.Drawing.Color.Black;
-            this.txtFiltroTitulo.Location = new System.Drawing.Point(40, 115);
-            this.txtFiltroTitulo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFiltroTitulo.Location = new System.Drawing.Point(53, 142);
+            this.txtFiltroTitulo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFiltroTitulo.Multiline = true;
             this.txtFiltroTitulo.Name = "txtFiltroTitulo";
-            this.txtFiltroTitulo.Size = new System.Drawing.Size(376, 34);
+            this.txtFiltroTitulo.Size = new System.Drawing.Size(501, 41);
             this.txtFiltroTitulo.TabIndex = 13;
             // 
             // lblTitulodelaTesis
@@ -147,10 +146,9 @@
             this.lblTitulodelaTesis.AutoSize = true;
             this.lblTitulodelaTesis.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblTitulodelaTesis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblTitulodelaTesis.Location = new System.Drawing.Point(40, 88);
-            this.lblTitulodelaTesis.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTitulodelaTesis.Location = new System.Drawing.Point(53, 108);
             this.lblTitulodelaTesis.Name = "lblTitulodelaTesis";
-            this.lblTitulodelaTesis.Size = new System.Drawing.Size(119, 18);
+            this.lblTitulodelaTesis.Size = new System.Drawing.Size(152, 24);
             this.lblTitulodelaTesis.TabIndex = 12;
             this.lblTitulodelaTesis.Text = "Titulo de la Tesis";
             this.lblTitulodelaTesis.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -160,10 +158,10 @@
             this.cmbFiltroPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cmbFiltroPeriodo.ForeColor = System.Drawing.Color.Black;
             this.cmbFiltroPeriodo.FormattingEnabled = true;
-            this.cmbFiltroPeriodo.Location = new System.Drawing.Point(40, 182);
-            this.cmbFiltroPeriodo.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbFiltroPeriodo.Location = new System.Drawing.Point(53, 224);
+            this.cmbFiltroPeriodo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbFiltroPeriodo.Name = "cmbFiltroPeriodo";
-            this.cmbFiltroPeriodo.Size = new System.Drawing.Size(254, 28);
+            this.cmbFiltroPeriodo.Size = new System.Drawing.Size(337, 33);
             this.cmbFiltroPeriodo.TabIndex = 10;
             // 
             // lblPeriodoTema
@@ -171,10 +169,9 @@
             this.lblPeriodoTema.AutoSize = true;
             this.lblPeriodoTema.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblPeriodoTema.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblPeriodoTema.Location = new System.Drawing.Point(40, 155);
-            this.lblPeriodoTema.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPeriodoTema.Location = new System.Drawing.Point(53, 191);
             this.lblPeriodoTema.Name = "lblPeriodoTema";
-            this.lblPeriodoTema.Size = new System.Drawing.Size(60, 18);
+            this.lblPeriodoTema.Size = new System.Drawing.Size(76, 24);
             this.lblPeriodoTema.TabIndex = 11;
             this.lblPeriodoTema.Text = "Periodo";
             this.lblPeriodoTema.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -185,8 +182,8 @@
             this.dgvTesis.AllowUserToDeleteRows = false;
             this.dgvTesis.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTesis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTesis.Location = new System.Drawing.Point(34, 274);
-            this.dgvTesis.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvTesis.Location = new System.Drawing.Point(45, 337);
+            this.dgvTesis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvTesis.Name = "dgvTesis";
             this.dgvTesis.ReadOnly = true;
             this.dgvTesis.RowHeadersWidth = 51;
@@ -203,10 +200,10 @@
             this.btnNuevaTesis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevaTesis.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevaTesis.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnNuevaTesis.Location = new System.Drawing.Point(124, 232);
-            this.btnNuevaTesis.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNuevaTesis.Location = new System.Drawing.Point(165, 286);
+            this.btnNuevaTesis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNuevaTesis.Name = "btnNuevaTesis";
-            this.btnNuevaTesis.Size = new System.Drawing.Size(134, 31);
+            this.btnNuevaTesis.Size = new System.Drawing.Size(179, 38);
             this.btnNuevaTesis.TabIndex = 6;
             this.btnNuevaTesis.Text = "+ Nueva Tesis";
             this.btnNuevaTesis.UseVisualStyleBackColor = false;
@@ -221,10 +218,10 @@
             this.btnBuscarTesis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarTesis.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarTesis.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnBuscarTesis.Location = new System.Drawing.Point(44, 232);
-            this.btnBuscarTesis.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBuscarTesis.Location = new System.Drawing.Point(59, 286);
+            this.btnBuscarTesis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscarTesis.Name = "btnBuscarTesis";
-            this.btnBuscarTesis.Size = new System.Drawing.Size(76, 31);
+            this.btnBuscarTesis.Size = new System.Drawing.Size(101, 38);
             this.btnBuscarTesis.TabIndex = 5;
             this.btnBuscarTesis.Text = "Buscar";
             this.btnBuscarTesis.UseVisualStyleBackColor = false;
@@ -235,11 +232,11 @@
             this.txtFiltroNombreApellidodelAutor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFiltroNombreApellidodelAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtFiltroNombreApellidodelAutor.ForeColor = System.Drawing.Color.Black;
-            this.txtFiltroNombreApellidodelAutor.Location = new System.Drawing.Point(40, 47);
-            this.txtFiltroNombreApellidodelAutor.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFiltroNombreApellidodelAutor.Location = new System.Drawing.Point(53, 58);
+            this.txtFiltroNombreApellidodelAutor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFiltroNombreApellidodelAutor.Multiline = true;
             this.txtFiltroNombreApellidodelAutor.Name = "txtFiltroNombreApellidodelAutor";
-            this.txtFiltroNombreApellidodelAutor.Size = new System.Drawing.Size(376, 34);
+            this.txtFiltroNombreApellidodelAutor.Size = new System.Drawing.Size(501, 41);
             this.txtFiltroNombreApellidodelAutor.TabIndex = 4;
             // 
             // lblFiltroNombreApellidodelAutor
@@ -247,10 +244,9 @@
             this.lblFiltroNombreApellidodelAutor.AutoSize = true;
             this.lblFiltroNombreApellidodelAutor.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblFiltroNombreApellidodelAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblFiltroNombreApellidodelAutor.Location = new System.Drawing.Point(40, 20);
-            this.lblFiltroNombreApellidodelAutor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFiltroNombreApellidodelAutor.Location = new System.Drawing.Point(53, 25);
             this.lblFiltroNombreApellidodelAutor.Name = "lblFiltroNombreApellidodelAutor";
-            this.lblFiltroNombreApellidodelAutor.Size = new System.Drawing.Size(179, 18);
+            this.lblFiltroNombreApellidodelAutor.Size = new System.Drawing.Size(234, 24);
             this.lblFiltroNombreApellidodelAutor.TabIndex = 2;
             this.lblFiltroNombreApellidodelAutor.Text = "Nombre/Apellido del Autor";
             this.lblFiltroNombreApellidodelAutor.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -259,23 +255,23 @@
             // 
             this.lblTesisRegistradas.AutoSize = true;
             this.lblTesisRegistradas.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.lblTesisRegistradas.Location = new System.Drawing.Point(75, 36);
-            this.lblTesisRegistradas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTesisRegistradas.Location = new System.Drawing.Point(100, 44);
             this.lblTesisRegistradas.Name = "lblTesisRegistradas";
-            this.lblTesisRegistradas.Size = new System.Drawing.Size(185, 26);
+            this.lblTesisRegistradas.Size = new System.Drawing.Size(233, 31);
             this.lblTesisRegistradas.TabIndex = 11;
             this.lblTesisRegistradas.Text = "Tesis Registradas";
             this.lblTesisRegistradas.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Registro_de_Tesis
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1229, 748);
             this.Controls.Add(this.lblTesisRegistradas);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Registro_de_Tesis";
             this.Text = "Registro_de_Tesis";
             this.panel1.ResumeLayout(false);

@@ -176,8 +176,32 @@ namespace WindowsFormsApp1.Consultas
 
         private void btnModificarEnciclopedias_Click(object sender, EventArgs e)
         {
-            NuevaEnciclopedia nuevaEnciclopedia = new NuevaEnciclopedia();
-            nuevaEnciclopedia.ShowDialog(this);
+            if (dgvEnciclopedia.SelectedRows.Count > 0)
+            {
+                // Obtener los datos de la fila seleccionada
+                DataGridViewRow filaSeleccionada = dgvEnciclopedia.SelectedRows[0];
+
+                int idEnciclopedia = Convert.ToInt32(filaSeleccionada.Cells["id"].Value); // Nombre exacto de la columna
+                string nombre = filaSeleccionada.Cells["nombre"].Value.ToString();
+                int idEditorial = Convert.ToInt32(dgvEnciclopedia.SelectedRows[0].Cells["IdEditorial"].Value);
+                string idioma = dgvEnciclopedia.SelectedRows[0].Cells["Idioma"].Value.ToString();
+                int año = Convert.ToInt32(dgvEnciclopedia.SelectedRows[0].Cells["Año"].Value);
+                int? tomos = dgvEnciclopedia.SelectedRows[0].Cells["Tomos"].Value != DBNull.Value ?
+                             Convert.ToInt32(dgvEnciclopedia.SelectedRows[0].Cells["Tomos"].Value) : (int?)null;
+                int idTema = Convert.ToInt32(dgvEnciclopedia.SelectedRows[0].Cells["IdTema"].Value);
+
+
+                // Abrir el formulario de edición con los datos seleccionados
+                NuevaEnciclopedia nuevaEnciclopedia = new NuevaEnciclopedia(idEnciclopedia, nombre, idEditorial, idioma, año, tomos, idTema);
+                nuevaEnciclopedia.ShowDialog(this);
+
+                // Refrescar la lista de autores después de guardar cambios
+                btnBuscarEnciclopedia_Click(sender, e); // Vuelve a ejecutar la búsqueda
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un autor para modificar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnEliminarEnciclopedias_Click(object sender, EventArgs e)
