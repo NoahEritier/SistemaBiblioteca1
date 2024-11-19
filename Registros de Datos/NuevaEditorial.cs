@@ -14,16 +14,25 @@ namespace WindowsFormsApp1
 {
     public partial class NuevaEditorial : Form
     {
-        public NuevaEditorial()
+        private int? editorialId = null; // ID del autor para edición
+
+        public NuevaEditorial(int? id = null, string nombre = "")
         {
             InitializeComponent();
+
+            editorialId = id;
+            txtNombreEditorial.Text = nombre;
+
+            if (editorialId != null)
+            {
+                this.Text = "Modificar Editorial"; // Cambia el título de la ventana
+            }
         }
 
         private void btnConfirmarRegistro_Click(object sender, EventArgs e)
         {
             // Obtener los valores de los TextBox
             string nombre = txtNombreEditorial.Text.Trim();
-            DateTime fechaRegistro = DateTime.Now;
 
             // Validar campos obligatorios
             if (string.IsNullOrEmpty(nombre))
@@ -42,15 +51,29 @@ namespace WindowsFormsApp1
                     mySqlConnection.Open();
 
                     // Sentencia SQL para insertar datos
-                    var sentencia = "INSERT INTO editoriales (nombre, fechaRegistro) VALUES (@nombre, @fechaRegistro)";
-
+                    string sentencia;
+                    if (editorialId == null)
+                    {
+                        sentencia = "INSERT INTO editoriales (nombre, fechaRegistro) VALUES (@nombre, @fechaRegistro)";
+                    }
+                    else
+                    {
+                        sentencia = "UPDATE editoriales SET nombre = @nombre WHERE id = @id";
+                    }
                     // Crear el comando SQL
                     using (MySqlCommand sqlCommand = new MySqlCommand(sentencia, mySqlConnection))
                     {
                         // Asignar los valores a los parámetros
                         sqlCommand.Parameters.AddWithValue("@nombre", nombre);
-                        sqlCommand.Parameters.AddWithValue(@"fechaRegistro", fechaRegistro);
 
+                        if (editorialId != null)
+                        {
+                            sqlCommand.Parameters.AddWithValue("@id", editorialId);
+                        }
+                        else
+                        {
+                            sqlCommand.Parameters.AddWithValue("@fechaRegistro", DateTime.Now);
+                        }
                         // Ejecutar la inserción
                         int registrosAfectados = sqlCommand.ExecuteNonQuery();
 

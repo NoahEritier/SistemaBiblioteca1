@@ -121,8 +121,25 @@ namespace WindowsFormsApp1.Consultas
 
         private void btnModificarEditoriales_Click(object sender, EventArgs e)
         {
-            NuevaEditorial nuevaEditorial = new NuevaEditorial();
-            nuevaEditorial.ShowDialog(this);
+            if (dgvEditoriales.SelectedRows.Count > 0)
+            {
+                // Obtener los datos de la fila seleccionada
+                DataGridViewRow filaSeleccionada = dgvEditoriales.SelectedRows[0];
+
+                int idEditorial = Convert.ToInt32(filaSeleccionada.Cells["id"].Value); // Nombre exacto de la columna
+                string nombre = filaSeleccionada.Cells["nombre"].Value.ToString();
+
+                // Abrir el formulario de edición con los datos seleccionados
+                NuevaEditorial nuevaEditorial = new NuevaEditorial(idEditorial, nombre);
+                nuevaEditorial.ShowDialog(this);
+
+                // Refrescar la lista de autores después de guardar cambios
+                btnBuscarEditorial_Click(sender, e); // Vuelve a ejecutar la búsqueda
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una editorial para modificar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnEliminarEditoriales_Click(object sender, EventArgs e)
