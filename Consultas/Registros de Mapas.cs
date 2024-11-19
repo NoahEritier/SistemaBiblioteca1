@@ -30,8 +30,29 @@ namespace WindowsFormsApp1.Consultas
 
         private void btnModificarMapas_Click(object sender, EventArgs e)
         {
-            NuevoMapas nuevoMapas = new NuevoMapas();
-            nuevoMapas.ShowDialog(this);
+            // Verificar si hay una fila seleccionada en el DataGridView
+            if (dgvMapas.SelectedRows.Count > 0)
+            {
+                // Obtener los datos de la fila seleccionada
+                DataGridViewRow filaSeleccionada = dgvMapas.SelectedRows[0];
+
+                // Asumimos que las columnas son: Id, Nombre, IdTema, Ilustraciones
+                int idMapa = Convert.ToInt32(filaSeleccionada.Cells["Id"].Value);
+                string nombre = filaSeleccionada.Cells["Nombre"].Value.ToString();
+                int idTema = Convert.ToInt32(filaSeleccionada.Cells["IdTema"].Value);
+                bool ilustraciones = Convert.ToBoolean(filaSeleccionada.Cells["Ilustraciones"].Value);
+
+                // Crear una instancia del formulario NuevoMapas, pasando los datos
+                NuevoMapas nuevoMapa = new NuevoMapas(idMapa, nombre, idTema, ilustraciones);
+                nuevoMapa.ShowDialog(this);
+
+                // Refrescar la lista de mapas después de editar
+                btnBuscarMapa_Click(sender, e); // Esto volverá a cargar los mapas
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un mapa para modificar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnEliminarMapas_Click(object sender, EventArgs e)
@@ -77,6 +98,11 @@ namespace WindowsFormsApp1.Consultas
             {
                 MessageBox.Show("Por favor, selecciona un mapa para eliminar.");
             }
+        }
+
+        private void btnBuscarMapa_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

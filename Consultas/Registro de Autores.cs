@@ -122,13 +122,36 @@ namespace WindowsFormsApp1
         {
             NuevoAutor nuevoAutor = new NuevoAutor();
             nuevoAutor.ShowDialog(this);
+            btnBuscarAutor_Click(sender, e); // Llama a tu método de búsqueda para recargar
+
         }
 
         private void btnModificarAutores_Click(object sender, EventArgs e)
         {
-            NuevoAutor nuevoAutor = new NuevoAutor();
-            nuevoAutor.ShowDialog(this);
+            // Verificar si hay una fila seleccionada en el DataGridView
+            if (dgvAutores.SelectedRows.Count > 0)
+            {
+                // Obtener los datos de la fila seleccionada
+                DataGridViewRow filaSeleccionada = dgvAutores.SelectedRows[0];
+
+                int idAutor = Convert.ToInt32(filaSeleccionada.Cells["id"].Value); // Nombre exacto de la columna
+                string nombre = filaSeleccionada.Cells["nombre"].Value.ToString();
+                string apellido = filaSeleccionada.Cells["apellido"].Value.ToString();
+                string nacionalidad = filaSeleccionada.Cells["nacionalidad"].Value?.ToString() ?? "";
+
+                // Abrir el formulario de edición con los datos seleccionados
+                NuevoAutor nuevoAutor = new NuevoAutor(idAutor, nombre, apellido, nacionalidad);
+                nuevoAutor.ShowDialog(this);
+
+                // Refrescar la lista de autores después de guardar cambios
+                btnBuscarAutor_Click(sender, e); // Vuelve a ejecutar la búsqueda
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un autor para modificar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
+
 
         private void btnEliminarAutores_Click(object sender, EventArgs e)
         {
