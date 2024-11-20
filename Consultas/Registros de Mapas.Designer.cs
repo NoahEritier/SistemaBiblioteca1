@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmbTemas = new System.Windows.Forms.ComboBox();
             this.btnEliminarMapas = new WindowsFormsApp1.PillButton();
             this.btnModificarMapas = new WindowsFormsApp1.PillButton();
-            this.txtFiltroTema = new System.Windows.Forms.TextBox();
-            this.cmbFiltroIlustraciones = new System.Windows.Forms.ComboBox();
-            this.lblFiltroIlustraciones = new System.Windows.Forms.Label();
             this.lblFiltroTema = new System.Windows.Forms.Label();
             this.dgvMapas = new System.Windows.Forms.DataGridView();
             this.btnNuevoMapa = new WindowsFormsApp1.PillButton();
@@ -48,11 +46,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.Controls.Add(this.cmbTemas);
             this.panel1.Controls.Add(this.btnEliminarMapas);
             this.panel1.Controls.Add(this.btnModificarMapas);
-            this.panel1.Controls.Add(this.txtFiltroTema);
-            this.panel1.Controls.Add(this.cmbFiltroIlustraciones);
-            this.panel1.Controls.Add(this.lblFiltroIlustraciones);
             this.panel1.Controls.Add(this.lblFiltroTema);
             this.panel1.Controls.Add(this.dgvMapas);
             this.panel1.Controls.Add(this.btnNuevoMapa);
@@ -62,8 +58,19 @@
             this.panel1.Location = new System.Drawing.Point(39, 89);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1541, 809);
+            this.panel1.Size = new System.Drawing.Size(1541, 724);
             this.panel1.TabIndex = 13;
+            // 
+            // cmbTemas
+            // 
+            this.cmbTemas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cmbTemas.ForeColor = System.Drawing.Color.Black;
+            this.cmbTemas.FormattingEnabled = true;
+            this.cmbTemas.Location = new System.Drawing.Point(56, 69);
+            this.cmbTemas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbTemas.Name = "cmbTemas";
+            this.cmbTemas.Size = new System.Drawing.Size(337, 33);
+            this.cmbTemas.TabIndex = 39;
             // 
             // btnEliminarMapas
             // 
@@ -74,7 +81,7 @@
             this.btnEliminarMapas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarMapas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarMapas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEliminarMapas.Location = new System.Drawing.Point(1409, 258);
+            this.btnEliminarMapas.Location = new System.Drawing.Point(1409, 200);
             this.btnEliminarMapas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminarMapas.Name = "btnEliminarMapas";
             this.btnEliminarMapas.Size = new System.Drawing.Size(101, 38);
@@ -92,7 +99,7 @@
             this.btnModificarMapas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificarMapas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarMapas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnModificarMapas.Location = new System.Drawing.Point(1294, 258);
+            this.btnModificarMapas.Location = new System.Drawing.Point(1294, 200);
             this.btnModificarMapas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnModificarMapas.Name = "btnModificarMapas";
             this.btnModificarMapas.Size = new System.Drawing.Size(109, 38);
@@ -100,44 +107,6 @@
             this.btnModificarMapas.Text = "Modificar";
             this.btnModificarMapas.UseVisualStyleBackColor = false;
             this.btnModificarMapas.Click += new System.EventHandler(this.btnModificarMapas_Click);
-            // 
-            // txtFiltroTema
-            // 
-            this.txtFiltroTema.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFiltroTema.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtFiltroTema.ForeColor = System.Drawing.Color.Black;
-            this.txtFiltroTema.Location = new System.Drawing.Point(56, 68);
-            this.txtFiltroTema.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtFiltroTema.Multiline = true;
-            this.txtFiltroTema.Name = "txtFiltroTema";
-            this.txtFiltroTema.Size = new System.Drawing.Size(403, 41);
-            this.txtFiltroTema.TabIndex = 36;
-            // 
-            // cmbFiltroIlustraciones
-            // 
-            this.cmbFiltroIlustraciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cmbFiltroIlustraciones.ForeColor = System.Drawing.Color.Black;
-            this.cmbFiltroIlustraciones.FormattingEnabled = true;
-            this.cmbFiltroIlustraciones.Items.AddRange(new object[] {
-            "SI",
-            "NO"});
-            this.cmbFiltroIlustraciones.Location = new System.Drawing.Point(56, 139);
-            this.cmbFiltroIlustraciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmbFiltroIlustraciones.Name = "cmbFiltroIlustraciones";
-            this.cmbFiltroIlustraciones.Size = new System.Drawing.Size(84, 33);
-            this.cmbFiltroIlustraciones.TabIndex = 10;
-            // 
-            // lblFiltroIlustraciones
-            // 
-            this.lblFiltroIlustraciones.AutoSize = true;
-            this.lblFiltroIlustraciones.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.lblFiltroIlustraciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblFiltroIlustraciones.Location = new System.Drawing.Point(56, 112);
-            this.lblFiltroIlustraciones.Name = "lblFiltroIlustraciones";
-            this.lblFiltroIlustraciones.Size = new System.Drawing.Size(114, 24);
-            this.lblFiltroIlustraciones.TabIndex = 11;
-            this.lblFiltroIlustraciones.Text = "Ilustraciones";
-            this.lblFiltroIlustraciones.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblFiltroTema
             // 
@@ -157,13 +126,13 @@
             this.dgvMapas.AllowUserToDeleteRows = false;
             this.dgvMapas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMapas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMapas.Location = new System.Drawing.Point(35, 314);
+            this.dgvMapas.Location = new System.Drawing.Point(31, 261);
             this.dgvMapas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvMapas.Name = "dgvMapas";
             this.dgvMapas.ReadOnly = true;
             this.dgvMapas.RowHeadersWidth = 51;
             this.dgvMapas.RowTemplate.Height = 24;
-            this.dgvMapas.Size = new System.Drawing.Size(1479, 532);
+            this.dgvMapas.Size = new System.Drawing.Size(1479, 428);
             this.dgvMapas.TabIndex = 7;
             // 
             // btnNuevoMapa
@@ -175,7 +144,7 @@
             this.btnNuevoMapa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevoMapa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoMapa.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnNuevoMapa.Location = new System.Drawing.Point(155, 258);
+            this.btnNuevoMapa.Location = new System.Drawing.Point(155, 200);
             this.btnNuevoMapa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNuevoMapa.Name = "btnNuevoMapa";
             this.btnNuevoMapa.Size = new System.Drawing.Size(165, 38);
@@ -193,7 +162,7 @@
             this.btnBuscarMapa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarMapa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarMapa.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnBuscarMapa.Location = new System.Drawing.Point(48, 258);
+            this.btnBuscarMapa.Location = new System.Drawing.Point(48, 200);
             this.btnBuscarMapa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscarMapa.Name = "btnBuscarMapa";
             this.btnBuscarMapa.Size = new System.Drawing.Size(101, 38);
@@ -207,7 +176,7 @@
             this.cmbFiltroPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cmbFiltroPeriodo.ForeColor = System.Drawing.Color.Black;
             this.cmbFiltroPeriodo.FormattingEnabled = true;
-            this.cmbFiltroPeriodo.Location = new System.Drawing.Point(56, 202);
+            this.cmbFiltroPeriodo.Location = new System.Drawing.Point(56, 141);
             this.cmbFiltroPeriodo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbFiltroPeriodo.Name = "cmbFiltroPeriodo";
             this.cmbFiltroPeriodo.Size = new System.Drawing.Size(337, 33);
@@ -218,7 +187,7 @@
             this.lblFiltroPeriodo.AutoSize = true;
             this.lblFiltroPeriodo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblFiltroPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblFiltroPeriodo.Location = new System.Drawing.Point(56, 175);
+            this.lblFiltroPeriodo.Location = new System.Drawing.Point(56, 113);
             this.lblFiltroPeriodo.Name = "lblFiltroPeriodo";
             this.lblFiltroPeriodo.Size = new System.Drawing.Size(76, 24);
             this.lblFiltroPeriodo.TabIndex = 3;
@@ -241,7 +210,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1639, 921);
+            this.ClientSize = new System.Drawing.Size(1639, 836);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblMapasRegistrados);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -259,9 +228,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtFiltroTema;
-        private System.Windows.Forms.ComboBox cmbFiltroIlustraciones;
-        private System.Windows.Forms.Label lblFiltroIlustraciones;
         private System.Windows.Forms.Label lblFiltroTema;
         private System.Windows.Forms.DataGridView dgvMapas;
         private PillButton btnNuevoMapa;
@@ -271,5 +237,6 @@
         private System.Windows.Forms.Label lblMapasRegistrados;
         private PillButton btnModificarMapas;
         private PillButton btnEliminarMapas;
+        private System.Windows.Forms.ComboBox cmbTemas;
     }
 }

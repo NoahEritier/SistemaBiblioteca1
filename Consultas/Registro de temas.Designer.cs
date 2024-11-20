@@ -58,7 +58,7 @@
             this.panel1.Location = new System.Drawing.Point(39, 89);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1455, 657);
+            this.panel1.Size = new System.Drawing.Size(1455, 729);
             this.panel1.TabIndex = 7;
             // 
             // btnEliminarTemas
@@ -211,7 +211,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1506, 748);
+            this.ClientSize = new System.Drawing.Size(1506, 829);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblTemasRegistrados);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

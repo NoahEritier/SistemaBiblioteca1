@@ -64,6 +64,7 @@
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(1541, 809);
             this.panel.TabIndex = 3;
+            this.panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Paint);
             // 
             // btnEliminarAutores
             // 

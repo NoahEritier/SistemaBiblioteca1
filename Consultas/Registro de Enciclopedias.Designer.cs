@@ -66,7 +66,7 @@
             this.panel1.Location = new System.Drawing.Point(48, 98);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1541, 809);
+            this.panel1.Size = new System.Drawing.Size(1541, 908);
             this.panel1.TabIndex = 9;
             // 
             // btnEliminarEnciclopedias
@@ -271,7 +271,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1639, 921);
+            this.ClientSize = new System.Drawing.Size(1639, 1017);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblEnciclopediasRegistradas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

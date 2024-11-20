@@ -198,5 +198,10 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Por favor, selecciona un autor para eliminar.");
             }
         }
+
+        private void panel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

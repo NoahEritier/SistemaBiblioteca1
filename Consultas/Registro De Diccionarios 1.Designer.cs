@@ -155,6 +155,7 @@
             this.cmbFiltroIdiomas.FormattingEnabled = true;
             this.cmbFiltroIdiomas.ItemHeight = 25;
             this.cmbFiltroIdiomas.Items.AddRange(new object[] {
+            "Cualquier idioma",
             "Alemán",
             "Chino",
             "Español",

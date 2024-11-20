@@ -120,6 +120,7 @@
             this.btnEliminarProyectos.TabIndex = 13;
             this.btnEliminarProyectos.Text = "Eliminar";
             this.btnEliminarProyectos.UseVisualStyleBackColor = false;
+            this.btnEliminarProyectos.Click += new System.EventHandler(this.btnEliminarProyectos_Click);
             // 
             // btnModificarProyectos
             // 

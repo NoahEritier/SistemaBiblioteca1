@@ -108,45 +108,20 @@ namespace WindowsFormsApp1.Consultas
                     DataTable dataTable = new DataTable();
                     dataAdapter.Fill(dataTable);
 
+                    // Verificar si hay datos
                     if (dataTable.Rows.Count > 0)
                     {
-                        // Configurar el DataGridView para mostrar la columna de descripción de la materia en lugar del idMateria
-                        dgvProyecto.AutoGenerateColumns = false;
-                        dgvProyecto.Columns.Clear();
-
-                        // Agregar las columnas al DataGridView
-                        foreach (DataColumn column in dataTable.Columns)
-                        {
-                            if (column.ColumnName == "MateriaDescripcion")
-                            {
-                                dgvProyecto.Columns.Add(new DataGridViewTextBoxColumn
-                                {
-                                    DataPropertyName = column.ColumnName,
-                                    HeaderText = "Materia"
-                                });
-                            }
-                            else
-                            {
-                                dgvProyecto.Columns.Add(new DataGridViewTextBoxColumn
-                                {
-                                    DataPropertyName = column.ColumnName,
-                                    HeaderText = column.ColumnName
-                                });
-                            }
-                        }
-
-                        // Enlazar los datos al DataGridView
+                        dgvProyecto.AutoGenerateColumns = true;  // Asegura que el DataGridView genere las columnas automáticamente
                         dgvProyecto.DataSource = dataTable;
                     }
                     else
                     {
-                        MessageBox.Show("No se encontraron resultados para los criterios seleccionados.",
-                                        "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("No se encontraron resultados.");
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error al filtrar proyectos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Error al filtrar los proyectos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 finally
                 {
@@ -249,9 +224,34 @@ namespace WindowsFormsApp1.Consultas
 
         private void btnModificarProyectos_Click(object sender, EventArgs e)
         {
-            NuevoProyectoDeCatedra nuevoProyectoDeCatedra = new NuevoProyectoDeCatedra();
-            nuevoProyectoDeCatedra.ShowDialog(this);
+            // Verificar si hay un proyecto seleccionado
+            if (dgvProyecto.SelectedRows.Count > 0)
+            {
+                try
+                {
+                    DataGridViewRow filaSeleccionada = dgvProyecto.SelectedRows[0];
+
+                    // Obtener el ID del proyecto seleccionado
+                    int idProyecto = Convert.ToInt32(filaSeleccionada.Cells["Id"].Value); // Nombre exacto de la columna
+
+                    // Abrir el formulario de modificación
+                    NuevoProyectoDeCatedra nuevoProyecto = new NuevoProyectoDeCatedra(idProyecto);
+                    nuevoProyecto.ShowDialog();
+
+                    // Refrescar la tabla después de la modificación
+                    btnBuscarProyecto_Click(sender, e);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al intentar modificar el proyecto: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un proyecto para modificar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
+
 
         public class Carrera
         {
@@ -263,6 +263,53 @@ namespace WindowsFormsApp1.Consultas
         {
             public int IdMateria { get; set; }
             public string Descripcion { get; set; }
+        }
+
+        private void btnEliminarProyectos_Click(object sender, EventArgs e)
+        {
+            // Verificar si hay una fila seleccionada en el DataGridView
+            if (dgvProyecto.SelectedRows.Count > 0)
+            {
+                // Obtener el ID del autor seleccionado (asumiendo que el ID está en la primera columna)
+                int idProyecto = Convert.ToInt32(dgvProyecto.SelectedRows[0].Cells[0].Value);
+
+                // Confirmar la eliminación
+                if (MessageBox.Show("¿Estás seguro de que deseas eliminar este proyecto?", "Confirmar Eliminación", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    var stringConexion = ConfigurationManager.ConnectionStrings["MyDbContext"].ToString();
+                    using (MySqlConnection mySqlConnection = new MySqlConnection(stringConexion))
+                    {
+                        try
+                        {
+                            mySqlConnection.Open();
+
+                            // Crear el comando SQL para eliminar el autor
+                            string query = "DELETE FROM proyectosdecatedra WHERE Id = @Id"; // Asegúrate de que el nombre de la columna sea correcto
+                            MySqlCommand sqlCommand = new MySqlCommand(query, mySqlConnection);
+                            sqlCommand.Parameters.AddWithValue("@Id", idProyecto);
+
+                            // Ejecutar el comando
+                            sqlCommand.ExecuteNonQuery();
+                            MessageBox.Show("Proyecto eliminado exitosamente.");
+
+                            // Recargar la lista de autores después de eliminar
+                            btnBuscarProyecto_Click(sender, e); // Llama a tu método de búsqueda para recargar
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Error al eliminar el proyecto: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            mySqlConnection.Close();
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un autor para eliminar.");
+            }
         }
     }
 }

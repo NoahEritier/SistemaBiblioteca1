@@ -16,19 +16,63 @@ namespace WindowsFormsApp1
 {
     public partial class NuevoLibro : Form
     {
-        public NuevoLibro()
+        private int? libroId = null;
+        public NuevoLibro(int? idLibro = null)
         {
             InitializeComponent();
-            CargarAutores();
-            CargarEditorial();
-            CargarTemas();
-            CargarNivel();
+
+            libroId = idLibro; // Si el ID es null, significa que estamos creando un nuevo mapa
+
+            if (libroId != null)
+            {
+                CargarDatosLibro();
+            }
+        }
+        private void CargarDatosLibro()
+        {
+            string consulta = "SELECT * FROM Libros WHERE Id = @Id";
+            var stringConexion = ConfigurationManager.ConnectionStrings["MyDbContext"].ToString();
+
+            using (MySqlConnection mySqlConnection = new MySqlConnection(stringConexion))
+            {
+                try
+                {
+                    mySqlConnection.Open();
+                    MySqlCommand sqlCommand = new MySqlCommand(consulta, mySqlConnection);
+                    sqlCommand.Parameters.AddWithValue("@Id", libroId);
+
+                    using (MySqlDataReader reader = sqlCommand.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Asignar los valores obtenidos a los controles
+                            txtId.Text = reader["Id"].ToString();
+                            txtTitulo.Text = reader["Titulo"].ToString();
+                            txtISBN.Text = reader["ISBN"].ToString();
+                            txtEdicion.Text = reader["Edicion"]?.ToString() ?? string.Empty;
+                            txtResumen.Text = reader["Resumen"]?.ToString() ?? string.Empty;
+                            txtPalabrasClave.Text = reader["PalabrasClave"]?.ToString() ?? string.Empty;
+
+                            cmbEditoriales.SelectedValue = reader["IdEditorial"];
+                            cmbTemas.SelectedValue = reader["IdTema"];
+                            cmbNiveles.SelectedValue = reader["IdNivel"];
+
+                            // Cargar los autores asociados al libro en el DataGridView
+                            CargarGrillaAutores();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al cargar los datos del libro: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    mySqlConnection.Close();
+                }
+            }
         }
 
-        private void btnCancelarRegistro_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
 
         private void btnConfirmarRegistro_Click(object sender, EventArgs e)
         {
@@ -81,7 +125,14 @@ namespace WindowsFormsApp1
 
                     using (MySqlCommand sqlCommand = new MySqlCommand(sentenciaInsert, mySqlConnection))
                     {
-                        sqlCommand.Parameters.AddWithValue("@id", txtId.Text);
+                        if(libroId == null)
+                        {
+                            sqlCommand.Parameters.AddWithValue("@id", txtId.Text);
+                        }
+                        else
+                        {
+                            sqlCommand.Parameters.AddWithValue("@id", libroId);
+                        }
                         sqlCommand.Parameters.AddWithValue("@titulo", titulo);
                         sqlCommand.Parameters.AddWithValue("@ISBN", ISBN);
                         sqlCommand.Parameters.AddWithValue("@fechaRegistro", fechaRegistro);
@@ -121,12 +172,6 @@ namespace WindowsFormsApp1
 
                         if (registrosAfectados > 0)
                         {
-                            var sentenciaSelectId = "SELECT LAST_INSERT_ID();";
-                            using (MySqlCommand sqlCommandSelect = new MySqlCommand(sentenciaSelectId, mySqlConnection))
-                            {
-                                object result = sqlCommandSelect.ExecuteScalar();
-                                txtId.Text = result != null ? result.ToString() : "0";
-                            }
                             MessageBox.Show("Autor registrado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             Close();
                         }
@@ -147,27 +192,6 @@ namespace WindowsFormsApp1
                     mySqlConnection.Close();
                 }
             }
-        }
-
-        private void btnAgregarNuevoAutor_Click(object sender, EventArgs e)
-        {
-            NuevoAutor nuevoAutor = new NuevoAutor();
-            nuevoAutor.ShowDialog(this);
-            CargarAutores();
-        }
-
-        private void btnAgregarNuevaEditorial_Click(object sender, EventArgs e)
-        {
-            NuevaEditorial nuevaEditorial = new NuevaEditorial();
-            nuevaEditorial.ShowDialog(this);
-            CargarEditorial();
-        }
-
-        private void btnAgregarNuevoTema_Click(object sender, EventArgs e)
-        {
-            NuevoTema nuevoTema = new NuevoTema("Libros");
-            nuevoTema.ShowDialog(this);
-            CargarTemas();
         }
 
         private void btnPasarAGrilla_Click(object sender, EventArgs e)
@@ -220,105 +244,71 @@ namespace WindowsFormsApp1
 
         private void NuevoLibro_Load(object sender, EventArgs e)
         {
+            CargarAutores();
+            CargarEditorial();
+            CargarTemas();
+            CargarNivel();
+            if(libroId == null)
+            { 
             var stringConexion = ConfigurationManager.ConnectionStrings["MyDbContext"].ToString();
 
-            using (MySqlConnection mySqlConnection = new MySqlConnection(stringConexion))
-            {
-                try
+                using (MySqlConnection mySqlConnection = new MySqlConnection(stringConexion))
                 {
-                    mySqlConnection.Open();
-
-                    // Sentencia SQL para insertar datos
-                    var sentenciaInsert = "INSERT INTO Libros (Titulo) VALUES (@titulo)";
-
-                    // Crear el comando SQL para la inserción
-                    using (MySqlCommand sqlCommandInsert = new MySqlCommand(sentenciaInsert, mySqlConnection))
+                    try
                     {
-                        // Asignar el valor del parámetro
-                        sqlCommandInsert.Parameters.AddWithValue("@titulo", "Nombre del libro");
+                        mySqlConnection.Open();
 
-                        // Ejecutar la inserción
-                        int registrosAfectados = sqlCommandInsert.ExecuteNonQuery();
+                        // Sentencia SQL para insertar datos
+                        var sentenciaInsert = "INSERT INTO Libros (Titulo) VALUES (@titulo)";
 
-                        if (registrosAfectados > 0)
+                        // Crear el comando SQL para la inserción
+                        using (MySqlCommand sqlCommandInsert = new MySqlCommand(sentenciaInsert, mySqlConnection))
                         {
-                            // Si la inserción fue exitosa, obtener el ID del último registro insertado
-                            var sentenciaSelectId = "SELECT LAST_INSERT_ID();";
+                            // Asignar el valor del parámetro
+                            sqlCommandInsert.Parameters.AddWithValue("@titulo", "Nombre del libro");
 
-                            // Crear el comando SQL para obtener el último ID
-                            using (MySqlCommand sqlCommandSelect = new MySqlCommand(sentenciaSelectId, mySqlConnection))
+                            // Ejecutar la inserción
+                            int registrosAfectados = sqlCommandInsert.ExecuteNonQuery();
+
+                            if (registrosAfectados > 0)
                             {
-                                object result = sqlCommandSelect.ExecuteScalar();
+                                // Si la inserción fue exitosa, obtener el ID del último registro insertado
+                                var sentenciaSelectId = "SELECT LAST_INSERT_ID();";
 
-                                // Convertir el resultado a texto si no es null, y asignarlo al TextBox
-                                txtId.Text = result != null ? result.ToString() : "0";
+                                // Crear el comando SQL para obtener el último ID
+                                using (MySqlCommand sqlCommandSelect = new MySqlCommand(sentenciaSelectId, mySqlConnection))
+                                {
+                                    object result = sqlCommandSelect.ExecuteScalar();
+
+                                    // Convertir el resultado a texto si no es null, y asignarlo al TextBox
+                                    txtId.Text = result != null ? result.ToString() : "0";
+                                }
+                            }
+                            else
+                            {
+                                // Si no se insertaron registros, asignar "0" al TextBox
+                                txtId.Text = "0";
                             }
                         }
-                        else
-                        {
-                            // Si no se insertaron registros, asignar "0" al TextBox
-                            txtId.Text = "0";
-                        }
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error al registrar el Libro: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                finally
-                {
-                    // Cerrar la conexión
-                    mySqlConnection.Close();
-                }
-            }
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if (dgvAutores.SelectedRows.Count > 0)
-            {
-                int idAutor = Convert.ToInt32(dgvAutores.CurrentRow.Cells[0].Value);
-                int idLibro = Convert.ToInt32(txtId.Text);
-
-                // Confirmar la eliminación
-                if (MessageBox.Show("¿Estás seguro de que deseas eliminar este autor?", "Confirmar Eliminación", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    var stringConexion = ConfigurationManager.ConnectionStrings["MyDbContext"].ToString();
-                    using (MySqlConnection mySqlConnection = new MySqlConnection(stringConexion))
+                    catch (Exception ex)
                     {
-                        try
-                        {
-                            mySqlConnection.Open();
-
-                            // Crear el comando SQL para eliminar el autor
-                            string query = "Delete From libros_autores WHERE IdLibro = @IdLibro And IdAutor = @IdAutor"; // Asegúrate de que el nombre de la columna sea correcto
-                            MySqlCommand sqlCommand = new MySqlCommand(query, mySqlConnection);
-                            sqlCommand.Parameters.AddWithValue("@IdLibro", idLibro);
-                            sqlCommand.Parameters.AddWithValue("@IdAutor", idAutor);
-
-                            // Ejecutar el comando
-                            sqlCommand.ExecuteNonQuery();
-                            MessageBox.Show("Autor eliminado exitosamente.");
-
-                            // Recargar la lista de autores después de eliminar
-                            CargarGrillaAutores();                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show($"Error al eliminar el autor: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        finally
-                        {
-                            mySqlConnection.Close();
-                        }
+                        MessageBox.Show($"Error al registrar el Libro: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        // Cerrar la conexión
+                        mySqlConnection.Close();
                     }
                 }
             }
-            else
-            {
-                MessageBox.Show("Por favor, selecciona un autor para eliminar.");
-            }
         }
-    
+        private void btnCancelarRegistro_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+
         private void CargarGrillaAutores()
         {
             // Construir la sentencia SQL dinámica
@@ -540,6 +530,73 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void btnAgregarNuevoAutor_Click(object sender, EventArgs e)
+        {
+            NuevoAutor nuevoAutor = new NuevoAutor();
+            nuevoAutor.ShowDialog(this);
+            CargarAutores();
+        }
+
+        private void btnAgregarNuevaEditorial_Click(object sender, EventArgs e)
+        {
+            NuevaEditorial nuevaEditorial = new NuevaEditorial();
+            nuevaEditorial.ShowDialog(this);
+            CargarEditorial();
+        }
+
+        private void btnAgregarNuevoTema_Click(object sender, EventArgs e)
+        {
+            NuevoTema nuevoTema = new NuevoTema("Libros");
+            nuevoTema.ShowDialog(this);
+            CargarTemas();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvAutores.SelectedRows.Count > 0)
+            {
+                int idAutor = Convert.ToInt32(dgvAutores.CurrentRow.Cells[0].Value);
+                int idLibro = Convert.ToInt32(txtId.Text);
+
+                // Confirmar la eliminación
+                if (MessageBox.Show("¿Estás seguro de que deseas eliminar este autor?", "Confirmar Eliminación", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    var stringConexion = ConfigurationManager.ConnectionStrings["MyDbContext"].ToString();
+                    using (MySqlConnection mySqlConnection = new MySqlConnection(stringConexion))
+                    {
+                        try
+                        {
+                            mySqlConnection.Open();
+
+                            // Crear el comando SQL para eliminar el autor
+                            string query = "Delete From libros_autores WHERE IdLibro = @IdLibro And IdAutor = @IdAutor"; // Asegúrate de que el nombre de la columna sea correcto
+                            MySqlCommand sqlCommand = new MySqlCommand(query, mySqlConnection);
+                            sqlCommand.Parameters.AddWithValue("@IdLibro", idLibro);
+                            sqlCommand.Parameters.AddWithValue("@IdAutor", idAutor);
+
+                            // Ejecutar el comando
+                            sqlCommand.ExecuteNonQuery();
+                            MessageBox.Show("Autor eliminado exitosamente.");
+
+                            // Recargar la lista de autores después de eliminar
+                            CargarGrillaAutores();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Error al eliminar el autor: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            mySqlConnection.Close();
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un autor para eliminar.");
+            }
+        }
 
     }
 }

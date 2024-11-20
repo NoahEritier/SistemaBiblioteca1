@@ -48,10 +48,10 @@
             this.panel1.Controls.Add(this.btnConfirmarRegistro);
             this.panel1.Controls.Add(this.btnCancelarRegistro);
             this.panel1.Controls.Add(this.lblNombre);
-            this.panel1.Location = new System.Drawing.Point(29, 55);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(35, 63);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(847, 620);
+            this.panel1.Size = new System.Drawing.Size(1129, 622);
             this.panel1.TabIndex = 13;
             // 
             // txtNumerodeTema
@@ -59,11 +59,11 @@
             this.txtNumerodeTema.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNumerodeTema.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtNumerodeTema.ForeColor = System.Drawing.Color.Black;
-            this.txtNumerodeTema.Location = new System.Drawing.Point(27, 119);
-            this.txtNumerodeTema.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNumerodeTema.Location = new System.Drawing.Point(36, 146);
+            this.txtNumerodeTema.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNumerodeTema.Multiline = true;
             this.txtNumerodeTema.Name = "txtNumerodeTema";
-            this.txtNumerodeTema.Size = new System.Drawing.Size(180, 34);
+            this.txtNumerodeTema.Size = new System.Drawing.Size(239, 41);
             this.txtNumerodeTema.TabIndex = 36;
             // 
             // txtNombre
@@ -71,11 +71,11 @@
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtNombre.ForeColor = System.Drawing.Color.Black;
-            this.txtNombre.Location = new System.Drawing.Point(27, 62);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombre.Location = new System.Drawing.Point(36, 76);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(303, 34);
+            this.txtNombre.Size = new System.Drawing.Size(403, 41);
             this.txtNombre.TabIndex = 35;
             // 
             // lblNumerodeTema
@@ -83,10 +83,9 @@
             this.lblNumerodeTema.AutoSize = true;
             this.lblNumerodeTema.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblNumerodeTema.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblNumerodeTema.Location = new System.Drawing.Point(28, 98);
-            this.lblNumerodeTema.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNumerodeTema.Location = new System.Drawing.Point(37, 121);
             this.lblNumerodeTema.Name = "lblNumerodeTema";
-            this.lblNumerodeTema.Size = new System.Drawing.Size(124, 18);
+            this.lblNumerodeTema.Size = new System.Drawing.Size(160, 24);
             this.lblNumerodeTema.TabIndex = 31;
             this.lblNumerodeTema.Text = "Numero de Tema";
             this.lblNumerodeTema.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -100,10 +99,10 @@
             this.btnConfirmarRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmarRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmarRegistro.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnConfirmarRegistro.Location = new System.Drawing.Point(148, 175);
-            this.btnConfirmarRegistro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnConfirmarRegistro.Location = new System.Drawing.Point(197, 215);
+            this.btnConfirmarRegistro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConfirmarRegistro.Name = "btnConfirmarRegistro";
-            this.btnConfirmarRegistro.Size = new System.Drawing.Size(80, 31);
+            this.btnConfirmarRegistro.Size = new System.Drawing.Size(107, 38);
             this.btnConfirmarRegistro.TabIndex = 28;
             this.btnConfirmarRegistro.Text = "Aceptar";
             this.btnConfirmarRegistro.UseVisualStyleBackColor = false;
@@ -118,10 +117,10 @@
             this.btnCancelarRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarRegistro.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCancelarRegistro.Location = new System.Drawing.Point(41, 175);
-            this.btnCancelarRegistro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelarRegistro.Location = new System.Drawing.Point(55, 215);
+            this.btnCancelarRegistro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancelarRegistro.Name = "btnCancelarRegistro";
-            this.btnCancelarRegistro.Size = new System.Drawing.Size(95, 31);
+            this.btnCancelarRegistro.Size = new System.Drawing.Size(127, 38);
             this.btnCancelarRegistro.TabIndex = 27;
             this.btnCancelarRegistro.Text = "Cancelar";
             this.btnCancelarRegistro.UseVisualStyleBackColor = false;
@@ -132,10 +131,9 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblNombre.Location = new System.Drawing.Point(28, 40);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNombre.Location = new System.Drawing.Point(37, 49);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(62, 18);
+            this.lblNombre.Size = new System.Drawing.Size(79, 24);
             this.lblNombre.TabIndex = 11;
             this.lblNombre.Text = "Nombre";
             this.lblNombre.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -144,24 +142,23 @@
             // 
             this.lblProyectosDeCatedra.AutoSize = true;
             this.lblProyectosDeCatedra.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.lblProyectosDeCatedra.Location = new System.Drawing.Point(70, 10);
-            this.lblProyectosDeCatedra.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblProyectosDeCatedra.Location = new System.Drawing.Point(93, 12);
             this.lblProyectosDeCatedra.Name = "lblProyectosDeCatedra";
-            this.lblProyectosDeCatedra.Size = new System.Drawing.Size(136, 26);
+            this.lblProyectosDeCatedra.Size = new System.Drawing.Size(169, 31);
             this.lblProyectosDeCatedra.TabIndex = 12;
             this.lblProyectosDeCatedra.Text = "Nuevo Tema";
             this.lblProyectosDeCatedra.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // NuevoTema
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(905, 640);
+            this.ClientSize = new System.Drawing.Size(1207, 788);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblProyectosDeCatedra);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "NuevoTema";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NuevoTema";

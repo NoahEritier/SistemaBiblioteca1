@@ -152,8 +152,28 @@ namespace WindowsFormsApp1.Consultas
 
         private void btnModificarTesis_Click(object sender, EventArgs e)
         {
-            NuevaTesis nuevaTesis = new NuevaTesis();
-            nuevaTesis.ShowDialog(this);
+            if (dgvTesis.SelectedRows.Count > 0)
+            {
+                // Obtener los datos de la fila seleccionada
+                DataGridViewRow filaSeleccionada = dgvTesis.SelectedRows[0];
+
+                int idTesis = Convert.ToInt32(filaSeleccionada.Cells["id"].Value); // Nombre exacto de la columna
+                string titulo = filaSeleccionada.Cells["titulo"].Value.ToString();
+                string apellido = filaSeleccionada.Cells["apellidoAutor"].Value.ToString();
+                string nombre = filaSeleccionada.Cells["nombreAutor"].Value.ToString();
+                int año = Convert.ToInt32(filaSeleccionada.Cells["año"].Value);
+
+                // Abrir el formulario de edición con los datos seleccionados
+                NuevaTesis nuevaTesis = new NuevaTesis(idTesis, nombre, apellido, titulo, año);
+                nuevaTesis.ShowDialog(this);
+
+                // Refrescar la lista de autores después de guardar cambios
+                btnBuscarTesis_Click(sender, e); // Vuelve a ejecutar la búsqueda
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una tesis para modificar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnEliminarTesis_Click(object sender, EventArgs e)

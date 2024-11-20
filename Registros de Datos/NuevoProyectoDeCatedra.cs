@@ -2,19 +2,75 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Data;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
     public partial class NuevoProyectoDeCatedra : Form
     {
+        private int? IdProyecto { get; set; } = null; // Campo para identificar si es creación o modificación
+
+        // Constructor para creación de un nuevo proyecto
         public NuevoProyectoDeCatedra()
         {
             InitializeComponent();
             CargarCarreras();
             cmbCarreras.SelectedValueChanged += CmbCarreras_SelectedValueChanged;
-            cmbMaterias.SelectedIndex = -1; 
+            cmbMaterias.SelectedIndex = -1;
+        }
+
+        // Constructor para modificar un proyecto existente
+        public NuevoProyectoDeCatedra(int idProyecto) : this()
+        {
+            IdProyecto = idProyecto;
+            CargarProyectoExistente(idProyecto);
+        }
+
+        // Método para cargar los datos del proyecto existente
+        private void CargarProyectoExistente(int idProyecto)
+        {
+            var stringConexion = ConfigurationManager.ConnectionStrings["MyDbContext"].ToString();
+            using (MySqlConnection mySqlConnection = new MySqlConnection(stringConexion))
+            {
+                try
+                {
+                    mySqlConnection.Open();
+
+                    // Consulta para obtener los datos del proyecto de cátedra
+                    string query = @"
+                        SELECT pc.idMateria, pc.año, m.idCarrera
+                        FROM proyectosdecatedra pc
+                        JOIN materias m ON pc.idMateria = m.idMateria
+                        WHERE pc.id = @idProyecto";
+                    MySqlCommand sqlCommand = new MySqlCommand(query, mySqlConnection);
+                    sqlCommand.Parameters.AddWithValue("@idProyecto", idProyecto);
+
+                    using (MySqlDataReader reader = sqlCommand.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Cargar los valores en los controles del formulario
+                            int idCarrera = Convert.ToInt32(reader["idCarrera"]);
+                            int idMateria = Convert.ToInt32(reader["idMateria"]);
+                            int año = Convert.ToInt32(reader["año"]);
+
+                            cmbCarreras.SelectedValue = idCarrera;
+                            CargarMaterias(idCarrera); // Asegurar que se carguen las materias
+                            cmbMaterias.SelectedValue = idMateria;
+                            txtAño.Text = año.ToString();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se encontró el proyecto especificado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            Close();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al cargar el proyecto de cátedra: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         // Método para cargar las carreras en el ComboBox cmbCarreras
@@ -100,7 +156,6 @@ namespace WindowsFormsApp1
                 cmbMaterias.SelectedValueChanged += cmbMaterias_SelectedValueChanged;
             }
         }
-
         // Método para obtener el profesor titular y mostrarlo en txtProfesor al seleccionar una materia
         private void cmbMaterias_SelectedValueChanged(object sender, EventArgs e)
         {
@@ -149,8 +204,7 @@ namespace WindowsFormsApp1
                 }
             }
         }
-
-        // Método para registrar el proyecto de cátedra e n la base de datos
+        // Método para confirmar el registro o la modificación
         private void btnConfirmarRegistro_Click(object sender, EventArgs e)
         {
             if (cmbCarreras.SelectedIndex == -1 || cmbMaterias.SelectedIndex == -1 || string.IsNullOrEmpty(txtAño.Text))
@@ -170,17 +224,34 @@ namespace WindowsFormsApp1
                 try
                 {
                     mySqlConnection.Open();
-                    string query = "INSERT INTO proyectosdecatedra (idMateria, año, fechaRegistro) VALUES (@idMateria, @año, @fechaRegistro)";
+
+                    string query;
+                    if (IdProyecto == null)
+                    {
+                        // Insertar un nuevo proyecto de cátedra
+                        query = "INSERT INTO proyectosdecatedra (idMateria, año, fechaRegistro) VALUES (@idMateria, @año, @fechaRegistro)";
+                    }
+                    else
+                    {
+                        // Actualizar un proyecto de cátedra existente
+                        query = "UPDATE proyectosdecatedra SET idMateria = @idMateria, año = @año WHERE idProyecto = @idProyecto";
+                    }
+
                     MySqlCommand sqlCommand = new MySqlCommand(query, mySqlConnection);
-                    sqlCommand.Parameters.AddWithValue("@idCarrera", idCarrera);
                     sqlCommand.Parameters.AddWithValue("@idMateria", idMateria);
                     sqlCommand.Parameters.AddWithValue("@año", año);
                     sqlCommand.Parameters.AddWithValue("@fechaRegistro", fechaRegistro);
 
+                    if (IdProyecto != null)
+                    {
+                        sqlCommand.Parameters.AddWithValue("@idProyecto", IdProyecto);
+                    }
+
                     int registrosAfectados = sqlCommand.ExecuteNonQuery();
                     if (registrosAfectados > 0)
                     {
-                        MessageBox.Show("Proyecto de Cátedra registrado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        string mensaje = IdProyecto == null ? "Proyecto de Cátedra registrado correctamente." : "Proyecto de Cátedra actualizado correctamente.";
+                        MessageBox.Show(mensaje, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Close();
                     }
                     else

@@ -25,6 +25,7 @@ namespace WindowsFormsApp1.Consultas
             cmbFiltroPeriodo.Items.Add("6 meses");
             cmbFiltroPeriodo.Items.Add("Cualquier momento");
             cmbFiltroPeriodo.SelectedIndex = 3; // Por defecto: "Cualquier momento"
+            cmbFiltroIdiomas.SelectedIndex = 0;
         }
 
         private void btnNuevoDiccionario_Click(object sender, EventArgs e)
@@ -62,10 +63,9 @@ namespace WindowsFormsApp1.Consultas
                 }
             }
 
-            // Filtrar por nacionalidad si no está vacío
-            if (!string.IsNullOrEmpty(filtroIdioma))
+            if (cmbFiltroIdiomas.SelectedIndex != 0)
             {
-                consulta += " AND idioma LIKE @filtroIdioma";
+                consulta += " AND idioma = @idioma";
             }
 
             // Filtrar por el periodo de tiempo en FechaRegistro
@@ -89,6 +89,7 @@ namespace WindowsFormsApp1.Consultas
                     break;
             }
 
+
             // Conectar a la base de datos y ejecutar la consulta
             var stringConexion = ConfigurationManager.ConnectionStrings["MyDbContext"].ToString();
             using (MySqlConnection mySqlConnection = new MySqlConnection(stringConexion))
@@ -100,9 +101,9 @@ namespace WindowsFormsApp1.Consultas
                     // Crear el comando SQL con la consulta
                     MySqlCommand sqlCommand = new MySqlCommand(consulta, mySqlConnection);
 
-                    if (!string.IsNullOrEmpty(filtroIdioma))
+                    if (cmbFiltroIdiomas.SelectedIndex != 0)
                     {
-                        sqlCommand.Parameters.AddWithValue("@filtroIdioma", "%" + filtroIdioma + "%"); // Agrega los comodines %
+                        sqlCommand.Parameters.AddWithValue("@idioma", filtroIdioma);
                     }
                     if (filtroAño != 0)
                     {

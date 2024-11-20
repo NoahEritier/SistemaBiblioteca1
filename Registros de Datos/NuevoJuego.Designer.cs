@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.NumCantidad = new System.Windows.Forms.NumericUpDown();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblCantidad = new System.Windows.Forms.Label();
             this.btnConfirmarRegistro = new WindowsFormsApp1.PillButton();
             this.btnCancelarRegistro = new WindowsFormsApp1.PillButton();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblProyectosDeCatedra = new System.Windows.Forms.Label();
-            this.NumCantidad = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NumCantidad)).BeginInit();
             this.SuspendLayout();
@@ -54,6 +54,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1129, 643);
             this.panel1.TabIndex = 11;
+            // 
+            // NumCantidad
+            // 
+            this.NumCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NumCantidad.Location = new System.Drawing.Point(46, 166);
+            this.NumCantidad.Name = "NumCantidad";
+            this.NumCantidad.Size = new System.Drawing.Size(85, 28);
+            this.NumCantidad.TabIndex = 36;
             // 
             // txtNombre
             // 
@@ -74,9 +82,9 @@
             this.lblCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lblCantidad.Location = new System.Drawing.Point(47, 139);
             this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(84, 24);
+            this.lblCantidad.Size = new System.Drawing.Size(96, 24);
             this.lblCantidad.TabIndex = 31;
-            this.lblCantidad.Text = "Cantidad";
+            this.lblCantidad.Text = "* Cantidad";
             this.lblCantidad.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnConfirmarRegistro
@@ -122,9 +130,9 @@
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lblNombre.Location = new System.Drawing.Point(47, 55);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(79, 24);
+            this.lblNombre.Size = new System.Drawing.Size(91, 24);
             this.lblNombre.TabIndex = 11;
-            this.lblNombre.Text = "Nombre";
+            this.lblNombre.Text = "* Nombre";
             this.lblNombre.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblProyectosDeCatedra
@@ -137,14 +145,6 @@
             this.lblProyectosDeCatedra.TabIndex = 10;
             this.lblProyectosDeCatedra.Text = "Nuevo Juego";
             this.lblProyectosDeCatedra.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // NumCantidad
-            // 
-            this.NumCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NumCantidad.Location = new System.Drawing.Point(46, 166);
-            this.NumCantidad.Name = "NumCantidad";
-            this.NumCantidad.Size = new System.Drawing.Size(85, 28);
-            this.NumCantidad.TabIndex = 36;
             // 
             // NuevoJuego
             // 

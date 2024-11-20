@@ -14,9 +14,15 @@ namespace WindowsFormsApp1.Registros_de_Datos
 {
     public partial class NuevaTesis : Form
     {
-        public NuevaTesis()
+        private int? idTesis = null;
+        public NuevaTesis(int? id = null, string nombreAutor ="", string apellidoAutor = "", string titulo = "", int? año = null)
         {
             InitializeComponent();
+            idTesis = id;
+            txtApellidoAutor.Text = apellidoAutor;
+            txtAño.Text = Convert.ToString(año);
+            txtNombreAutor.Text = nombreAutor;
+            txtTitulo.Text = titulo;
         }
 
         private void btnCancelarRegistro_Click(object sender, EventArgs e)
@@ -64,8 +70,15 @@ namespace WindowsFormsApp1.Registros_de_Datos
                     mySqlConnection.Open();
 
                     // Sentencia SQL para insertar datos
-                    var sentencia = "INSERT INTO tesis (titulo, año, nombreAutor, apellidoAutor, fechaRegistro) VALUES (@titulo, @año, @nombreAutor, @apellidoAutor, @fechaRegistro)";
-
+                    string sentencia;
+                    if (idTesis == null)
+                    {
+                        sentencia = "INSERT INTO tesis (titulo, año, nombreAutor, apellidoAutor, fechaRegistro) VALUES (@titulo, @año, @nombreAutor, @apellidoAutor, @fechaRegistro)";
+                    }
+                    else
+                    {
+                        sentencia = "UPDATE tesis SET titulo = @titulo, año = @año, apellidoAutor = @apellidoAutor, nombreAutor = @nombreAutor";
+                    }
                     // Crear el comando SQL
                     using (MySqlCommand sqlCommand = new MySqlCommand(sentencia, mySqlConnection))
                     {

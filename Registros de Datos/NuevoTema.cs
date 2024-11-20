@@ -15,11 +15,16 @@ namespace WindowsFormsApp1.Registros_de_Datos
 {
     public partial class NuevoTema : Form
     {
+        private int? idTema = null;
         public string Grupo = string.Empty;
-        public NuevoTema(string grupo)
+        public NuevoTema(string grupo, int? id = null, string nombre = "", string numeroTema = "")
         {
             InitializeComponent();
+            idTema = id;
+
             Grupo = grupo;
+            txtNombre.Text = nombre;
+            txtNumerodeTema.Text = numeroTema;
         }
 
         private void btnCancelarRegistro_Click(object sender, EventArgs e)
@@ -57,8 +62,15 @@ namespace WindowsFormsApp1.Registros_de_Datos
                     mySqlConnection.Open();
 
                     // Sentencia SQL para insertar datos
-                    var sentencia = "INSERT INTO temas (nombre, numeroTema, grupo) VALUES (@nombre, @numeroTema, @grupo)";
-
+                    string sentencia;
+                    if (idTema == null)
+                    {
+                        sentencia = "INSERT INTO temas (nombre, numeroTema, grupo, fechaRegistro) VALUES (@nombre, @numeroTema, @grupo, @fechaRegistro)";
+                    }
+                    else
+                    {
+                        sentencia = "UPDATE temas SET nombre = @nombre, numeroTema = @numeroTema, grupo = @grupo";
+                    }
                     // Crear el comando SQL
                     using (MySqlCommand sqlCommand = new MySqlCommand(sentencia, mySqlConnection))
                     {

@@ -55,7 +55,7 @@ namespace WindowsFormsApp1.Consultas
             if (esNumero)
             {
                 // Si es numérico, aplicar coincidencia exacta en numeroTema
-                consulta += " AND numeroTema = @numeroTema";
+                consulta += " AND numeroTema Like @numeroTema";
             }
             else if (!string.IsNullOrEmpty(nombreNroTema))
             {
@@ -141,8 +141,29 @@ namespace WindowsFormsApp1.Consultas
 
         private void btnModificarTemas_Click(object sender, EventArgs e)
         {
-            NuevoTema nuevoTema = new NuevoTema(Grupo);
-            nuevoTema.ShowDialog(this);
+            
+                // Verificar si hay una fila seleccionada en el DataGridView
+                if (dgvTemas.SelectedRows.Count > 0)
+                {
+                    // Obtener los datos de la fila seleccionada
+                    DataGridViewRow filaSeleccionada = dgvTemas.SelectedRows[0];
+
+                    int idTema = Convert.ToInt32(filaSeleccionada.Cells["id"].Value); // Nombre exacto de la columna
+                    string nombre = filaSeleccionada.Cells["nombre"].Value.ToString();
+                    string numeroTema = filaSeleccionada.Cells["numeroTema"].Value.ToString();
+
+                // Abrir el formulario de edición con los datos seleccionados
+                NuevoTema nuevoTema = new NuevoTema(Grupo, idTema, nombre, numeroTema);
+                nuevoTema.ShowDialog(this);
+
+                // Refrescar la lista de autores después de guardar cambios
+                btnBuscarTema_Click(sender, e);  
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, selecciona un autor para modificar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
         }
 
         private void btnEliminarTemas_Click(object sender, EventArgs e)

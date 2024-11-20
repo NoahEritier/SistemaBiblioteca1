@@ -29,7 +29,8 @@ namespace WindowsFormsApp1.Consultas
         // Método para cargar los nombres de los temas en cmbFiltroTema
         private void CargarTemas()
         {
-            // Cadena de conexión desde el archivo de configuración
+
+            string consulta = "SELECT Id, Nombre FROM Temas WHERE Grupo = 'Enciclopedias' ORDER BY Nombre";
             var stringConexion = ConfigurationManager.ConnectionStrings["MyDbContext"].ToString();
 
             using (MySqlConnection mySqlConnection = new MySqlConnection(stringConexion))
@@ -37,25 +38,28 @@ namespace WindowsFormsApp1.Consultas
                 try
                 {
                     mySqlConnection.Open();
-
-                    // Consulta para obtener los nombres de los temas
-                    string consulta = "SELECT nombre FROM temas";
-
                     MySqlCommand sqlCommand = new MySqlCommand(consulta, mySqlConnection);
-                    MySqlDataReader reader = sqlCommand.ExecuteReader();
-
-                    // Agregar "Todos los temas" como opción predeterminada
-                    cmbFiltroTema.Items.Add("Todos los temas");
-
-                    // Llenar la ComboBox con los nombres de los temas
-                    while (reader.Read())
+                    MySqlDataAdapter dataAdapter = new MySqlDataAdapter(sqlCommand);
+                    DataTable dataTable = new DataTable();
+                    dataAdapter.Fill(dataTable);
+                    if (dataTable.Rows.Count > 0)
                     {
-                        cmbFiltroTema.Items.Add(reader["nombre"].ToString());
+                        DataRow nuevaFila = dataTable.NewRow();
+                        nuevaFila["Id"] = 0;
+                        nuevaFila["Nombre"] = "Cualquier tema";
+                        dataTable.Rows.InsertAt(nuevaFila, 0);
+
+                        // Asignar el DataSource a la ComboBox
+                        cmbFiltroTema.DataSource = dataTable;
+                        cmbFiltroTema.DisplayMember = "Nombre";
+                        cmbFiltroTema.ValueMember = "Id";
+                        cmbFiltroTema.SelectedIndex = 0; // Seleccionar "Cualquier tema" por defecto
                     }
-
-                    reader.Close();
-
-                    cmbFiltroTema.SelectedIndex = 0; // Seleccionar "Todos los temas" como opción predeterminada
+                
+                    else
+                    {
+                        MessageBox.Show("No se encontraron temas.");
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -67,7 +71,6 @@ namespace WindowsFormsApp1.Consultas
                 }
             }
         }
-
         private void btnNuevaEnciclopedia_Click(object sender, EventArgs e)
         {
             NuevaEnciclopedia nuevaEnciclopedia = new NuevaEnciclopedia();
@@ -79,7 +82,7 @@ namespace WindowsFormsApp1.Consultas
             // Obtener los valores de los filtros
             string titulo = txtFiltroTituloEnciclopedia.Text.Trim();
             string filtroPeriodo = cmbFiltroPeriodo.SelectedItem.ToString();
-            string temaSeleccionado = cmbFiltroTema.SelectedItem.ToString();
+            int idTema = Convert.ToInt32(cmbFiltroTema.SelectedValue);
             string filtroIdioma = cmbFiltroIdioma.SelectedItem.ToString();
 
             // Construir la sentencia SQL dinámica
@@ -89,6 +92,16 @@ namespace WindowsFormsApp1.Consultas
             if (!string.IsNullOrEmpty(titulo))
             {
                 consulta += " AND nombre LIKE @titulo";
+            }
+
+            if (cmbFiltroIdioma.SelectedIndex != 0)
+            {
+                consulta += " AND idioma = @idioma";
+            }
+
+            if (idTema != 0)
+            {
+                consulta += " AND idTema = @idTema";
             }
 
             // Filtrar por el periodo de tiempo en FechaRegistro
@@ -129,18 +142,15 @@ namespace WindowsFormsApp1.Consultas
                         sqlCommand.Parameters.AddWithValue("@titulo", "%" + titulo + "%"); // Agrega los comodines %
                     }
 
-                    if (filtroIdioma != "Cualquier idioma")
+                    if (cmbFiltroIdioma.SelectedIndex != 0)
                     {
                         sqlCommand.Parameters.AddWithValue("@idioma", filtroIdioma);
-                        consulta += " AND idioma = @filtroIdioma";
                     }
 
-                    // Solo filtrar por tema si se seleccionó uno distinto de "Todos los temas"
-                    //if (cmbFiltroTema.SelectedIndex != 0) // "Todos los temas" es la primera opción
-                    //{
-                      //  sqlCommand.Parameters.AddWithValue("@tema", temaSeleccionado);
-                        //consulta += " AND tema = @tema"; // Asegúrate de agregar la condición para el tema en la consulta.
-                    //}
+                    if (idTema != 0)
+                    {
+                        sqlCommand.Parameters.AddWithValue("@idTema", idTema);
+                    }
 
                     if (filtroPeriodo != "Cualquier momento")
                     {
@@ -200,7 +210,7 @@ namespace WindowsFormsApp1.Consultas
             }
             else
             {
-                MessageBox.Show("Por favor, selecciona un autor para modificar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, selecciona una enciclopedia para modificar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

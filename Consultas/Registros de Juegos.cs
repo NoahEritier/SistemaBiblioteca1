@@ -120,8 +120,27 @@ namespace WindowsFormsApp1.Consultas
 
         private void btnModificarJuegos_Click(object sender, EventArgs e)
         {
-            NuevoJuego nuevoJuego = new NuevoJuego();
-            nuevoJuego.ShowDialog(this);
+            // Verificar si hay una fila seleccionada en el DataGridView
+            if (dgvJuegos.SelectedRows.Count > 0)
+            {
+                // Obtener los datos de la fila seleccionada
+                DataGridViewRow filaSeleccionada = dgvJuegos.SelectedRows[0];
+
+                int idJuego = Convert.ToInt32(filaSeleccionada.Cells["id"].Value); // Nombre exacto de la columna
+                string nombre = filaSeleccionada.Cells["nombre"].Value.ToString();
+                int cantidad = Convert.ToInt32(filaSeleccionada.Cells["cantidad"].Value);
+
+                // Abrir el formulario de edición con los datos seleccionados
+                NuevoJuego nuevoJuego = new NuevoJuego(idJuego, nombre, cantidad);
+                nuevoJuego.ShowDialog(this);
+
+                // Refrescar la lista de autores después de guardar cambios
+                btnBuscarJuego_Click(sender, e); // Vuelve a ejecutar la búsqueda
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un juego para modificar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnEliminarJuegos_Click(object sender, EventArgs e)

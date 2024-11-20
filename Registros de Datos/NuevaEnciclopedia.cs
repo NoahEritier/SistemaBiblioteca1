@@ -27,12 +27,6 @@ namespace WindowsFormsApp1.Registros_de_Datos
                 txtAño.Text = año.ToString();
                 txtTomos.Text = tomos?.ToString() ?? ""; // Mostrar tomos si hay un valor, o dejar vacío
                 cmbTemas.SelectedValue = idTema;
-
-                this.Text = "Editar Enciclopedia";
-            }
-            else
-            {
-                this.Text = "Nueva Enciclopedia";
             }
         }
 
@@ -86,7 +80,7 @@ namespace WindowsFormsApp1.Registros_de_Datos
         private void CargarTemas()
         {
 
-            string consulta = "SELECT Id, Nombre FROM Temas WHERE Grupo = 'Libros' ORDER BY Nombre";
+            string consulta = "SELECT Id, Nombre FROM Temas WHERE Grupo = 'Enciclopedias' ORDER BY Nombre";
             var stringConexion = ConfigurationManager.ConnectionStrings["MyDbContext"].ToString();
 
             using (MySqlConnection mySqlConnection = new MySqlConnection(stringConexion))
@@ -109,7 +103,6 @@ namespace WindowsFormsApp1.Registros_de_Datos
                     else
                     {
                         MessageBox.Show("No se encontraron temas.");
-                        cmbTemas.DataSource = null;
                     }
                 }
                 catch (Exception ex)
@@ -195,9 +188,16 @@ namespace WindowsFormsApp1.Registros_de_Datos
                 {
                     mySqlConnection.Open();
 
-                    // Sentencia SQL para insertar datos, incluyendo el idTema
-                    var sentencia = "INSERT INTO enciclopedias (nombre, año, tomos, fechaRegistro, idEditorial, idioma, idTema) VALUES (@titulo, @año, @tomos, @fechaRegistro, @idEditorial, @idioma, @idTema)";
+                    string sentencia;
+                    if (idEnciclopedia == null)
+                    {
+                        sentencia = "INSERT INTO enciclopedias (nombre, año, tomos, fechaRegistro, idEditorial, idioma, idTema) VALUES (@titulo, @año, @tomos, @fechaRegistro, @idEditorial, @idioma, @idTema)";
+                    }
+                    else
+                    {
+                        sentencia = "UPDATE enciclopedias SET nombre=@titulo, año=@año, tomos=@tomos,idEditorial=@idEditorial, idioma=@idioma, idTema= @idTema WHERE id = @id";
 
+                    }
                     // Crear el comando SQL
                     using (MySqlCommand sqlCommand = new MySqlCommand(sentencia, mySqlConnection))
                     {
@@ -205,10 +205,18 @@ namespace WindowsFormsApp1.Registros_de_Datos
                         sqlCommand.Parameters.AddWithValue("@titulo", titulo);
                         sqlCommand.Parameters.AddWithValue("@año", año);
                         sqlCommand.Parameters.AddWithValue("@tomos", tomos);
-                        sqlCommand.Parameters.AddWithValue("@fechaRegistro", fechaRegistro);
                         sqlCommand.Parameters.AddWithValue("@idEditorial", idEditorial);
                         sqlCommand.Parameters.AddWithValue("@idioma", idioma);
                         sqlCommand.Parameters.AddWithValue("@idTema", idTema); // Agregar el ID del tema
+
+                        if (idEnciclopedia != null)
+                        {
+                            sqlCommand.Parameters.AddWithValue("@id", idEnciclopedia);
+                        }
+                        else
+                        {
+                            sqlCommand.Parameters.AddWithValue("@fechaRegistro", DateTime.Now);
+                        }
 
                         // Ejecutar la inserción
                         int registrosAfectados = sqlCommand.ExecuteNonQuery();

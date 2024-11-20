@@ -12,11 +12,16 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1.Registros_de_Datos
 {
+    
 public partial class NuevoJuego : Form
     {
-        public NuevoJuego()
+        private int? idJuego = null;
+        public NuevoJuego(int? id = null, string nombre = "", int? cantidad = null)
         {
+            idJuego = id;
             InitializeComponent();
+            txtNombre.Text = nombre;
+            NumCantidad.Value = Convert.ToDecimal(cantidad);
         }
 
         private void btnCancelarRegistro_Click(object sender, EventArgs e)
@@ -52,31 +57,38 @@ public partial class NuevoJuego : Form
             {
                 mySqlConnection.Open();
 
-                // Sentencia SQL para insertar datos
-                var sentencia = "INSERT INTO juegos (nombre, cantidad, fechaRegistro) VALUES (@nombre, @cantidad, @fechaRegistro)";
-
-                // Crear el comando SQL
-                using (MySqlCommand sqlCommand = new MySqlCommand(sentencia, mySqlConnection))
+                    // Sentencia SQL para insertar datos
+                string sentencia;
+                if (idJuego == null)
                 {
-                    // Asignar los valores a los parámetros
-                    sqlCommand.Parameters.AddWithValue("@nombre", nombre);
-                    sqlCommand.Parameters.AddWithValue("@cantidad", cantidad);
-                    sqlCommand.Parameters.AddWithValue(@"fechaRegistro", fechaRegistro);
-
-
-                    // Ejecutar la inserción
-                    int registrosAfectados = sqlCommand.ExecuteNonQuery();
-
-                    if (registrosAfectados > 0)
-                    {
-                        MessageBox.Show("Juegos registrado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se pudo registrar el juego.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    sentencia = "INSERT INTO juegos (nombre, cantidad, fechaRegistro) VALUES (@nombre, @cantidad, @fechaRegistro)";
                 }
+                else
+                {
+                    sentencia = "UPDATE juegos SET nombre = @nombre, cantidad = @cantidad";
+                }
+                        // Crear el comando SQL
+                        using (MySqlCommand sqlCommand = new MySqlCommand(sentencia, mySqlConnection))
+                        {
+                            // Asignar los valores a los parámetros
+                            sqlCommand.Parameters.AddWithValue("@nombre", nombre);
+                            sqlCommand.Parameters.AddWithValue("@cantidad", cantidad);
+                            sqlCommand.Parameters.AddWithValue(@"fechaRegistro", fechaRegistro);
+
+
+                            // Ejecutar la inserción
+                            int registrosAfectados = sqlCommand.ExecuteNonQuery();
+
+                            if (registrosAfectados > 0)
+                            {
+                                MessageBox.Show("Juegos registrado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se pudo registrar el juego.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
             }
             catch (Exception ex)
             {

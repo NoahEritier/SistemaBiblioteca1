@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1
@@ -17,14 +18,18 @@ namespace WindowsFormsApp1
         public Registro_de_Libros()
         {
             InitializeComponent();
+            cmbFiltroPeriodo.Items.Add("1 semana");
+            cmbFiltroPeriodo.Items.Add("1 mes");
+            cmbFiltroPeriodo.Items.Add("6 meses");
+            cmbFiltroPeriodo.Items.Add("Cualquier momento");
+            cmbFiltroPeriodo.SelectedIndex = 3; // Por defecto: "Cualquier momento"
         }
 
         private void btnBuscarLibro_Click(object sender, EventArgs e)
         {
             // Obtener los valores de los filtros
             string filtroTitulo = txtFiltroLibro.Text.Trim();
-            string filtroAutor = cmbFiltroPeriodo.Text.Trim();
-
+            string filtroPeriodo = cmbFiltroPeriodo.SelectedItem.ToString();
             // Construir la sentencia SQL dinámica
             string consulta = "SELECT * FROM libros WHERE 1=1";
 
@@ -34,13 +39,26 @@ namespace WindowsFormsApp1
                 consulta += " AND titulo LIKE @filtroTitulo";
             }
 
-            // Filtrar por autor si no está vacío
-            if (!string.IsNullOrEmpty(filtroAutor))
+            DateTime fechaFiltro = DateTime.Now;
+            switch (filtroPeriodo)
             {
-                consulta += " AND autor LIKE @filtroAutor";
+                case "1 semana":
+                    fechaFiltro = DateTime.Now.AddDays(-7);
+                    consulta += " AND FechaRegistro >= @fechaFiltro";
+                    break;
+                case "1 mes":
+                    fechaFiltro = DateTime.Now.AddMonths(-1);
+                    consulta += " AND FechaRegistro >= @fechaFiltro";
+                    break;
+                case "6 meses":
+                    fechaFiltro = DateTime.Now.AddMonths(-6);
+                    consulta += " AND FechaRegistro >= @fechaFiltro";
+                    break;
+                case "Cualquier momento":
+                    // No se agrega filtro por fecha
+                    break;
             }
-
-            // Conectar a la base de datos y ejecutar la consulta
+                    // Conectar a la base de datos y ejecutar la consulta
             var stringConexion = ConfigurationManager.ConnectionStrings["MyDbContext"].ToString();
             using (MySqlConnection mySqlConnection = new MySqlConnection(stringConexion))
             {
@@ -57,9 +75,9 @@ namespace WindowsFormsApp1
                         sqlCommand.Parameters.AddWithValue("@filtroTitulo", "%" + filtroTitulo + "%");
                     }
 
-                    if (!string.IsNullOrEmpty(filtroAutor))
+                    if(filtroPeriodo != "Cualquier momento")
                     {
-                        sqlCommand.Parameters.AddWithValue("@filtroAutor", "%" + filtroAutor + "%");
+                        sqlCommand.Parameters.AddWithValue("@filtroPeriodo", filtroPeriodo);
                     }
 
                     // Ejecutar la consulta y cargar los resultados en un DataTable
@@ -94,12 +112,37 @@ namespace WindowsFormsApp1
         {
             NuevoLibro nuevoLibro = new NuevoLibro();
             nuevoLibro.ShowDialog(this);
+            btnBuscarLibro_Click(sender, e);
         }
 
         private void btnModificarLibros_Click(object sender, EventArgs e)
         {
-            NuevoLibro nuevoLibro = new NuevoLibro();
-            nuevoLibro.ShowDialog(this);
+            // Verificar si hay un proyecto seleccionado
+            if (dgvLibros.SelectedRows.Count > 0)
+            {
+                try
+                {
+                    DataGridViewRow filaSeleccionada = dgvLibros.SelectedRows[0];
+
+                    // Obtener el ID del proyecto seleccionado
+                    int idLibro = Convert.ToInt32(filaSeleccionada.Cells["Id"].Value); // Nombre exacto de la columna
+
+                    // Abrir el formulario de modificación
+                    NuevoLibro nuevoLibro = new NuevoLibro(idLibro);
+                    nuevoLibro.ShowDialog();
+
+                    // Refrescar la tabla después de la modificación
+                    btnBuscarLibro_Click(sender, e);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al intentar modificar el proyecto: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un proyecto para modificar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnEliminarLibros_Click(object sender, EventArgs e)
@@ -120,16 +163,21 @@ namespace WindowsFormsApp1
                         {
                             mySqlConnection.Open();
 
-                            // Crear el comando SQL para eliminar el libro
-                            string consulta = "DELETE FROM libros_autores WHERE IdLibro = @Id";
-                            string query = "DELETE FROM libros WHERE Id = @Id"; // Asegúrate de que el nombre de la columna sea correcto
-                            MySqlCommand sqlCommand = new MySqlCommand(consulta, mySqlConnection);
-                            MySqlCommand sqlCommand2 = new MySqlCommand(query, mySqlConnection);
+                            string consulta1 = "DELETE FROM libros_autores WHERE IdLibro = @Id";
+                            MySqlCommand sqlCommand1 = new MySqlCommand(consulta1, mySqlConnection);
+                            sqlCommand1.Parameters.AddWithValue("@Id", idLibro);
 
-                            sqlCommand.Parameters.AddWithValue("@Id", idLibro);
+                            // Ejecutar el primer comando (libros_autores)
+                            sqlCommand1.ExecuteNonQuery();
 
-                            // Ejecutar el comando
-                            sqlCommand.ExecuteNonQuery();
+                            // Crear el comando SQL para eliminar de la tabla libros
+                            string consulta2 = "DELETE FROM libros WHERE Id = @Id";
+                            MySqlCommand sqlCommand2 = new MySqlCommand(consulta2, mySqlConnection);
+                            sqlCommand2.Parameters.AddWithValue("@Id", idLibro);
+
+                            // Ejecutar el segundo comando (libros)
+                            sqlCommand2.ExecuteNonQuery();
+
                             MessageBox.Show("Libro eliminado exitosamente.");
 
                             // Recargar la lista de libros después de eliminar
