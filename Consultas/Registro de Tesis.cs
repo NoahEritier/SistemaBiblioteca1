@@ -28,6 +28,11 @@ namespace WindowsFormsApp1.Consultas
             cmbFiltroPeriodo.SelectedIndex = 3; // Por defecto: "Cualquier momento"
         }
 
+        private void Registro_de_Tesis_Load(object sender, EventArgs e)
+        {
+            btnBuscarTesis.PerformClick();
+        }
+
         private void btnNuevaTesis_Click(object sender, EventArgs e)
         {
             NuevaTesis nuevaTesis = new NuevaTesis();

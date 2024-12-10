@@ -189,5 +189,10 @@ namespace WindowsFormsApp1.Consultas
                 MessageBox.Show("Por favor, selecciona un juego para eliminar.");
             }
         }
+
+        private void Registros_de_Juegos_Load(object sender, EventArgs e)
+        {
+            btnBuscarJuego.PerformClick();
+        }
     }
 }

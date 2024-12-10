@@ -219,6 +219,7 @@
             this.Name = "Registros_de_Juegos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registros_de_Juegos";
+            this.Load += new System.EventHandler(this.Registros_de_Juegos_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJuegos)).EndInit();

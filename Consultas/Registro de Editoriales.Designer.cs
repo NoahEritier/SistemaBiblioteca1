@@ -218,6 +218,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Registro_de_Editoriales";
             this.Text = "Registro_de_Editoriales";
+            this.Load += new System.EventHandler(this.Registro_de_Editoriales_Load);
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEditoriales)).EndInit();

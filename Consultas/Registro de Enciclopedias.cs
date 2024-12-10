@@ -20,10 +20,14 @@ namespace WindowsFormsApp1.Consultas
             cmbFiltroPeriodo.Items.Add("Cualquier momento");
             cmbFiltroPeriodo.SelectedIndex = 3; // Por defecto: "Cualquier momento"
 
-
             cmbFiltroIdioma.SelectedIndex = 0;
             // Llamar al método para cargar los temas en la ComboBox
             CargarTemas();
+        }
+
+        private void Registro_de_Diccionarios_Load(object sender, EventArgs e)
+        {
+            btnBuscarEnciclopedia.PerformClick();
         }
 
         // Método para cargar los nombres de los temas en cmbFiltroTema

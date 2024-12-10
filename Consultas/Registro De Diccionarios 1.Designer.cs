@@ -254,6 +254,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Registro_De_Diccionarios_1";
             this.Text = "Registro_De_Diccionarios_1";
+            this.Load += new System.EventHandler(this.Registro_De_Diccionarios_1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiccionarios)).EndInit();

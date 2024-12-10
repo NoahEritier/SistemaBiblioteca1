@@ -25,6 +25,11 @@ namespace WindowsFormsApp1.Consultas
             cmbFiltroCarrera.SelectedIndexChanged += cmbFiltroCarrera_SelectedIndexChanged;
         }
 
+        private void Registro_de_Proyecto_de_Catedra_Load(object sender, EventArgs e)
+        {
+            btnBuscarProyecto.PerformClick();
+        }
+
         private void cmbFiltroCarrera_SelectedIndexChanged(object sender, EventArgs e)
         {
             int idCarrera = Convert.ToInt32(cmbFiltroCarrera.SelectedValue);
@@ -310,7 +315,7 @@ namespace WindowsFormsApp1.Consultas
             {
                 MessageBox.Show("Por favor, selecciona un autor para eliminar.");
             }
-        }
+        }       
     }
 }
 

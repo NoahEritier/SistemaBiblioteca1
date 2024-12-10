@@ -28,6 +28,10 @@ namespace WindowsFormsApp1.Consultas
             cmbFiltroIdiomas.SelectedIndex = 0;
         }
 
+        private void Registro_De_Diccionarios_1_Load(object sender, EventArgs e)
+        {
+            btnBuscarDiccionario.PerformClick();
+        }
         private void btnNuevoDiccionario_Click(object sender, EventArgs e)
         {
             NuevoDiccionario nuevoDiccionario = new NuevoDiccionario();
@@ -216,5 +220,7 @@ namespace WindowsFormsApp1.Consultas
                 MessageBox.Show("Por favor, selecciona un diccionario para eliminar.");
             }
         }
+
+
     }
 }

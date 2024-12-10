@@ -64,7 +64,6 @@
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(1541, 809);
             this.panel.TabIndex = 3;
-            this.panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Paint);
             // 
             // btnEliminarAutores
             // 
@@ -248,6 +247,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Registro_de_Autores";
             this.Text = "Registro_de_Autores";
+            this.Load += new System.EventHandler(this.Registro_de_Autores_Load);
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAutores)).EndInit();

@@ -30,6 +30,15 @@ namespace WindowsFormsApp1.Consultas
             CargarTemas();
         }
 
+        private void Registros_de_Mapas_Load(object sender, EventArgs e)
+        {
+            btnBuscarMapa.PerformClick();
+        }
+
+        private void Registro_de_Mapas_Load(object sender, EventArgs e)
+        {
+            btnBuscarMapa.PerformClick();
+        }
 
         private void btnNuevoMapa_Click(object sender, EventArgs e)
         {

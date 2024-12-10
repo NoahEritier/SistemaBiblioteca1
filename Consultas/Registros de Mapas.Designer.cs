@@ -217,6 +217,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Registros_de_Mapas";
             this.Text = "Registros_de_Mapas";
+            this.Load += new System.EventHandler(this.Registros_de_Mapas_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMapas)).EndInit();

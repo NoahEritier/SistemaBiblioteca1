@@ -28,8 +28,13 @@ namespace WindowsFormsApp1.Consultas
             cmbFiltroPeriodo.SelectedIndex = 3; // Por defecto: "Cualquier momento"
         }
 
+        private void Registro_de_Editoriales_Load(object sender, EventArgs e)
+        {
+            btnBuscarEditorial.PerformClick();
+        }
+
         private void btnBuscarEditorial_Click(object sender, EventArgs e)
-    {
+        {
         // Obtener los valores de los filtros
         string filtroNombre = txtFiltroNombre.Text.Trim();
         string filtroPeriodo = cmbFiltroPeriodo.SelectedItem.ToString();

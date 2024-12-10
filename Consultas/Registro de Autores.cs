@@ -20,6 +20,10 @@ namespace WindowsFormsApp1
             cmbFiltroPeriodo.SelectedIndex = 3; // Por defecto: "Cualquier momento"
         }
 
+        private void Registro_de_Autores_Load(object sender, EventArgs e)
+        {
+            btnBuscarAutor.PerformClick();
+        }
         private void btnBuscarAutor_Click(object sender, EventArgs e)
         {
             // Obtener los valores de los filtros
@@ -199,9 +203,6 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void panel_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
     }
 }

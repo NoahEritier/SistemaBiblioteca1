@@ -25,6 +25,12 @@ namespace WindowsFormsApp1
             cmbFiltroPeriodo.SelectedIndex = 3; // Por defecto: "Cualquier momento"
         }
 
+        private void Registro_de_Libros_Load(object sender, EventArgs e)
+        {
+            btnBuscarLibro.PerformClick();
+        }
+
+
         private void btnBuscarLibro_Click(object sender, EventArgs e)
         {
             // Obtener los valores de los filtros

@@ -29,6 +29,10 @@ namespace WindowsFormsApp1.Consultas
             Grupo = grupo;
         }
 
+        private void registro_de_temas_Load(object sender, EventArgs e)
+        {
+            btnBuscarTema.PerformClick();
+        }
 
         private void btnNuevoTema_Click(object sender, EventArgs e)
         {
